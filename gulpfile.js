@@ -28,6 +28,7 @@ var browserify = require('browserify');
 
 // transforms
 var to5ify = require('6to5ify');
+var partialify = require('partialify');
 
 var APP_DIR = 'app';
 var BUILD_DIR = 'build';
@@ -90,6 +91,7 @@ gulp.task('browserify', function() {
     }));
 
     bundler.transform(to5ify);
+    bundler.transform(partialify);
     bundler.on('error', gutil.log.bind(gutil, 'Browserify Error'));
 
     bundler.on('update', rebundle);
