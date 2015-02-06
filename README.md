@@ -73,13 +73,15 @@ A typical module will look something like this:
 ```javascript
 import * as _ from 'lodash';
 
-class ExampleCtrl {
+class Example {
     constructor(data) {
         this.exampleData = data;
     }
 
     someMethod() {
-        return 'foo';
+        return _.map(this.exampleData, function(data) {
+            return (data * 2);
+        });
     }
 
     get data() {
@@ -89,10 +91,10 @@ class ExampleCtrl {
 
 function ExampleState($stateProvider) {
     $stateProvider.state('app.example', {
-        controller: ExampleCtrl,
+        controller: ['data', Example],
         controllerAs: 'Example',
         url: '/example',
-        templateUrl: require.toUrl('./_example.html')
+        templateUrl: require('./_example.html')
     });
 }
 
