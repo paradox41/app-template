@@ -1,12 +1,13 @@
-'use strict';
-
 import * as angular from 'angular';
 import 'angular-ui-router';
+
+import './example';
 
 const MODULE_NAME = 'app';
 
 angular.module(MODULE_NAME, [
-    'ui.router'
+    'ui.router',
+    'example'
 ])
 
 .config([
