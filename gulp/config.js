@@ -16,8 +16,8 @@ module.exports = {
             './app/**/*.js',
             '!./app/**/*.spec.js',
             '!./app/bower_components/**/*.js',
-            '!./app/templates.js',
-            '!./app/app.min.js'
+            '!./app/*.min.js',
+            '!./app/*.worker.js'
         ]
     },
     scss: {
@@ -35,5 +35,8 @@ module.exports = {
     },
     test: {
         karma: karmaConfigPath
+    },
+    serviceWorker: {
+        name: 'service.worker.js'
     }
 };
