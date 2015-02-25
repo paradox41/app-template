@@ -1,4 +1,3 @@
-
 var gulp = require('gulp');
 var runSequence = require('run-sequence');
 
@@ -9,5 +8,5 @@ gulp.task('build', function() {
         'browserify:build',
         'scss:build',
         'changelog'
-    ], 'cachebust', 'handlebars:build');
+    ], 'cachebust', 'handlebars:build', 'generate-service-worker', 'uglify');
 });

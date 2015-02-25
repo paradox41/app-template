@@ -1,4 +1,3 @@
-
 var config = require('../config');
 
 var gulp = require('gulp');
@@ -13,6 +12,15 @@ gulp.task('serve', function() {
     browserSync({
         server: {
             baseDir: config.app
+        },
+        notify: false
+    });
+});
+
+gulp.task('serve:build', function() {
+    browserSync({
+        server: {
+            baseDir: config.build
         },
         notify: false
     });

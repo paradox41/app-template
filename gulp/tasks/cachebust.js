@@ -1,4 +1,3 @@
-
 var config = require('../config');
 
 var gulp = require('gulp');
@@ -6,10 +5,7 @@ var gulp = require('gulp');
 var rev = require('gulp-rev');
 
 gulp.task('cachebust', function() {
-    return gulp.src([
-            'build/app.css',
-            'build/app.min.js'
-        ], {
+    return gulp.src([config.build + '/*.{css,js}'], {
             base: config.app
         })
         .pipe(gulp.dest(config.build))

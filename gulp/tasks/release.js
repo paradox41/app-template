@@ -1,4 +1,3 @@
-
 var gulp = require('gulp');
 var bump = require('gulp-bump');
 var git = require('gulp-git');

@@ -44,5 +44,3 @@
 #### Features
 
 * **app:** Add partialify ([2ac8b275](https://github.com/paradox41/app-template/commit/2ac8b2759166f17634af32af55df146b252a2c1b))
-
-

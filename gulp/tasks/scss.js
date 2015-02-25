@@ -1,4 +1,3 @@
-
 var config = require('../config');
 
 var gulp = require('gulp');
@@ -10,7 +9,7 @@ var filter = require('gulp-filter');
 var minify = require('gulp-minify-css');
 
 var reload = require('browser-sync').reload;
-var lint = require('gulp-scss-lint');
+// var lint = require('gulp-scss-lint');
 
 gulp.task('scss:dev', function(cb) {
     gulp.src(config.scss.src)
@@ -31,9 +30,9 @@ gulp.task('scss:dev', function(cb) {
 
 gulp.task('scss:build', function() {
     return gulp.src(config.scss.src)
-        .pipe(lint({
-            config: '.scss-lint.yml'
-        }))
+        // .pipe(lint({
+        //     config: '.scss-lint.yml'
+        // }))
         .pipe(sass())
         .pipe(autoprefixer())
         .pipe(minify({

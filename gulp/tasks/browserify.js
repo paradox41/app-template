@@ -3,7 +3,7 @@ var config = require('../config');
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 
-// var filter = require('gulp-filter');
+var filter = require('gulp-filter');
 var sourcemaps = require('gulp-sourcemaps');
 var plumber = require('gulp-plumber');
 var uglify = require('gulp-uglify');
@@ -14,7 +14,7 @@ var buffer = require('vinyl-buffer');
 var watchify = require('watchify');
 var browserify = require('browserify');
 
-// var reload = require('browser-sync').reload;
+var reload = require('browser-sync').reload;
 
 // transforms
 var babelify = require('babelify');
@@ -40,7 +40,11 @@ gulp.task('browserify:dev', function() {
                 loadMaps: true
             }))
             .pipe(sourcemaps.write('./'))
-            .pipe(gulp.dest(config.app));
+            .pipe(filter('*.min.js'))
+            .pipe(gulp.dest(config.app))
+            .pipe(reload({
+                stream: true
+            }));
     };
 
     bundler.transform(babelify);
@@ -50,9 +54,9 @@ gulp.task('browserify:dev', function() {
 
     bundler.on('update', bundle);
 
-    bundler.on('log', function(msg) {
-        gutil.log('Browserify build: ', gutil.colors.magenta(msg));
-    });
+    // bundler.on('log', function(msg) {
+    //     gutil.log('Browserify build: ', gutil.colors.magenta(msg));
+    // });
 
     return bundle();
 });
