@@ -11,6 +11,11 @@ module.exports = {
             '!./app/bower_components/**/*.html',
         ]
     },
+    hbs: {
+        files: [
+            './app/*.hbs'
+        ]
+    },
     js: {
         files: [
             './app/**/*.js',
