@@ -3,6 +3,7 @@
 [![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/paradox41/app-template)
 [![Tag](https://img.shields.io/github/tag/paradox41/app-template.svg?style=flat)](https://github.com/paradox41/app-template)
 [![Build](https://travis-ci.org/paradox41/app-template.svg)](https://travis-ci.org/paradox41/app-template)
+[![David](https://david-dm.org/paradox41/app-template.svg)](https://github.com/paradox41/app-template)
 
 Boilerplate for my Angular apps
 
