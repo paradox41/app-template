@@ -19,6 +19,7 @@
     "bootstrap-sass-official": "~3.2.0",
     "bootswatch-scss": "master",
     "font-awesome": "~4.2.0",
-    "lodash": "~2.4.1"
+    "lodash": "~2.4.1",
+    "angular-material": "~0.9.7"
   }
 }

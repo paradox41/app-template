@@ -1,5 +1,8 @@
 import angular from 'angular';
 import 'angular-ui-router';
+import 'angular-aria';
+import 'angular-animate';
+import 'angular-material';
 
 import filtersModule from './common/filters';
 
@@ -9,6 +12,9 @@ const MODULE_NAME = 'app';
 
 angular.module(MODULE_NAME, [
     'ui.router',
+    'ngAria',
+    'ngAnimate',
+    'ngMaterial',
     filtersModule.name,
     exampleModule.name
 ])

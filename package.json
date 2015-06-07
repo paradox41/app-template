@@ -59,6 +59,8 @@
   "browser": {
     "app": "./app/app.js",
     "angular": "./node_modules/angular/angular.js",
+    "angular-aria": "./app/bower_components/angular-aria/angular-aria.js",
+    "angular-material": "./app/bower_components/angular-material/angular-material.js",
     "angular-ui-router": "./node_modules/angular-ui-router/release/angular-ui-router.js"
   },
   "browserify": {
@@ -72,11 +74,14 @@
     },
     "angular-ui-router": {
       "depends": "angular"
+    },
+    "angular-material": {
+      "depends": ["angular", "angular-aria"]
     }
   },
   "dependencies": {
-    "angular": "^1.3.5",
-    "angular-animate": "^1.3.5",
-    "angular-ui-router": "^0.2.11"
+    "angular": "^1.4.0",
+    "angular-animate": "^1.4.0",
+    "angular-ui-router": "^0.2.15"
   }
 }
