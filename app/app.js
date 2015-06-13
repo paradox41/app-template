@@ -4,18 +4,25 @@ import 'angular-aria';
 import 'angular-animate';
 import 'angular-material';
 
-import filtersModule from './common/filters';
-
 import exampleModule from './example';
 
 const MODULE_NAME = 'app';
+
+function AppStateConfig($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('');
+
+    $stateProvider.state('app', {
+        url: '',
+        abstract: true,
+        template: '<div ui-view></div>'
+    });
+}
 
 angular.module(MODULE_NAME, [
     'ui.router',
     'ngAria',
     'ngAnimate',
     'ngMaterial',
-    filtersModule.name,
     exampleModule.name
 ])
 
@@ -38,15 +45,5 @@ angular.module(MODULE_NAME, [
         });
     }
 ]);
-
-function AppStateConfig($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('');
-
-    $stateProvider.state('app', {
-        url: '',
-        abstract: true,
-        template: '<div ui-view></div>'
-    });
-}
 
 angular.bootstrap(document.querySelector('html'), [MODULE_NAME]);

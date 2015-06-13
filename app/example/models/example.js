@@ -1,13 +1,10 @@
 import _ from 'lodash';
 
-import {memoize} from 'common/decorators';
-
 class Foo {
     constructor(data) {
         _.extend(this, _.omit(data, '$$hashKey'));
     }
 
-    @memoize
     get name() {
         return `${this.first} ${this.last}`;
     }

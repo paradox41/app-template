@@ -1,7 +1,17 @@
 import angular from 'angular';
 
-import DefaultFilter from './filters';
+function defaultFilter() {
+    return function(value, defaultValue) {
+        // if the value is invalid, return the default value
+        if (value === undefined || value === null) {
+            return defaultValue || '-';
+        }
+        return value;
+    };
+}
+
+defaultFilter.$inject = [];
 
 export default angular.module('common.filters', [])
 
-.filter('default', DefaultFilter);
+.filter('default', defaultFilter);
