@@ -1,12 +1,12 @@
-var config = require('../config');
+import config from '../config';
 
-var gulp = require('gulp');
+import gulp from 'gulp';
 
-var rev = require('gulp-rev');
+import rev from 'gulp-rev';
 
 gulp.task('cachebust', function() {
-    return gulp.src([config.build + '/*.{css,js}'], {
-            base: config.app
+    return gulp.src([config.build + '/**/*.{css,js}'], {
+            base: config.build
         })
         .pipe(gulp.dest(config.build))
         .pipe(rev())

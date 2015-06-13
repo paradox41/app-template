@@ -1,8 +1,8 @@
-var config = require('../config');
+import config from '../config';
 
-var gulp = require('gulp');
+import gulp from 'gulp';
 
-var uglify = require('gulp-uglify');
+import uglify from 'gulp-uglify';
 
 gulp.task('uglify', function() {
     return gulp.src(config.build + '/*.worker.js')

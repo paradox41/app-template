@@ -1,13 +1,13 @@
-var config = require('../config');
+import config from '../config';
 
-var gulp = require('gulp');
-var rename = require('gulp-rename');
-var debug = require('gulp-debug');
+import gulp from 'gulp';
+import rename from 'gulp-rename';
+import debug from 'gulp-debug';
 
 gulp.task('convert', function() {
     return gulp.src(config.app + '/bower_components/**/*.css')
         .pipe(debug({
-            title: 'convert:'
+            title: '[convert]:'
         }))
         .pipe(rename({
             extname: '.copy.scss'

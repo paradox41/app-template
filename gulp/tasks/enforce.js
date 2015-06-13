@@ -1,6 +1,6 @@
-var fs = require('fs');
+import fs from 'fs';
 
-var gulp = require('gulp');
+import gulp from 'gulp';
 
 gulp.task('enforce', function() {
     var validateCommit = '.git/hooks/commit-msg';

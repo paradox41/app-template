@@ -1,4 +1,5 @@
 {
     "preset": "google",
-    "validateIndentation": "\s\s\s\s"
+    "esnext": true,
+    "validateIndentation": 4
 }

@@ -6,4 +6,4 @@
  * Add common configuration options to ./gulp/config.js
  */
 
-require('./gulp');
+import './gulp';

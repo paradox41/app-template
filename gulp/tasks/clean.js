@@ -1,6 +1,6 @@
-var config = require('../config');
+import config from '../config';
 
-var gulp = require('gulp');
+import gulp from 'gulp';
 
 gulp.task('clean', function(cb) {
     require('del')([config.build], {

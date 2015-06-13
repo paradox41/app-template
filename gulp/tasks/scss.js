@@ -1,17 +1,17 @@
-var config = require('../config');
+import config from '../config';
 
-var gulp = require('gulp');
-var plumber = require('gulp-plumber');
-var sourcemaps = require('gulp-sourcemaps');
-var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var filter = require('gulp-filter');
-var minify = require('gulp-minify-css');
+import gulp from 'gulp';
+import plumber from 'gulp-plumber';
+import sourcemaps from 'gulp-sourcemaps';
+import sass from 'gulp-sass';
+import autoprefixer from 'gulp-autoprefixer';
+import filter from 'gulp-filter';
+import minify from 'gulp-minify-css';
 
-var reload = require('browser-sync').reload;
+import {reload} from 'browser-sync';
 
 gulp.task('scss:dev', function(cb) {
-    gulp.src(config.scss.src)
+    return gulp.src(config.scss.src)
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass({

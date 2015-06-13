@@ -1,8 +1,8 @@
-var fs = require('fs');
+import fs from 'fs';
 
-var gulp = require('gulp');
+import gulp from 'gulp';
 
-var changelog = require('conventional-changelog');
+import changelog from 'conventional-changelog';
 
 gulp.task('changelog', function(done) {
     function changeParsed(err, log) {

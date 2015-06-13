@@ -35,8 +35,16 @@ module.exports = {
         buildDest: './build/app.css'
     },
     browserify: {
-        in: './app/app.js',
-        out: 'app.min.js'
+        dev: {
+            entry: './app/app.js',
+            out: 'app.min.js',
+        },
+        vendor: {
+            libs: [
+                'lodash'
+            ],
+            out: 'vendor.min.js'
+        }
     },
     test: {
         karma: karmaConfigPath

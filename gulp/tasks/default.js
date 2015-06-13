@@ -1,7 +1,8 @@
-var gulp = require('gulp');
+import gulp from 'gulp';
 
 gulp.task('default', [
-    'browserify:dev',
+    'browserify',
+    'browserify:vendor',
     'handlebars:dev',
     'serve',
     'scss:dev',

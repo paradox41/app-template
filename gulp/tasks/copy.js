@@ -1,20 +1,19 @@
-var config = require('../config');
+import config from '../config';
 
-var gulp = require('gulp');
+import gulp from 'gulp';
 
-var debug = require('gulp-debug');
+import debug from 'gulp-debug';
 
 gulp.task('copy:build', function() {
     return gulp.src([
-        './app/**/*.{tff,woff,woff2,ico,txt,png,svg,jpg,jpeg,json,geojson,csv}',
-        './app/*.worker.js',
+        './app/**/*.{tff,woff,woff2,ico,txt,png,svg,jpg,jpeg,json,geojson,csv,hbs}',
         '!*.map',
         '!./app/bower_components/**/*.{json,txt,csv}'
     ], {
-        base: './app'
+        base: config.app
     })
     .pipe(debug({
-        title: 'copy'
+        title: '[copy]'
     }))
     .pipe(gulp.dest(config.build));
 });

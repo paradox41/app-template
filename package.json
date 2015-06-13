@@ -13,7 +13,9 @@
   },
   "homepage": "https://github.com/paradox41/app-template",
   "devDependencies": {
-    "angular-mocks": "^1.3.14",
+    "aliasify": "^1.7.2",
+    "angular-mocks": "^1.3.16",
+    "babel": "^5.5.6",
     "babelify": "^6.1.2",
     "bower": "^1.4.1",
     "browser-sync": "^2.7.5",
@@ -22,15 +24,17 @@
     "chai": "^2.3.0",
     "conventional-changelog": "0.0.11",
     "del": "^0.1.3",
-    "gulp": "^3.8.11",
+    "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.0",
     "gulp-bump": "^0.1.10",
     "gulp-changed": "^0.4.1",
     "gulp-compile-handlebars": "^0.4.3",
     "gulp-debug": "^2.0.0",
+    "gulp-eslint": "^0.13.2",
     "gulp-filter": "^1.0.2",
     "gulp-git": "^0.5.2",
-    "gulp-jshint": "^1.8.5",
+    "gulp-if": "^1.2.5",
+    "gulp-jscs": "^1.6.0",
     "gulp-minify-css": "^0.3.10",
     "gulp-plumber": "^0.6.6",
     "gulp-rename": "^1.2.0",
@@ -40,13 +44,12 @@
     "gulp-tag-version": "^1.1.0",
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.1",
-    "jshint-stylish": "^0.4.0",
     "karma": "^0.12.32",
     "karma-browserify": "^2.0.0",
     "karma-chai": "^0.1.0",
     "karma-mocha": "^0.1.10",
     "karma-phantomjs-launcher": "^0.1.4",
-    "lodash": "^3.9.3",
+    "minimist": "^1.1.1",
     "mocha": "^2.2.5",
     "partialify": "^3.1.3",
     "run-sequence": "^1.0.1",
@@ -65,8 +68,14 @@
   },
   "browserify": {
     "transform": [
-      "browserify-shim"
+      "browserify-shim",
+      "aliasify"
     ]
+  },
+  "aliasify": {
+    "aliases": {
+      "common": "./app/common"
+    }
   },
   "browserify-shim": {
     "angular": {
@@ -76,12 +85,16 @@
       "depends": "angular"
     },
     "angular-material": {
-      "depends": ["angular", "angular-aria"]
+      "depends": [
+        "angular",
+        "angular-aria"
+      ]
     }
   },
   "dependencies": {
     "angular": "^1.4.0",
     "angular-animate": "^1.4.0",
-    "angular-ui-router": "^0.2.15"
+    "angular-ui-router": "^0.2.15",
+    "lodash": "^3.9.3"
   }
 }

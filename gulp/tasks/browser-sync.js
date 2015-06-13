@@ -1,8 +1,8 @@
-var config = require('../config');
+import config from '../config';
 
-var gulp = require('gulp');
+import gulp from 'gulp';
 
-var browserSync = require('browser-sync');
+import browserSync from 'browser-sync';
 
 gulp.task('reload', function() {
     browserSync.reload();

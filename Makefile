@@ -1,18 +1,10 @@
-
 dependencies:
-	npm cache clean
-	bower cache clean
-	npm --loglevel info install
-	bower install
+	npm prune && npm install && bower install
 
 clean:
-	rm -rf node_modules/
-	rm -rf app/bower_components/
+	rm -rf node_modules/ app/bower_components/
 
 build:
-	make clean
-	make dependencies
-	gulp build
+	make dependencies && gulp build
 
-
-.PHONY : build
+.PHONY: build

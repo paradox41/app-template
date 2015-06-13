@@ -1,12 +1,12 @@
-var gulp = require('gulp');
-var runSequence = require('run-sequence');
+import gulp from 'gulp';
+import runSequence from 'run-sequence';
 
 gulp.task('build', function() {
-    runSequence('test', 'jshint', 'clean', [
+    runSequence('test', 'lint', 'clean', 'copy:build', [
         // these are done async
-        'copy:build',
         'browserify:build',
-        'scss:build',
+        'browserify:vendor:build',
+        'scss:build'
         // 'changelog'
-    ], 'cachebust', 'handlebars:build', 'generate-service-worker', 'uglify');
+    ], 'cachebust', 'handlebars:build', 'uglify');
 });

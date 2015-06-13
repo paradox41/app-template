@@ -1,8 +1,8 @@
-var gulp = require('gulp');
-var bump = require('gulp-bump');
-var git = require('gulp-git');
-var filter = require('gulp-filter');
-var tag = require('gulp-tag-version');
+import gulp from 'gulp';
+import bump from 'gulp-bump';
+import git from 'gulp-git';
+import filter from 'gulp-filter';
+import tag from 'gulp-tag-version';
 
 var release = function(importance) {
     return gulp.src(['./bower.json', './package.json'])
