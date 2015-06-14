@@ -1,9 +1,24 @@
+//
+// Global
+// --------------------------------------------------
+
 @import 'assets/stylesheets/partials/global/variables';
 @import 'assets/stylesheets/partials/global/functions';
 @import 'assets/stylesheets/partials/global/mixins';
 @import 'assets/stylesheets/partials/global/extends';
 
-@import 'assets/stylesheets/partials/base/bootstrap';
+//
+// Base
+// --------------------------------------------------
+
 @import 'assets/stylesheets/partials/base/font-awesome';
+
+//
+// Components
+// --------------------------------------------------
+
+//
+// Vendor
+// --------------------------------------------------
 
 @import 'bower_components/angular-material/angular-material.copy.scss';

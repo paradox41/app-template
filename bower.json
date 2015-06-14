@@ -2,7 +2,7 @@
   "name": "app-template",
   "version": "2.1.1",
   "authors": [
-    "Will <will@intandem.io>"
+    "Will <will.soto9@gmail.com>"
   ],
   "description": "",
   "license": "MIT",
@@ -16,10 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap-sass-official": "~3.2.0",
-    "bootswatch-scss": "master",
     "font-awesome": "~4.2.0",
-    "lodash": "~2.4.1",
     "angular-material": "~0.9.7"
   }
 }
