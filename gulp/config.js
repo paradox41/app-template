@@ -1,14 +1,16 @@
 // this is needed because it *looks* like karma wants an absolute
 // path to the conf file
-var karmaConfigPath = require('path').resolve('.') + '/karma.conf.js';
+import {resolve} from 'path';
 
-module.exports = {
+var karmaConfigPath = resolve('.') + '/karma.conf.js';
+
+export default {
     app: './app',
     build: './build',
     html: {
         files: [
             './app/**/*.html',
-            '!./app/bower_components/**/*.html',
+            '!./app/bower_components/**/*.html'
         ]
     },
     hbs: {
@@ -37,7 +39,7 @@ module.exports = {
     browserify: {
         dev: {
             entry: './app/app.js',
-            out: 'app.min.js',
+            out: 'app.min.js'
         },
         vendor: {
             libs: [
@@ -48,8 +50,5 @@ module.exports = {
     },
     test: {
         karma: karmaConfigPath
-    },
-    serviceWorker: {
-        name: 'service.worker.js'
     }
 };

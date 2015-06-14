@@ -10,7 +10,7 @@ import minify from 'gulp-minify-css';
 
 import {reload} from 'browser-sync';
 
-gulp.task('scss:dev', function(cb) {
+gulp.task('scss:dev', function() {
     return gulp.src(config.scss.src)
         .pipe(plumber())
         .pipe(sourcemaps.init())
@@ -24,7 +24,6 @@ gulp.task('scss:dev', function(cb) {
         .pipe(reload({
             stream: true
         }));
-    cb();
 });
 
 gulp.task('scss:build', function() {
