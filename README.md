@@ -4,7 +4,7 @@
 [![Tag](https://img.shields.io/github/tag/paradox41/app-template.svg?style=flat)](https://github.com/paradox41/app-template)
 [![Build](https://travis-ci.org/paradox41/app-template.svg)](https://travis-ci.org/paradox41/app-template)
 [![David](https://david-dm.org/paradox41/app-template.svg)](https://github.com/paradox41/app-template)
-
+[![devDependency Status](https://david-dm.org/paradox41/app-template/dev-status.svg)](https://david-dm.org/paradox41/app-template#info=devDependencies)
 Boilerplate for my Angular apps
 
 ## Usage
