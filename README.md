@@ -10,12 +10,13 @@
 
 Clone the repo or download the zip file. If you cloned, `rm -rf .git`
 
-1. `make dependencies`
-2. `gulp`
+1. `npm install`
+2. `bower install`
+3. `gulp`
 
 ## Build
 
-1. `make build`
+1. `gulp build`
 
 ## Style
 
