@@ -1,4 +1,4 @@
-
+---
 - name: npm | Install gulp globally.
   npm: name=gulp global=yes state=present
 
