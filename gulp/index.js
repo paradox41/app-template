@@ -14,5 +14,4 @@ import './tasks/lint';
 import './tasks/release';
 import './tasks/scss';
 import './tasks/test';
-import './tasks/uglify';
 import './tasks/watch';

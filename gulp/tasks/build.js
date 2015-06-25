@@ -8,5 +8,5 @@ gulp.task('build', function() {
         'browserify:vendor:build',
         'scss:build'
         // 'changelog'
-    ], 'cachebust', 'handlebars:build', 'uglify');
+    ], 'cachebust', 'handlebars:build');
 });
