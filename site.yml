@@ -6,4 +6,4 @@
     app_name: app-template
 
   tasks:
-    - include: ansible/tasks/main.yml
+    - include: provision/tasks/main.yml
