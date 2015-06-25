@@ -1,8 +1,14 @@
 import _ from 'lodash';
 
-class Foo {
+/**
+ * Represents a Foo
+ * @class
+ * @param {array} data - The array of data
+ * @author Will
+ */
+export default class Foo {
     constructor(data) {
-        _.extend(this, _.omit(data, '$$hashKey'));
+        _.extend(this, _.omit(data, ['$$hashKey']));
     }
 
     get name() {
@@ -15,5 +21,3 @@ class Foo {
         this.last = last;
     }
 }
-
-export default Foo;

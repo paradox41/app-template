@@ -30,6 +30,7 @@
     "gulp-changed": "^0.4.1",
     "gulp-compile-handlebars": "^0.4.3",
     "gulp-debug": "^2.0.0",
+    "gulp-documentation": "^1.0.1",
     "gulp-eslint": "^0.13.2",
     "gulp-filter": "^1.0.2",
     "gulp-git": "^0.5.2",

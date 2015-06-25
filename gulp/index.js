@@ -7,6 +7,7 @@ import './tasks/clean';
 import './tasks/convert';
 import './tasks/copy';
 import './tasks/default';
+import './tasks/documentation';
 import './tasks/enforce';
 import './tasks/handlebars';
 import './tasks/lint';

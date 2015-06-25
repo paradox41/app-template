@@ -55,12 +55,9 @@ var devOpts = {
     cache: {},
     packageCache: {},
     fullPaths: true,
-    extensions: ['.js', '.html']
+    extensions: ['.js', '.html'],
+    debug: options.debug
 };
-
-if (options.debug === true) {
-    devOpts.debug = true;
-}
 
 var opts = _.extend({}, watchify.args, devOpts);
 var bundler = watchify(browserify(opts));

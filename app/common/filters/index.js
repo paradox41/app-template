@@ -1,5 +1,10 @@
 import angular from 'angular';
 
+/**
+ * @example <p>{{obj.value | default:'Some other value'}}</p>
+ * @return {[type]}
+ * @author Will
+ */
 function defaultFilter() {
     return function(value, defaultValue) {
         // if the value is invalid, return the default value
