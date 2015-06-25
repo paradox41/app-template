@@ -19,10 +19,10 @@ gulp.task('patch', ['build'], function() {
     return release('patch');
 });
 
-gulp.task('feature', ['build'], function() {
+gulp.task('minor', ['build'], function() {
     return release('minor');
 });
 
-gulp.task('release', ['build'], function() {
+gulp.task('major', ['build'], function() {
     return release('major');
 });
