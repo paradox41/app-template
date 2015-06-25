@@ -39,6 +39,8 @@ and the HTML partial and the JavaScript file should be placed together in that f
 A typical module will look something like this:
 
 ```javascript
+import angular from 'angular';
+
 import _ from 'lodash';
 
 class ExampleCtrl {
@@ -59,12 +61,22 @@ class ExampleCtrl {
 
 ExampleCtrl.$inject = ['data'];
 
-function ExampleState($stateProvider) {
+/* 
+    Allows us to import exampleModule like so:
+
+    import exampleModule from './example';
+    
+    angular.module('foo', [
+        exampleModule.name
+    ])  
+*/ 
+export default angular.module('example', [])
+
+.controller('ExampleCtrl', ExampleCtrl)
+
+.config(['$stateProvider', function($stateProvider) {
     $stateProvider.state('app.example', {
-        controller: [
-            'data',
-            ExampleCtrl
-        ],
+        controller: 'ExampleCtrl',
         controllerAs: 'Example',
         url: '/example',
         template: require('./_example.html'),
@@ -74,15 +86,7 @@ function ExampleState($stateProvider) {
             }]
         }
     });
-}
-
-ExampleState.$inject = ['$stateProvider'];
-
-export default ExampleState;
-
-export {
-    ExampleCtrl
-};
+}]);
 ```
 
 ### Commit Conventions
