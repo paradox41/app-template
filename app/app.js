@@ -1,9 +1,15 @@
 import angular from 'angular';
+
+// import angular modules
 import 'angular-ui-router';
 import 'angular-aria';
 import 'angular-animate';
 import 'angular-material';
 
+// import common modules
+import navigationModule from './common/navigation';
+
+// import regular modules
 import exampleModule from './example';
 
 const MODULE_NAME = 'app';
@@ -23,7 +29,8 @@ angular.module(MODULE_NAME, [
     'ngAria',
     'ngAnimate',
     'ngMaterial',
-    exampleModule.name
+    exampleModule.name,
+    navigationModule.name
 ])
 
 .config([

@@ -2,23 +2,35 @@
 <html lang="en">
 
 <head>
-    <title></title>
+    <title>App Template</title>
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" href="{{ assets "app.css" }}">
 </head>
 
 <body>
-    <main class="container-fluid" ui-view>
-        <div class="row">
-            <div class="col-xs-12">
-                <h1>Hello World!</h1>
-                <a href="" ui-sref="app.example">Example state</a>
-            </div>
-        </div>
+    <main layout="column">
+        <section layout="row" flex>
+            <navigation></navigation>
+            <md-content flex layout-padding>
+                <div layout="column" layout-fill layout-align="top center">
+                    <p>
+                        The left sidenav will 'lock open' on a medium (>=960px wide) device.
+                    </p>
+                    <p>
+                        The right sidenav will focus on a specific child element.
+                    </p>
+                    <div>
+                        <md-button ng-click="Navigation.toggle()" class="md-primary" hide-gt-md>
+                            Toggle left
+                        </md-button>
+                    </div>
+                </div>
+                <div flex></div>
+            </md-content>
+        </section>
     </main>
 
     <script type="text/javascript" src="{{ assets "vendor.min.js" }}"></script>
