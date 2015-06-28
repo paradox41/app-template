@@ -21,10 +21,8 @@ export default {
     js: {
         files: [
             './app/**/*.js',
-            '!./app/**/*.spec.js',
-            '!./app/bower_components/**/*.js',
-            '!./app/*.min.js',
-            '!./app/*.worker.js'
+            '!./app/**/*.{spec,min}.js',
+            '!./app/bower_components/**/*.js'
         ]
     },
     scss: {
@@ -38,13 +36,20 @@ export default {
     },
     browserify: {
         dev: {
-            entry: './app/app.js',
+            entries: ['./app/app.js'],
             out: 'app.min.js'
         },
         vendor: {
             libs: [
+                'angular',
+                'angular-animate',
+                'angular-material',
+                'angular-aria',
+                'angular-ui-router',
+                'angular-sanitize',
                 'lodash'
             ],
+            entries: ['./app/vendor.js'],
             out: 'vendor.min.js'
         }
     },

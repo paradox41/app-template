@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 
 gulp.task('default', [
-    'browserify',
+    'browserify:dev',
     'browserify:vendor',
     'handlebars:dev',
     'serve',

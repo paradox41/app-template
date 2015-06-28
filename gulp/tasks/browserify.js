@@ -7,7 +7,7 @@ import minimist from 'minimist';
 
 import gulp from 'gulp';
 import gutil from 'gulp-util';
-import gulpif from 'gulp-if';
+// import gulpif from 'gulp-if';
 
 // import filter from 'gulp-filter';
 // import sourcemaps from 'gulp-sourcemaps';
@@ -50,47 +50,41 @@ var libs = config.browserify.vendor.libs;
 /*
     Browserify for development, mostly app code
 */
-var devOpts = {
-    entries: [config.browserify.dev.entry],
-    cache: {},
-    packageCache: {},
-    fullPaths: true,
-    extensions: ['.js', '.html'],
-    debug: options.debug
-};
+gulp.task('browserify:dev', function() {
+    var devOpts = {
+        entries: config.browserify.dev.entries,
+        cache: {},
+        packageCache: {},
+        fullPaths: true,
+        extensions: ['.js', '.html'],
+        debug: options.debug
+    };
 
-var opts = _.extend({}, watchify.args, devOpts);
-var bundler = watchify(browserify(opts));
+    var opts = _.extend({}, watchify.args, devOpts);
+    var bundler = watchify(browserify(opts));
 
-function bundle() {
-    return bundler.bundle()
-        .pipe(plumber())
-        .on('error', gutil.log.bind(gutil, 'Browserify Error'))
-        .pipe(source(config.browserify.dev.out))
-        .pipe(buffer())
-        .pipe(gulpif(options.env === 'production', uglify()))
-        .pipe(gulp.dest(config.app));
-}
+    function bundle() {
+        return bundler.bundle()
+            .pipe(plumber())
+            .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+            .pipe(source(config.browserify.dev.out))
+            .pipe(buffer())
+            .pipe(gulp.dest(config.app));
+    }
 
-// add transformations here
-bundler.transform(babelify);
-bundler.transform(partialify);
+    // add transformations here
+    bundler.transform(babelify);
+    bundler.transform(partialify);
 
-if (options.env === 'production') {
-    bundler.transform(stripify);
-}
+    libs.forEach(function(lib) {
+        bundler.exclude(lib);
+    });
 
-libs.forEach(function(lib) {
-    bundler.exclude(lib);
+    bundler.on('update', bundle); // on any dep update, runs the bundler
+    bundler.on('log', gutil.log); // output build logs to terminal
+
+    return bundle();
 });
-
-bundler.on('update', bundle); // on any dep update, runs the bundler
-bundler.on('log', gutil.log); // output build logs to terminal
-
-/*
-    The actual gulp task
-*/
-gulp.task('browserify', bundle);
 
 /*
     Browserify for our vendor bundle
@@ -115,9 +109,8 @@ gulp.task('browserify:vendor', function() {
     Browserify for our build
 */
 gulp.task('browserify:build', function() {
-
     var bundler = browserify({
-        entries: [config.browserify.dev.entry],
+        entries: config.browserify.dev.entries,
         transform: [
             babelify,
             partialify,
@@ -146,7 +139,9 @@ gulp.task('browserify:build', function() {
     Browserify for our vendor bundle
 */
 gulp.task('browserify:vendor:build', function() {
-    var bundler = browserify();
+    var bundler = browserify({
+        entries: config.browserify.vendor.entries
+    });
 
     libs.forEach(function(lib) {
         bundler.require(lib);
