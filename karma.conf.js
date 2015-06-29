@@ -1,7 +1,7 @@
 module.exports = function(config) {
     config.set({
 
-        frameworks: ['mocha', 'browserify:dev', 'chai'],
+        frameworks: ['mocha', 'browserify', 'chai'],
 
         files: [
             'app/**/*.spec.js'
@@ -12,8 +12,8 @@ module.exports = function(config) {
         ],
 
         preprocessors: {
-            'app/app.js': ['browserify:dev'],
-            'app/**/*.spec.js': ['browserify:dev']
+            'app/app.js': ['browserify'],
+            'app/**/*.spec.js': ['browserify']
         },
 
         reporters: ['progress'],

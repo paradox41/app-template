@@ -139,9 +139,7 @@ gulp.task('browserify:build', function() {
     Browserify for our vendor bundle
 */
 gulp.task('browserify:vendor:build', function() {
-    var bundler = browserify({
-        entries: config.browserify.vendor.entries
-    });
+    var bundler = browserify();
 
     libs.forEach(function(lib) {
         bundler.require(lib);
