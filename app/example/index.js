@@ -3,6 +3,8 @@ import 'angular-ui-router';
 
 import _ from 'lodash';
 
+const STATE = 'app.example';
+
 class ExampleCtrl {
     constructor(data) {
         this.exampleData = data;
@@ -21,8 +23,12 @@ class ExampleCtrl {
 
 ExampleCtrl.$inject = ['data'];
 
-function ExampleState($stateProvider) {
-    $stateProvider.state('app.example', {
+export default angular.module('example', [
+    'ui.router'
+])
+
+.config(['$stateProvider', function($stateProvider) {
+    $stateProvider.state(STATE, {
         controller: 'ExampleCtrl',
         controllerAs: 'Example',
         url: '/example',
@@ -33,14 +39,11 @@ function ExampleState($stateProvider) {
             }]
         }
     });
-}
-
-ExampleState.$inject = ['$stateProvider'];
-
-export default angular.module('example', [
-    'ui.router'
-])
-
-.config(ExampleState)
+}])
 
 .controller('ExampleCtrl', ExampleCtrl);
+
+export var exampleNavigation = {
+    state: STATE,
+    name: 'Example'
+};

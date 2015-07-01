@@ -2,9 +2,11 @@ import angular from 'angular';
 import 'angular-material';
 
 class NavigationCtrl {
-    constructor($mdSidenav, $mdMedia) {
+    constructor($rootScope, $mdSidenav, $mdMedia) {
         this.$mdSidenav = $mdSidenav;
         this.$mdMedia = $mdMedia;
+
+        this.navItems = $rootScope.navItems;
     }
 
     toggle(side = 'left') {
@@ -12,7 +14,7 @@ class NavigationCtrl {
     }
 }
 
-NavigationCtrl.$inject = ['$mdSidenav', '$mdMedia'];
+NavigationCtrl.$inject = ['$rootScope', '$mdSidenav', '$mdMedia'];
 
 function navigationDirective() {
     return {

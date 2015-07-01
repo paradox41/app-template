@@ -10,19 +10,11 @@ import 'angular-material';
 import navigationModule from './common/navigation';
 
 // import regular modules
-import exampleModule from './example';
+import exampleModule, {
+    exampleNavigation
+} from './example';
 
 const MODULE_NAME = 'app';
-
-function AppStateConfig($stateProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('');
-
-    $stateProvider.state('app', {
-        url: '',
-        abstract: true,
-        template: '<div ui-view></div>'
-    });
-}
 
 angular.module(MODULE_NAME, [
     'ui.router',
@@ -33,11 +25,16 @@ angular.module(MODULE_NAME, [
     navigationModule.name
 ])
 
-.config([
-    '$stateProvider',
-    '$urlRouterProvider',
-    '$httpProvider',
-    AppStateConfig
+.config(['$stateProvider', '$urlRouterProvider',
+    function($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('');
+
+        $stateProvider.state('app', {
+            url: '',
+            abstract: true,
+            template: '<div ui-view></div>'
+        });
+    }
 ])
 
 .constant('version', require('../package.json').version)
@@ -46,6 +43,8 @@ angular.module(MODULE_NAME, [
     function($rootScope, $state, $stateParams) {
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
+
+        $rootScope.navItems = [exampleNavigation];
 
         $rootScope.$on('$routeChangeError', function() {
             console.log('failed to change routes', arguments);
