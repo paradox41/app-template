@@ -11,7 +11,6 @@
 Clone the repo or download the zip file. If you cloned, `rm -rf .git`
 
 1. `npm install`
-2. `bower install`
 3. `gulp`
 
 ## Build

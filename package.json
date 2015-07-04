@@ -11,6 +11,9 @@
   "bugs": {
     "url": "https://github.com/paradox41/app-template/issues"
   },
+  "scripts": {
+    "postinstall": "bower install"
+  },
   "homepage": "https://github.com/paradox41/app-template",
   "devDependencies": {
     "aliasify": "^1.7.2",

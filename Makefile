@@ -1,5 +1,5 @@
 dependencies:
-	npm prune && npm install && bower install
+	npm prune && npm install
 
 clean:
 	rm -rf node_modules/ app/bower_components/
