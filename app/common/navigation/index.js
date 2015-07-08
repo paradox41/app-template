@@ -26,6 +26,8 @@ function navigationDirective() {
     };
 }
 
+navigationDirective.$inject = [];
+
 export default angular.module('common.navigation', [
     'ngMaterial'
 ])
