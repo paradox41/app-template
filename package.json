@@ -85,7 +85,9 @@
       "exports": "angular"
     },
     "angular-ui-router": {
-      "depends": ["angular"]
+      "depends": [
+        "angular"
+      ]
     },
     "angular-material": {
       "depends": [

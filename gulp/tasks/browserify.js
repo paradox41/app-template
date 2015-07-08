@@ -1,9 +1,7 @@
-/* global process */
 import config from '../config';
+import options from '../options';
 
 import _ from 'lodash';
-
-import minimist from 'minimist';
 
 import gulp from 'gulp';
 import gutil from 'gulp-util';
@@ -27,19 +25,6 @@ import babelify from 'babelify';
 import partialify from 'partialify';
 import stripify from 'stripify';
 
-/*
-    Capture any args that might have been passed in
-*/
-var knownOptions = {
-    string: 'env',
-    'boolean': 'debug',
-    'default': {
-        env: process.env.NODE_ENV || 'development',
-        debug: false
-    }
-};
-
-var options = minimist(process.argv.slice(2), knownOptions);
 
 /*
     Array of libs that should be excluded from the app bundle
@@ -56,7 +41,7 @@ gulp.task('browserify:dev', function() {
         cache: {},
         packageCache: {},
         fullPaths: true,
-        extensions: ['.js', '.html'],
+        extensions: ['.js', '.html', '.json'],
         debug: options.debug
     };
 
@@ -80,8 +65,8 @@ gulp.task('browserify:dev', function() {
         bundler.exclude(lib);
     });
 
-    bundler.on('update', bundle); // on any dep update, runs the bundler
-    bundler.on('log', gutil.log); // output build logs to terminal
+    // on any dep update, runs the bundler
+    bundler.on('update', bundle);
 
     return bundle();
 });
@@ -122,17 +107,12 @@ gulp.task('browserify:build', function() {
         bundler.exclude(lib);
     });
 
-    function bundle() {
-        return bundler
-            .bundle()
-            .pipe(source(config.browserify.dev.out))
-            .pipe(buffer())
-            // add transformation tasks to the pipeline here
-            .pipe(uglify())
-            .pipe(gulp.dest(config.build));
-    }
-
-    return bundle();
+    return bundler.bundle()
+        .pipe(source(config.browserify.dev.out))
+        .pipe(buffer())
+        // add transformation tasks to the pipeline here
+        .pipe(uglify())
+        .pipe(gulp.dest(config.build));
 });
 
 /*
