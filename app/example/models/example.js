@@ -3,7 +3,7 @@ import _ from 'lodash';
 /**
  * Represents a Foo
  * @class
- * @param {array} data - The array of data
+ * @param {object} data - Some data
  * @author Will
  */
 export default class Foo {
