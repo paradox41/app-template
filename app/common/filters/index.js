@@ -2,7 +2,6 @@ import angular from 'angular';
 
 /**
  * @example <p>{{obj.value | default:'Some other value'}}</p>
- * @return {[type]}
  * @author Will
  */
 function defaultFilter() {
