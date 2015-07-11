@@ -1,3 +1,20 @@
+## 3.1.0 (2015-07-10)
+
+
+#### Bug Fixes
+
+* ***:** Make states work ([79102360](https://github.com/paradox41/app-template/commit/7910236095cde75b2f7a1437cf1a725aa94749b3))
+* **build:** Fix build ([948860f7](https://github.com/paradox41/app-template/commit/948860f7fc855a1ad58594cc07530f9406efa5a7))
+
+
+#### Features
+
+* **api:** Add Resource for REST APIs ([3fa57c8b](https://github.com/paradox41/app-template/commit/3fa57c8b5f4a071de672bcaf3bc00607a2927674))
+* **example:** Add example state content ([4e371b41](https://github.com/paradox41/app-template/commit/4e371b4157cfe5bcc386ff5bc397ed3891b91efa))
+* **navigation:** Add some actual links and material icons ([3f563989](https://github.com/paradox41/app-template/commit/3f563989b3a99101d475c36f69dd13e43dea4a04))
+* **users:** Replace example module with something more useful ([4af137d8](https://github.com/paradox41/app-template/commit/4af137d8e6c5c27f2a112d04f327fd0e1d0fc683))
+
+
 ### 3.0.0 (2015-06-25)
 
 
