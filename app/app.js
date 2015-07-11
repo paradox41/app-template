@@ -10,9 +10,9 @@ import 'angular-material';
 import navigationModule from './common/navigation';
 
 // import regular modules
-import exampleModule, {
-    exampleNavigation
-} from './example';
+import userModule, {
+    userNavigation
+} from './users';
 
 const MODULE_NAME = 'app';
 
@@ -21,7 +21,7 @@ angular.module(MODULE_NAME, [
     'ngAria',
     'ngAnimate',
     'ngMaterial',
-    exampleModule.name,
+    userModule.name,
     navigationModule.name
 ])
 
@@ -44,7 +44,7 @@ angular.module(MODULE_NAME, [
         $rootScope.$state = $state;
         $rootScope.$stateParams = $stateParams;
 
-        $rootScope.navItems = [exampleNavigation];
+        $rootScope.navItems = [userNavigation];
 
         $rootScope.$on('$routeChangeError', function() {
             console.log('failed to change routes', arguments);
