@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl">
+  <title data-ice="title">API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+</head>
+<body class="layout-container">
+
+<header>
+  <a href="./">Home</a>
+  <a href="identifiers.html">Identifier</a>
+  <a href="source.html">Source</a>
+  
+  <a data-ice="repoURL" href="https://github.com/paradox41/app-template" class="repo-url-github">Repository</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div data-ice="classWrap">
+  <h2>Class</h2>
+  <ul>
+    
+  <li data-ice="classDoc"><span><a href="class/app/users/models/user.js~User.html">User</a></span></li>
+</ul>
+</div>
+
+
+
+
+
+<div data-ice="variableWrap">
+  <h2><a href="variable/">Variable</a></h2>
+  <ul>
+    
+  <li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-user">user</a></span></li>
+<li data-ice="variableDoc"><span><a href="variable/index.html#static-variable-userNavigation">userNavigation</a></span></li>
+</ul>
+</div>
+
+
+
+
+</nav>
+
+<div class="content" data-ice="content"><div data-ice="index"><h1 id="angular-boilerplate">Angular Boilerplate</h1>
+<p><a href="https://github.com/paradox41/app-template"><img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="License"></a>
+<a href="https://github.com/paradox41/app-template"><img src="https://img.shields.io/github/tag/paradox41/app-template.svg?style=flat" alt="Tag"></a>
+<a href="https://travis-ci.org/paradox41/app-template"><img src="https://travis-ci.org/paradox41/app-template.svg" alt="Build"></a>
+<a href="https://david-dm.org/paradox41/app-template"><img src="https://david-dm.org/paradox41/app-template.svg" alt="Dependency Status"></a>
+<a href="https://david-dm.org/paradox41/app-template#info=devDependencies"><img src="https://david-dm.org/paradox41/app-template/dev-status.svg" alt="devDependency Status"></a></p>
+<h2 id="usage">Usage</h2>
+<p>Clone the repo or download the zip file. If you cloned, <code>rm -rf .git</code></p>
+<ol>
+<li><code>npm install</code></li>
+<li><code>gulp</code></li>
+</ol>
+<h2 id="build">Build</h2>
+<ol>
+<li><code>gulp build</code></li>
+</ol>
+<h2 id="style">Style</h2>
+<h3 id="javascript">JavaScript</h3>
+<ul>
+<li>Each module should be totally self-contained. Any functionality shared across modules should be moved into <code>common/</code>.</li>
+<li>Modules can have their own directives, services, filters, etc. If multiple files are needed in order to maintain file size,
+a folder should be created (<code>directives/</code>, <code>services/</code>, etc) and the broken up files should be placed into their respective folders
+with less abstract naming conventions.</li>
+<li>JavaScript files should always be as close as possible - preferably on the same level - as their HTML partials.</li>
+<li>If a directive has a partial - which they tend to - a new folder should be created that is named accordingly (meaning not something generic)
+and the HTML partial and the JavaScript file should be placed together in that folder.</li>
+</ul>
+<h3 id="sass">Sass</h3>
+<ul>
+<li><code>app.scss</code> is merely a table of contents. There should be no Sass in the file.</li>
+<li>Each module is responsible for exporting its submodules. In other words, <code>app.scss</code> should only import top level modules.</li>
+<li>Sass that needs to be shared among modules should be moved into <code>assets/stylesheets/</code>.</li>
+</ul>
+<h3 id="modules">Modules</h3>
+<p>A typical module will look something like this:</p>
+<pre><code class="lang-javascript"><pre class="source-code"><code class="prettyprint">import angular from &apos;angular&apos;;
+
+import _ from &apos;lodash&apos;;
+
+class ExampleCtrl {
+    constructor(data) {
+        this.exampleData = data;
+    }
+
+    someMethod() {
+        return _.map(this.exampleData, function(data) {
+            return (data * 2);
+        });
+    }
+
+    get data() {
+        return this.exampleData;
+    }
+}
+
+ExampleCtrl.$inject = [&apos;data&apos;];
+
+/* 
+    Allows us to import exampleModule like so:
+
+    import exampleModule from &apos;./example&apos;;
+
+    angular.module(&apos;foo&apos;, [
+        exampleModule.name
+    ])  
+*/ 
+export default angular.module(&apos;example&apos;, [])
+
+.controller(&apos;ExampleCtrl&apos;, ExampleCtrl)
+
+.config([&apos;$stateProvider&apos;, function($stateProvider) {
+    $stateProvider.state(&apos;app.example&apos;, {
+        controller: &apos;ExampleCtrl&apos;,
+        controllerAs: &apos;Example&apos;,
+        url: &apos;/example&apos;,
+        template: require(&apos;./_example.html&apos;),
+        resolve: {
+            data: [function() {
+                return [1, 2, 3, 4, 5, 6];
+            }]
+        }
+    });
+}]);</code></pre>
+</code></pre>
+<h3 id="commit-conventions">Commit Conventions</h3>
+<p>Follow <a href="https://github.com/ajoslin/conventional-changelog/blob/master/CONVENTIONS.md">conventional changelog</a></p>
+<h3 id="documentation">Documentation</h3>
+<p>Documentation via <a href="https://esdoc.org/">ESDoc</a></p>
+<p><code>make docs &amp;&amp; gulp documentation:serve</code></p>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.1.3)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

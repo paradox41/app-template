@@ -2,12 +2,13 @@ import config from '../config';
 
 import gulp from 'gulp';
 
-import documentation from 'gulp-documentation';
+import browserSync from 'browser-sync';
 
-gulp.task('documentation', function() {
-    return gulp.src(`${config.app}/app.js`)
-        .pipe(documentation({
-            format: 'md'
-        }))
-        .pipe(gulp.dest('./docs'));
+gulp.task('documentation:serve', function() {
+    browserSync({
+        server: {
+            baseDir: config.docs
+        },
+        notify: false
+    });
 });

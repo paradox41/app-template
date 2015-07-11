@@ -1,3 +1,6 @@
+/**
+ * @module Users
+ */
 import angular from 'angular';
 import 'angular-ui-router';
 
@@ -18,8 +21,13 @@ class UsersCtrl {
 UsersCtrl.$inject = ['UserResource'];
 
 function UserResourceFactory(Resource) {
-    // resource via http://jsonplaceholder.typicode.com/
-    return new Resource('users', User, 'http://jsonplaceholder.typicode.com');
+    class UserResource extends Resource {
+        constructor() {
+            super('users', User);
+        }
+    }
+
+    return new UserResource();
 }
 
 UserResourceFactory.$inject = ['Resource'];
@@ -43,5 +51,6 @@ export default angular.module('users', [
 
 export var userNavigation = {
     state: STATE,
-    name: 'Users'
+    name: 'Users',
+    icon: 'face'
 };

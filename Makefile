@@ -7,4 +7,7 @@ clean:
 build:
 	make dependencies && gulp build
 
-.PHONY: build
+docs:
+	./node_modules/.bin/esdoc -c esdoc.json
+
+.PHONY: build docs

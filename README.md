@@ -91,3 +91,9 @@ export default angular.module('example', [])
 ### Commit Conventions
 
 Follow [conventional changelog](https://github.com/ajoslin/conventional-changelog/blob/master/CONVENTIONS.md)
+
+### Documentation
+
+Documentation via [ESDoc](https://esdoc.org/)
+
+`make docs && gulp documentation:serve`

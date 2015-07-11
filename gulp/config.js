@@ -7,6 +7,7 @@ var karmaConfigPath = resolve('.') + '/karma.conf.js';
 export default {
     app: './app',
     build: './build',
+    docs: './docs',
     html: {
         files: [
             './app/**/*.html',
