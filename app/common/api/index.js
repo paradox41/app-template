@@ -1,8 +1,27 @@
+/**
+ * @module common.api
+ */
 import angular from 'angular';
 
 import _ from 'lodash';
 
-function ResourceFactory($http) {
+function ResourceProvider() {
+    var config = {
+        baseURL: ''
+    };
+
+    this.setConfig = function(opts) {
+        _.extend(config, opts);
+    };
+
+    this.$get = [function() {
+        return config;
+    }];
+}
+
+ResourceProvider.$inject = [];
+
+function ResourceFactory($http, ResourceConfig) {
 
     function wrapResult(resultPromise, ResultModel) {
         return resultPromise.then(function(resultData) {
@@ -17,10 +36,21 @@ function ResourceFactory($http) {
     }
 
     class Resource {
-        // TODO(will): Make baseURL configurable via a provider
-        constructor(route, model, baseURL = '') {
-            this.route = `${baseURL}/${route}`;
+        /**
+         * Base Resource class for constructing new REST routes
+         * @class
+         * @param  {string} route The path to the endpoint
+         * @param  {function} model Optional model to be applied to the fetched resource
+         * @param  {Object} options Optional configuration object
+         */
+        constructor(route, model, options = {}) {
+            let opts = {};
+            // allow global config to be overridden here
+            _.extend(opts, ResourceConfig, options);
+
+            this.route = `${opts.baseURL}/${route}`;
             this.model = model;
+            this.options = opts;
         }
 
         get(pk, config = {}) {
@@ -73,8 +103,10 @@ function ResourceFactory($http) {
     return Resource;
 }
 
-ResourceFactory.$inject = ['$http'];
+ResourceFactory.$inject = ['$http', 'ResourceConfig'];
 
 export default angular.module('common.api', [])
+
+.provider('ResourceConfig', ResourceProvider)
 
 .factory('Resource', ResourceFactory);

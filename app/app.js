@@ -8,6 +8,7 @@ import 'angular-material';
 
 // import common modules
 import navigationModule from './common/navigation';
+import commonApi from './common/api';
 
 // import regular modules
 import userModule, {
@@ -22,11 +23,17 @@ angular.module(MODULE_NAME, [
     'ngAnimate',
     'ngMaterial',
     userModule.name,
-    navigationModule.name
+    navigationModule.name,
+    commonApi.name
 ])
 
-.config(['$stateProvider', '$urlRouterProvider',
-    function($stateProvider, $urlRouterProvider) {
+.config(['$stateProvider', '$urlRouterProvider', 'ResourceConfigProvider',
+    function($stateProvider, $urlRouterProvider, ResourceConfigProvider) {
+
+        ResourceConfigProvider.setConfig({
+            baseURL: 'http://jsonplaceholder.typicode.com'
+        });
+
         $urlRouterProvider.otherwise('');
 
         $stateProvider.state('app', {
