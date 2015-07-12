@@ -12,8 +12,9 @@
 .vagrant/
 node_modules/
 npm-debug.log
+
 app/bower_components/
-app/templates.js
-build/
-Vagrantfile
 app/index.html
+
+build/
+coverage/
