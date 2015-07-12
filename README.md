@@ -5,6 +5,7 @@
 [![Build](https://travis-ci.org/paradox41/app-template.svg)](https://travis-ci.org/paradox41/app-template)
 [![Dependency Status](https://david-dm.org/paradox41/app-template.svg)](https://david-dm.org/paradox41/app-template)
 [![devDependency Status](https://david-dm.org/paradox41/app-template/dev-status.svg)](https://david-dm.org/paradox41/app-template#info=devDependencies)
+[![Coverage Status](https://coveralls.io/repos/paradox41/app-template/badge.svg?branch=master&service=github)](https://coveralls.io/github/paradox41/app-template?branch=master)
 
 ## Usage
 

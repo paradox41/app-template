@@ -12,15 +12,18 @@ module.exports = function(config) {
         ],
 
         preprocessors: {
-            'app/app.js': ['browserify'],
-            'app/**/*.spec.js': ['browserify']
+            'app/**/*.js': ['browserify', 'coverage']
         },
 
-        reporters: ['progress'],
+        reporters: ['progress', 'coverage', 'coveralls'],
+        coverageReporter: {
+            type: 'lcov',
+            dir: 'coverage/'
+        },
         port: 9876,
         colors: true,
 
-        // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+        // config.LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
         logLevel: config.LOG_INFO,
         autoWatch: false,
         browsers: ['PhantomJS'],
