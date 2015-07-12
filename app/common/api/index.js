@@ -24,15 +24,19 @@ ResourceProvider.$inject = [];
 function ResourceFactory($http, ResourceConfig) {
 
     function wrapResult(resultPromise, ResultModel) {
-        return resultPromise.then(function(resultData) {
-            return new ResultModel(resultData);
+        return resultPromise.then(function(response) {
+            return new ResultModel(response.data);
         });
     }
 
     function serialize(obj) {
         return _(obj).keys().map(function(key) {
-            return `encodeURIComponent(key)=encodeURIComponent(obj[key])`;
+            return `encodeURIComponent(${key})=encodeURIComponent(${obj[key]})`;
         }).value().join('&');
+    }
+
+    function returnResponse(response) {
+        return response.data;
     }
 
     class Resource {
@@ -59,16 +63,16 @@ function ResourceFactory($http, ResourceConfig) {
             if (this.model !== undefined) {
                 return wrapResult(result, this.model);
             } else {
-                return result;
+                return result.then(returnResponse);
             }
         }
 
         create(obj, config = {}) {
-            return $http.post(`${this.route}`, obj, config);
+            return $http.post(`${this.route}`, obj, config).then(returnResponse);
         }
 
         update(pk, obj, config = {}) {
-            return $http.put(`${this.route}/${pk}`, obj, config);
+            return $http.put(`${this.route}/${pk}`, obj, config).then(returnResponse);
         }
 
         search(params, config = {}) {
@@ -92,6 +96,8 @@ function ResourceFactory($http, ResourceConfig) {
 
                     return response.data;
                 });
+            } else {
+                return result.then(returnResponse);
             }
         }
 
