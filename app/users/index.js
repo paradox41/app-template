@@ -1,24 +1,24 @@
 /**
- * @module Users
+ * @module users
  */
 import angular from 'angular';
 import 'angular-ui-router';
 
-import 'common/api';
+import commonApi from 'common/api';
 
 import {User} from './models';
+
+import edit from './edit';
 
 const STATE = 'app.users';
 
 class UsersCtrl {
-    constructor(UserResource) {
-        UserResource.search().then((response) => {
-            this.users = response;
-        });
+    constructor(users) {
+        this.users = users;
     }
 }
 
-UsersCtrl.$inject = ['UserResource'];
+UsersCtrl.$inject = ['users'];
 
 function UserResourceFactory(Resource) {
     class UserResource extends Resource {
@@ -33,7 +33,8 @@ function UserResourceFactory(Resource) {
 UserResourceFactory.$inject = ['Resource'];
 
 export default angular.module('users', [
-    'common.api'
+    commonApi.name,
+    edit.name
 ])
 
 .config(['$stateProvider', function($stateProvider) {
@@ -41,7 +42,12 @@ export default angular.module('users', [
         controller: 'UsersCtrl',
         controllerAs: 'Users',
         url: '/users',
-        template: require('./_users.html')
+        template: require('./_users.html'),
+        resolve: {
+            users: ['UserResource', function(UserResource) {
+                return UserResource.search();
+            }]
+        }
     });
 }])
 

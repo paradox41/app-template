@@ -3,7 +3,9 @@
         <md-list>
             <md-list-item class="md-3-line" ng-repeat="user in Users.users">
                 <div class="md-list-item-text">
-                    <h3>{{user.name}}</h3>
+                    <h3>
+                        <a href="" ui-sref="app.users.edit({ id: user.id })">{{user.name}}</a>
+                    </h3>
                     <h4>{{user.email}}</h4>
                     <p>{{user.company.name}}</p>
                 </div>

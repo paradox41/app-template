@@ -1,0 +1,40 @@
+<div ui-view>
+    <md-content layout-padding>
+        <form name="userForm">
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" ng-model="UsersEdit.user.name">
+                </md-input-container>
+                <md-input-container flex>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" ng-model="UsersEdit.user.email">
+                </md-input-container>
+            </div>
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                    <label for="address">Address</label>
+                    <input type="text" name="address" ng-model="UsersEdit.user.address.street">
+                </md-input-container>
+                <md-input-container flex>
+                    <label for="address2">Address 2</label>
+                    <input type="text" name="address2" ng-model="UsersEdit.user.address.suite">
+                </md-input-container>
+            </div>
+            <div layout layout-sm="column">
+                <md-input-container flex>
+                    <label for="city">City</label>
+                    <input type="text" name="city" ng-model="UsersEdit.user.address.city">
+                </md-input-container>
+                <md-select placeholder="State" ng-model="UsersEdit.user.address.state">
+                    <md-option ng-repeat="state in UsersEdit.states" value="{{state.abbreviation}}">{{state.name}}</md-option>
+                </md-select>
+                <md-input-container flex>
+                    <label for="zipcode">Postal Code</label>
+                    <input type="text" name="zipcode" ng-model="UsersEdit.user.address.zipcode">
+                </md-input-container>
+            </div>
+        </form>
+        <md-button class="md-raised md-primary" ng-click="UsersEdit.save()">Save</md-button>
+    </md-content>
+</div>
