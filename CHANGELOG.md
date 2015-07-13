@@ -1,3 +1,16 @@
+## 3.2.0 (2015-07-13)
+
+
+#### Bug Fixes
+
+* **api:** Minor resource fixes ([cc95d4ea](https://github.com/paradox41/app-template/commit/cc95d4eaadf79e15b1d0bba959e71eba692d406c))
+
+
+#### Features
+
+* **users:** Add edit for users ([b4477802](https://github.com/paradox41/app-template/commit/b44778029950f6ea859b564ff74f45c79f9e5347))
+
+
 ## 3.1.0 (2015-07-10)
 
 
