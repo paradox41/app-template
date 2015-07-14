@@ -1,9 +1,0 @@
----
-- hosts: all
-  connection: local
-  vars:
-    repo: git@github.com:paradox41/app-template.git
-    app_name: app-template
-
-  tasks:
-    - include: provision/tasks/main.yml

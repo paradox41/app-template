@@ -1,9 +1,0 @@
----
-- name: npm | Install gulp globally.
-  npm: name=gulp global=yes state=present
-
-- name: npm | Install bower globally.
-  npm: name=bower global=yes state=present
-
-- name: make | Run `make build`
-  shell: make build
