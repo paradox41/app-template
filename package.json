@@ -38,7 +38,6 @@
     "gulp-filter": "^1.0.2",
     "gulp-git": "^0.5.2",
     "gulp-if": "^1.2.5",
-    "gulp-jscs": "^1.6.0",
     "gulp-minify-css": "^0.3.10",
     "gulp-plumber": "^0.6.6",
     "gulp-rename": "^1.2.0",
