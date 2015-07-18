@@ -384,6 +384,12 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "app/users/edit/index.js",
+    "file/app/users/edit/index.js.html",
+    "app/users/edit/index.js",
+    "file"
+  ],
+  [
     "app/users/index.js",
     "file/app/users/index.js.html",
     "app/users/index.js",

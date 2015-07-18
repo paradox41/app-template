@@ -41,7 +41,7 @@
     "access": null,
     "description": null,
     "lineNumber": 1,
-    "content": "import _ from 'lodash';\n\ndescribe('karma tests with chai', function() {\n    it('should expose the Chai assert method', function() {\n        return assert.ok('everything', 'everything is ok');\n    });\n    it('should expose the Chai expect method', function() {\n        return expect('foo').to.not.equal('bar');\n    });\n});\n\ndescribe('just checking that libraries work', function() {\n\n    it('works for lodash', function() {\n        expect(_.size([1, 2, 3])).to.equal(3);\n    });\n});\n"
+    "content": "import angular from 'angular';\nimport _ from 'lodash';\n\ndescribe('karma tests with chai', function() {\n    it('should expose the Chai assert method', function() {\n        assert.ok('everything', 'everything is ok');\n    });\n\n    it('should expose the Chai expect method', function() {\n        expect('foo').to.not.equal('bar');\n    });\n});\n\ndescribe('just checking that libraries work', function() {\n\n    it('works for lodash', function() {\n        expect(_.size([1, 2, 3])).to.equal(3);\n    });\n\n    it('works for angular', function() {\n        expect(angular).to.exist;\n    });\n});\n"
   },
   {
     "kind": "file",
@@ -53,7 +53,7 @@
     "access": null,
     "description": null,
     "lineNumber": 4,
-    "content": "/**\n * @module common.api\n */\nimport angular from 'angular';\n\nimport _ from 'lodash';\n\nfunction ResourceProvider() {\n    var config = {\n        baseURL: ''\n    };\n\n    this.setConfig = function(opts) {\n        _.extend(config, opts);\n    };\n\n    this.$get = [function() {\n        return config;\n    }];\n}\n\nResourceProvider.$inject = [];\n\nfunction ResourceFactory($http, ResourceConfig) {\n\n    function wrapResult(resultPromise, ResultModel) {\n        return resultPromise.then(function(resultData) {\n            return new ResultModel(resultData);\n        });\n    }\n\n    function serialize(obj) {\n        return _(obj).keys().map(function(key) {\n            return `encodeURIComponent(key)=encodeURIComponent(obj[key])`;\n        }).value().join('&');\n    }\n\n    class Resource {\n        /**\n         * Base Resource class for constructing new REST routes\n         * @class\n         * @param  {string} route The path to the endpoint\n         * @param  {function} model Optional model to be applied to the fetched resource\n         * @param  {Object} options Optional configuration object\n         */\n        constructor(route, model, options = {}) {\n            let opts = {};\n            // allow global config to be overridden here\n            _.extend(opts, ResourceConfig, options);\n\n            this.route = `${opts.baseURL}/${route}`;\n            this.model = model;\n            this.options = opts;\n        }\n\n        get(pk, config = {}) {\n            let result = $http.get(`${this.route}/${pk}`, config);\n\n            if (this.model !== undefined) {\n                return wrapResult(result, this.model);\n            } else {\n                return result;\n            }\n        }\n\n        create(obj, config = {}) {\n            return $http.post(`${this.route}`, obj, config);\n        }\n\n        update(pk, obj, config = {}) {\n            return $http.put(`${this.route}/${pk}`, obj, config);\n        }\n\n        search(params, config = {}) {\n            let route = this.route;\n\n            if (params) {\n                params = serialize(params);\n\n                route = `${route}?${params}`;\n            }\n\n            let result = $http.get(`${route}`, config);\n\n            if (this.model !== undefined) {\n                let Model = this.model;\n\n                return result.then(function(response) {\n                    response.data = _.map(response.data, function(obj) {\n                        return new Model(obj);\n                    });\n\n                    return response.data;\n                });\n            }\n        }\n\n        delete(pk, config = {}) {\n            return $http.delete(`${this.route}/${pk}`, config);\n        }\n    }\n\n    return Resource;\n}\n\nResourceFactory.$inject = ['$http', 'ResourceConfig'];\n\nexport default angular.module('common.api', [])\n\n.provider('ResourceConfig', ResourceProvider)\n\n.factory('Resource', ResourceFactory);\n"
+    "content": "/**\n * @module common.api\n */\nimport angular from 'angular';\n\nimport _ from 'lodash';\n\nfunction ResourceProvider() {\n    var config = {\n        baseURL: ''\n    };\n\n    this.setConfig = function(opts) {\n        _.extend(config, opts);\n    };\n\n    this.$get = [function() {\n        return config;\n    }];\n}\n\nResourceProvider.$inject = [];\n\nfunction ResourceFactory($http, ResourceConfig) {\n\n    function wrapResult(resultPromise, ResultModel) {\n        return resultPromise.then(function(response) {\n            return new ResultModel(response.data);\n        });\n    }\n\n    function serialize(obj) {\n        return _(obj).keys().map(function(key) {\n            return `encodeURIComponent(${key})=encodeURIComponent(${obj[key]})`;\n        }).value().join('&');\n    }\n\n    function returnResponse(response) {\n        return response.data;\n    }\n\n    class Resource {\n        /**\n         * Base Resource class for constructing new REST routes\n         * @class\n         * @param  {string} route The path to the endpoint\n         * @param  {function} model Optional model to be applied to the fetched resource\n         * @param  {Object} options Optional configuration object\n         */\n        constructor(route, model, options = {}) {\n            let opts = {};\n            // allow global config to be overridden here\n            _.extend(opts, ResourceConfig, options);\n\n            this.route = `${opts.baseURL}/${route}`;\n            this.model = model;\n            this.options = opts;\n        }\n\n        get(pk, config = {}) {\n            let result = $http.get(`${this.route}/${pk}`, config);\n\n            if (this.model !== undefined) {\n                return wrapResult(result, this.model);\n            } else {\n                return result.then(returnResponse);\n            }\n        }\n\n        create(obj, config = {}) {\n            return $http.post(`${this.route}`, obj, config).then(returnResponse);\n        }\n\n        update(pk, obj, config = {}) {\n            return $http.put(`${this.route}/${pk}`, obj, config).then(returnResponse);\n        }\n\n        search(params, config = {}) {\n            let route = this.route;\n\n            if (params) {\n                params = serialize(params);\n\n                route = `${route}?${params}`;\n            }\n\n            let result = $http.get(`${route}`, config);\n\n            if (this.model !== undefined) {\n                let Model = this.model;\n\n                return result.then(function(response) {\n                    response.data = _.map(response.data, function(obj) {\n                        return new Model(obj);\n                    });\n\n                    return response.data;\n                });\n            } else {\n                return result.then(returnResponse);\n            }\n        }\n\n        delete(pk, config = {}) {\n            return $http.delete(`${this.route}/${pk}`, config);\n        }\n    }\n\n    return Resource;\n}\n\nResourceFactory.$inject = ['$http', 'ResourceConfig'];\n\nexport default angular.module('common.api', [])\n\n.provider('ResourceConfig', ResourceProvider)\n\n.factory('Resource', ResourceFactory);\n"
   },
   {
     "kind": "function",
@@ -410,13 +410,176 @@
     "kind": "file",
     "static": true,
     "variation": null,
+    "name": "app/users/edit/index.js",
+    "memberof": null,
+    "longname": "app/users/edit/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 4,
+    "content": "/**\n * @module users.edit\n */\nimport angular from 'angular';\nimport 'angular-ui-router';\nimport 'angular-material';\n\nimport commonApi from 'common/api';\n\nimport states from './states.json';\n\nconst STATE = 'app.users.edit';\n\nclass UsersEditCtrl {\n    constructor($mdToast, UserResource, user) {\n        this.$mdToast = $mdToast;\n\n        this.UserResource = UserResource;\n\n        this.user = user;\n        this.states = states;\n    }\n\n    save() {\n        let result;\n\n        if (this.user.id) {\n            result = this.UserResource.create(this.user);\n        } else {\n            result = this.UserResource.update(this.user.id, this.user);\n        }\n\n        result.then(() => {\n            let $mdToast = this.$mdToast;\n\n            $mdToast.show($mdToast.simple().content('Saved!'));\n        });\n    }\n}\n\nUsersEditCtrl.$inject = [\n    '$mdToast',\n    'UserResource',\n    'user'\n];\n\nexport default angular.module('users.edit', [\n    'ngMaterial',\n    commonApi.name\n])\n\n.config(['$stateProvider', function($stateProvider) {\n    $stateProvider.state(STATE, {\n        controller: 'UsersEditCtrl',\n        controllerAs: 'UsersEdit',\n        url: '/edit/:id',\n        template: require('./_edit.html'),\n        resolve: {\n            user: ['UserResource', '$stateParams',\n                function(UserResource, $stateParams) {\n                    return UserResource.get($stateParams.id);\n                }\n            ]\n        }\n    });\n}])\n\n.controller('UsersEditCtrl', UsersEditCtrl);\n"
+  },
+  {
+    "kind": "variable",
+    "static": true,
+    "variation": null,
+    "name": "STATE",
+    "memberof": "app/users/edit/index.js",
+    "longname": "app/users/edit/index.js~STATE",
+    "access": null,
+    "export": false,
+    "importPath": "app-template/app/users/edit/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "type": {
+      "types": [
+        "string"
+      ]
+    }
+  },
+  {
+    "kind": "class",
+    "static": true,
+    "variation": null,
+    "name": "UsersEditCtrl",
+    "memberof": "app/users/edit/index.js",
+    "longname": "app/users/edit/index.js~UsersEditCtrl",
+    "access": null,
+    "export": false,
+    "importPath": "app-template/app/users/edit/index.js",
+    "importStyle": null,
+    "description": null,
+    "lineNumber": 14,
+    "undocument": true,
+    "interface": false
+  },
+  {
+    "kind": "constructor",
+    "static": false,
+    "variation": null,
+    "name": "constructor",
+    "memberof": "app/users/edit/index.js~UsersEditCtrl",
+    "longname": "app/users/edit/index.js~UsersEditCtrl#constructor",
+    "access": null,
+    "description": null,
+    "lineNumber": 15,
+    "undocument": true,
+    "params": [
+      {
+        "name": "$mdToast",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "UserResource",
+        "types": [
+          "*"
+        ]
+      },
+      {
+        "name": "user",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "generator": false
+  },
+  {
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "$mdToast",
+    "memberof": "app/users/edit/index.js~UsersEditCtrl",
+    "longname": "app/users/edit/index.js~UsersEditCtrl#$mdToast",
+    "access": null,
+    "description": null,
+    "lineNumber": 16,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "UserResource",
+    "memberof": "app/users/edit/index.js~UsersEditCtrl",
+    "longname": "app/users/edit/index.js~UsersEditCtrl#UserResource",
+    "access": null,
+    "description": null,
+    "lineNumber": 18,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "user",
+    "memberof": "app/users/edit/index.js~UsersEditCtrl",
+    "longname": "app/users/edit/index.js~UsersEditCtrl#user",
+    "access": null,
+    "description": null,
+    "lineNumber": 20,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "kind": "member",
+    "static": false,
+    "variation": null,
+    "name": "states",
+    "memberof": "app/users/edit/index.js~UsersEditCtrl",
+    "longname": "app/users/edit/index.js~UsersEditCtrl#states",
+    "access": null,
+    "description": null,
+    "lineNumber": 21,
+    "undocument": true,
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "kind": "method",
+    "static": false,
+    "variation": null,
+    "name": "save",
+    "memberof": "app/users/edit/index.js~UsersEditCtrl",
+    "longname": "app/users/edit/index.js~UsersEditCtrl#save",
+    "access": null,
+    "description": null,
+    "lineNumber": 24,
+    "undocument": true,
+    "params": [],
+    "generator": false
+  },
+  {
+    "kind": "file",
+    "static": true,
+    "variation": null,
     "name": "app/users/index.js",
     "memberof": null,
     "longname": "app/users/index.js",
     "access": null,
     "description": null,
     "lineNumber": 4,
-    "content": "/**\n * @module Users\n */\nimport angular from 'angular';\nimport 'angular-ui-router';\n\nimport 'common/api';\n\nimport {User} from './models';\n\nconst STATE = 'app.users';\n\nclass UsersCtrl {\n    constructor(UserResource) {\n        UserResource.search().then((response) => {\n            this.users = response;\n        });\n    }\n}\n\nUsersCtrl.$inject = ['UserResource'];\n\nfunction UserResourceFactory(Resource) {\n    class UserResource extends Resource {\n        constructor() {\n            super('users', User);\n        }\n    }\n\n    return new UserResource();\n}\n\nUserResourceFactory.$inject = ['Resource'];\n\nexport default angular.module('users', [\n    'common.api'\n])\n\n.config(['$stateProvider', function($stateProvider) {\n    $stateProvider.state(STATE, {\n        controller: 'UsersCtrl',\n        controllerAs: 'Users',\n        url: '/users',\n        template: require('./_users.html')\n    });\n}])\n\n.controller('UsersCtrl', UsersCtrl)\n\n.factory('UserResource', UserResourceFactory);\n\nexport var userNavigation = {\n    state: STATE,\n    name: 'Users',\n    icon: 'face'\n};\n"
+    "content": "/**\n * @module users\n */\nimport angular from 'angular';\nimport 'angular-ui-router';\n\nimport commonApi from 'common/api';\n\nimport {User} from './models';\n\nimport edit from './edit';\n\nconst STATE = 'app.users';\n\nclass UsersCtrl {\n    constructor(users) {\n        this.users = users;\n    }\n}\n\nUsersCtrl.$inject = ['users'];\n\nfunction UserResourceFactory(Resource) {\n    class UserResource extends Resource {\n        constructor() {\n            super('users', User);\n        }\n    }\n\n    return new UserResource();\n}\n\nUserResourceFactory.$inject = ['Resource'];\n\nexport default angular.module('users', [\n    commonApi.name,\n    edit.name\n])\n\n.config(['$stateProvider', function($stateProvider) {\n    $stateProvider.state(STATE, {\n        controller: 'UsersCtrl',\n        controllerAs: 'Users',\n        url: '/users',\n        template: require('./_users.html'),\n        resolve: {\n            users: ['UserResource', function(UserResource) {\n                return UserResource.search();\n            }]\n        }\n    });\n}])\n\n.controller('UsersCtrl', UsersCtrl)\n\n.factory('UserResource', UserResourceFactory);\n\nexport var userNavigation = {\n    state: STATE,\n    name: 'Users',\n    icon: 'face'\n};\n"
   },
   {
     "kind": "variable",
@@ -430,7 +593,7 @@
     "importPath": "app-template/app/users/index.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 11,
+    "lineNumber": 13,
     "undocument": true,
     "type": {
       "types": [
@@ -450,7 +613,7 @@
     "importPath": "app-template/app/users/index.js",
     "importStyle": null,
     "description": null,
-    "lineNumber": 13,
+    "lineNumber": 15,
     "undocument": true,
     "interface": false
   },
@@ -463,11 +626,11 @@
     "longname": "app/users/index.js~UsersCtrl#constructor",
     "access": null,
     "description": null,
-    "lineNumber": 14,
+    "lineNumber": 16,
     "undocument": true,
     "params": [
       {
-        "name": "UserResource",
+        "name": "users",
         "types": [
           "*"
         ]
@@ -484,7 +647,7 @@
     "longname": "app/users/index.js~UsersCtrl#users",
     "access": null,
     "description": null,
-    "lineNumber": 16,
+    "lineNumber": 17,
     "undocument": true,
     "type": {
       "types": [
@@ -533,7 +696,7 @@
     "importPath": "app-template/app/users/index.js",
     "importStyle": "{userNavigation}",
     "description": null,
-    "lineNumber": 52,
+    "lineNumber": 58,
     "undocument": true,
     "type": {
       "types": [

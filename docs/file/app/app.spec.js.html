@@ -54,14 +54,16 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">app/app.spec.js</h1>
-<pre class="source-code line-number"><code class="prettyprint linenums" data-ice="content">import _ from &apos;lodash&apos;;
+<pre class="source-code line-number"><code class="prettyprint linenums" data-ice="content">import angular from &apos;angular&apos;;
+import _ from &apos;lodash&apos;;
 
 describe(&apos;karma tests with chai&apos;, function() {
     it(&apos;should expose the Chai assert method&apos;, function() {
-        return assert.ok(&apos;everything&apos;, &apos;everything is ok&apos;);
+        assert.ok(&apos;everything&apos;, &apos;everything is ok&apos;);
     });
+
     it(&apos;should expose the Chai expect method&apos;, function() {
-        return expect(&apos;foo&apos;).to.not.equal(&apos;bar&apos;);
+        expect(&apos;foo&apos;).to.not.equal(&apos;bar&apos;);
     });
 });
 
@@ -69,6 +71,10 @@ describe(&apos;just checking that libraries work&apos;, function() {
 
     it(&apos;works for lodash&apos;, function() {
         expect(_.size([1, 2, 3])).to.equal(3);
+    });
+
+    it(&apos;works for angular&apos;, function() {
+        expect(angular).to.exist;
     });
 });
 </code></pre>
