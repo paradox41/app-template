@@ -1,8 +1,0 @@
-{
-  "source": "./app",
-  "destination": "./docs",
-  "excludes": [
-    "\\.min\\.js$",
-    "bower_components"
-  ]
-}

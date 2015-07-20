@@ -8,6 +8,6 @@ build:
 	make dependencies && gulp build
 
 docs:
-	./node_modules/.bin/esdoc -c esdoc.json
+	./node_modules/.bin/jsdoc -c jsdoc.conf.json
 
 .PHONY: build docs

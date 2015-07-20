@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: users/models/user.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,35 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: users/models/user.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import _ from 'lodash';
 
+class User {
+    /**
+     * The User class (duh)
+     * @class
+     * @param  {object} user
+     * @return {object} A User
+     */
+    constructor(user) {
+        _.extend(this, user);
 
-    <h3> </h3>
+        console.log(this);
+    }
+}
 
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+export default User;
+</code></pre>
+        </article>
+    </section>
 
 
 
