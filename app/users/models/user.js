@@ -1,17 +1,15 @@
-import _ from 'lodash';
+import {extend} from 'lodash';
 
-class User {
+export default class User {
     /**
      * The User class
      * @class
-     * @param  {object} user
-     * @return {object} A User
+     * @param  {Object} user
+     * @return {Object} A User
      */
     constructor(user) {
-        _.extend(this, user);
+        extend(this, user);
 
         console.log(this);
     }
 }
-
-export default User;

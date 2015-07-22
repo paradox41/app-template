@@ -17,6 +17,12 @@ import _ from 'lodash';
  * ]);
  */
 function ResourceProvider() {
+    /**
+     * @namespace
+     * @type {Object}
+     * @property {Object} config
+     * @property {String} config.baseURL The base URL for all API requests
+     */
     var config = {
         baseURL: ''
     };
@@ -162,7 +168,6 @@ function ResourceFactory($http, ResourceConfig) {
 
 ResourceFactory.$inject = ['$http', 'ResourceConfig'];
 
-/** @exports common.api */
 export default angular.module('common.api', [])
 
 .provider('ResourceConfig', ResourceProvider)
