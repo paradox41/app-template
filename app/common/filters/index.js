@@ -1,5 +1,7 @@
 /**
  * @module common.filters
+ * @author Will
+ * @description Common filters
  */
 import angular from 'angular';
 
