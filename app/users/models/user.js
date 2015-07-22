@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 class User {
     /**
-     * The User class (duh)
+     * The User class
      * @class
      * @param  {object} user
      * @return {object} A User
