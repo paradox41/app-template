@@ -77,7 +77,7 @@ function ResourceFactory($http, ResourceConfig) {
          * Get a specific resource [GET]
          * @instance
          * @param  {integer} pk The primary key or the id
-         * @param  {Object} config Config to be passed in Angular's `$http.get()`
+         * @param  {Object} config Config to be passed to Angular's `$http.get()`
          * @return {promise}
          */
         get(pk, config = {}) {
@@ -94,7 +94,7 @@ function ResourceFactory($http, ResourceConfig) {
          * Create an object [POST]
          * @instance
          * @param  {Object} obj The object graph
-         * @param  {Object} config Config to be passed in Angular's `$http.post()`
+         * @param  {Object} config Config to be passed to Angular's `$http.post()`
          * @return {promise}
          */
         create(obj, config = {}) {
@@ -106,7 +106,7 @@ function ResourceFactory($http, ResourceConfig) {
          * @instance
          * @param  {integer} pk The primary key or the id of the object to update
          * @param  {Object} obj The new object
-         * @param  {Object} config Config to be passed in Angular's `$http.put()`
+         * @param  {Object} config Config to be passed to Angular's `$http.put()`
          * @return {promise}
          */
         update(pk, obj, config = {}) {
@@ -117,7 +117,7 @@ function ResourceFactory($http, ResourceConfig) {
          * Search a particular resource [GET]
          * @instance
          * @param  {Object} params Search params to be serialized
-         * @param  {Object} config Config to be passed in Angular's `$http.get()`
+         * @param  {Object} config Config to be passed to Angular's `$http.get()`
          * @return {promise}
          */
         search(params, config = {}) {
@@ -149,7 +149,7 @@ function ResourceFactory($http, ResourceConfig) {
         /**
          * Delete an object [DELETE]
          * @param  {integer} pk The primary key or the id
-         * @param  {Object} config Config to be passed in Angular's `$http.delete()`
+         * @param  {Object} config Config to be passed to Angular's `$http.delete()`
          * @return {promise}
          */
         delete(pk, config = {}) {
