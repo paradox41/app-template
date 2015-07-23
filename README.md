@@ -7,6 +7,17 @@
 [![devDependency Status](https://david-dm.org/paradox41/app-template/dev-status.svg)](https://david-dm.org/paradox41/app-template#info=devDependencies)
 [![Coverage Status](https://coveralls.io/repos/paradox41/app-template/badge.svg?branch=master&service=github)](https://coveralls.io/github/paradox41/app-template?branch=master)
 
+## Summary
+
+Angular 1.x starter kit featuring:
+- [Angular](https://angularjs.org/)
+- [Angular Material](https://material.angularjs.org/)
+- [Gulp](http://gulpjs.com/)
+- [Browserify](http://browserify.org/)
+- [Karma](https://karma-runner.github.io/)
+- [Mocha](http://mochajs.org/)
+- [Chai](http://chaijs.com/)
+
 ## Usage
 
 Clone the repo or download the zip file. If you cloned, `rm -rf .git`
@@ -16,7 +27,7 @@ Clone the repo or download the zip file. If you cloned, `rm -rf .git`
 
 ## Build
 
-1. `gulp build`
+1. `npm run build`
 
 ## Style
 
@@ -95,6 +106,7 @@ Follow [conventional changelog](https://github.com/ajoslin/conventional-changelo
 
 ### Documentation
 
-Documentation via [ESDoc](https://esdoc.org/)
+Documentation via [JSDoc](http://usejsdoc.org/)
 
-`make docs && gulp documentation:serve`
+1. `npm run docs`
+2. `gulp documentation:serve`
