@@ -12,7 +12,10 @@
     "url": "https://github.com/paradox41/app-template/issues"
   },
   "scripts": {
-    "postinstall": "bower install"
+    "postinstall": "bower install",
+    "build": "npm install && gulp build",
+    "clean": "rm -rf node_modules/ app/bower_components/",
+    "docs": "./node_modules/.bin/jsdoc -c jsdoc.conf.json"
   },
   "homepage": "https://github.com/paradox41/app-template",
   "devDependencies": {
