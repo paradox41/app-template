@@ -18,3 +18,5 @@ app/index.html
 
 build/
 coverage/
+
+.publish/

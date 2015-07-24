@@ -9,6 +9,7 @@ import './tasks/copy';
 import './tasks/default';
 import './tasks/documentation';
 import './tasks/enforce';
+import './tasks/gh-pages';
 import './tasks/handlebars';
 import './tasks/lint';
 import './tasks/release';
