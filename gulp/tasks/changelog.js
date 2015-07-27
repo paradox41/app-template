@@ -12,9 +12,12 @@ gulp.task('changelog', function(done) {
         fs.writeFile('CHANGELOG.md', log, done);
     }
     fs.readFile('./package.json', 'utf8', function(err, data) {
-        var ref$ = JSON.parse(data);
-        var repository = ref$.repository;
-        var version = ref$.version;
+        if (err) {
+            return done(err);
+        }
+
+        let ref = JSON.parse(data);
+        let {repository, version} = ref;
 
         changelog({
             repository: repository.url,
