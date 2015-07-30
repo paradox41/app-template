@@ -52,7 +52,10 @@ function ResourceFactory($http, ResourceConfig) {
 
     function serialize(obj) {
         return _(obj).keys().map(function(key) {
-            return `encodeURIComponent(${key})=encodeURIComponent(${obj[key]})`;
+            let param = encodeURIComponent(key);
+            let value = encodeURIComponent(obj[key]);
+
+            return `${param}=${value}`;
         }).value().join('&');
     }
 
