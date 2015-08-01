@@ -24,8 +24,8 @@
     "babelify": "^6.1.2",
     "bower": "^1.4.1",
     "browser-sync": "^2.7.5",
-    "browserify": "^10.2.1",
-    "browserify-shim": "^3.8.7",
+    "browserify": "^11.0.1",
+    "browserify-shim": "^3.8.10",
     "chai": "^3.2.0",
     "conventional-changelog": "^0.2.1",
     "del": "^1.2.0",
@@ -65,7 +65,7 @@
     "stripify": "^3.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0",
-    "watchify": "^3.1.2"
+    "watchify": "^3.3.1"
   },
   "browser": {
     "app": "./app/app.js",
