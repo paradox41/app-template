@@ -1,3 +1,20 @@
+<a name="3.2.0"></a>
+# 3.2.1 (2015-08-01)
+
+
+### Bug Fixes
+
+* **api:** Fix serialization ([fae7d9b](https://github.com/paradox41/app-template/commit/fae7d9b))
+* **provision:** Remove ansible as doesn't really belong here ([895470b](https://github.com/paradox41/app-template/commit/895470b))
+
+### Features
+
+* **gulp:** Add gh-pages deployment ([a75547e](https://github.com/paradox41/app-template/commit/a75547e))
+* **gulp:** Add test:watch task ([288fdb4](https://github.com/paradox41/app-template/commit/288fdb4))
+* **package:** Add git pre-push hook ([ef56ba6](https://github.com/paradox41/app-template/commit/ef56ba6))
+
+
+
 ## 3.2.0 (2015-07-13)
 
 
