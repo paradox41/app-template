@@ -3,6 +3,3 @@ node_js:
   - "node"
   - "iojs"
 script: npm run build
-cache:
-  directories:
-    - node_modules
