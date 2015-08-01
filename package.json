@@ -19,7 +19,8 @@
   },
   "git": {
     "scripts": {
-      "pre-push": "gulp lint && npm test"
+      "pre-push": "gulp lint && npm test",
+      "commit-msg": "node ./validate-commit-msg $1"
     }
   },
   "homepage": "https://github.com/paradox41/app-template",
