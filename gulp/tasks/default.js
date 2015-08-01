@@ -8,3 +8,8 @@ gulp.task('default', [
     'scss:dev',
     'watch'
 ]);
+
+gulp.task('pre-push', [
+    'lint',
+    'test:once'
+]);

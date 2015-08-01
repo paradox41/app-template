@@ -19,7 +19,7 @@
   },
   "git": {
     "scripts": {
-      "pre-push": "gulp lint && npm test",
+      "pre-push": "gulp pre-push",
       "commit-msg": "node ./validate-commit-msg $1"
     }
   },
