@@ -2,26 +2,16 @@ import config from '../config';
 
 import gulp from 'gulp';
 
-import browserSync from 'browser-sync';
+import {create} from 'browser-sync';
 
-gulp.task('reload', function() {
-    browserSync.reload();
-});
+const browserSync = create();
 
 gulp.task('serve', function() {
-    browserSync({
+    browserSync.init({
         server: {
             baseDir: config.app
         },
-        notify: false
-    });
-});
-
-gulp.task('serve:build', function() {
-    browserSync({
-        server: {
-            baseDir: config.build
-        },
+        port: 8080,
         notify: false
     });
 });
