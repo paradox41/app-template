@@ -103,7 +103,7 @@ export default angular.module('example', [])
 
 ### Commit Conventions
 
-Follow [conventional changelog](https://github.com/ajoslin/conventional-changelog/blob/master/CONVENTIONS.md)
+Follow [conventional changelog](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit)
 
 ### Documentation
 
