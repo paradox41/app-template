@@ -17,6 +17,7 @@ Angular 1.x starter kit featuring:
 - [Karma](https://karma-runner.github.io/)
 - [Mocha](http://mochajs.org/)
 - [Chai](http://chaijs.com/)
+- [Conventional Changelog](https://github.com/ajoslin/conventional-changelog)
 
 ## Usage
 
