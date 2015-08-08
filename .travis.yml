@@ -1,5 +1,5 @@
 language: node_js
 node_js:
   - "node"
-  # - "iojs"
+  - "iojs-v2.5.0"
 script: npm run build
