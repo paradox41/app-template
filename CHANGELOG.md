@@ -1,5 +1,15 @@
-<a name="3.2.0"></a>
-# 3.2.1 (2015-08-01)
+<a name="3.2.1"></a>
+## 3.2.1 (2015-08-16)
+
+
+### Bug Fixes
+
+* **travis:** Peg iojs at 2.5.0 so node-sass compiles ([8394332](https://github.com/paradox41/app-template/commit/8394332))
+
+
+
+<a name="3.2.1"></a>
+## 3.2.1 (2015-08-01)
 
 
 ### Bug Fixes
@@ -15,134 +25,125 @@
 
 
 
-## 3.2.0 (2015-07-13)
+<a name="3.2.0"></a>
+# 3.2.0 (2015-07-13)
 
 
-#### Bug Fixes
+### Bug Fixes
 
-* **api:** Minor resource fixes ([cc95d4ea](https://github.com/paradox41/app-template/commit/cc95d4eaadf79e15b1d0bba959e71eba692d406c))
+* **api:** Minor resource fixes ([cc95d4e](https://github.com/paradox41/app-template/commit/cc95d4e))
 
+### Features
 
-#### Features
-
-* **users:** Add edit for users ([b4477802](https://github.com/paradox41/app-template/commit/b44778029950f6ea859b564ff74f45c79f9e5347))
-
-
-## 3.1.0 (2015-07-10)
+* **users:** Add edit for users ([b447780](https://github.com/paradox41/app-template/commit/b447780))
 
 
-#### Bug Fixes
 
-* ***:** Make states work ([79102360](https://github.com/paradox41/app-template/commit/7910236095cde75b2f7a1437cf1a725aa94749b3))
-* **build:** Fix build ([948860f7](https://github.com/paradox41/app-template/commit/948860f7fc855a1ad58594cc07530f9406efa5a7))
-
-
-#### Features
-
-* **api:** Add Resource for REST APIs ([3fa57c8b](https://github.com/paradox41/app-template/commit/3fa57c8b5f4a071de672bcaf3bc00607a2927674))
-* **example:** Add example state content ([4e371b41](https://github.com/paradox41/app-template/commit/4e371b4157cfe5bcc386ff5bc397ed3891b91efa))
-* **navigation:** Add some actual links and material icons ([3f563989](https://github.com/paradox41/app-template/commit/3f563989b3a99101d475c36f69dd13e43dea4a04))
-* **users:** Replace example module with something more useful ([4af137d8](https://github.com/paradox41/app-template/commit/4af137d8e6c5c27f2a112d04f327fd0e1d0fc683))
+<a name="3.1.0"></a>
+# 3.1.0 (2015-07-11)
 
 
-### 3.0.0 (2015-06-25)
+### Bug Fixes
+
+* ***:** Make states work ([7910236](https://github.com/paradox41/app-template/commit/7910236))
+* **build:** Fix build ([948860f](https://github.com/paradox41/app-template/commit/948860f))
+
+### Features
+
+* **api:** Add Resource for REST APIs ([3fa57c8](https://github.com/paradox41/app-template/commit/3fa57c8))
+* **example:** Add example state content ([4e371b4](https://github.com/paradox41/app-template/commit/4e371b4))
+* **navigation:** Add some actual links and material icons ([3f56398](https://github.com/paradox41/app-template/commit/3f56398))
+* **users:** Replace example module with something more useful ([4af137d](https://github.com/paradox41/app-template/commit/4af137d))
 
 
-#### Bug Fixes
 
-* **.travis.yml:**
-  * Chain build commands ([2a6673ef](https://github.com/paradox41/app-template/commit/2a6673ef80082f890d7ee54385b7f3a86282f6a9))
-  * Add bower install command ([e331c4f2](https://github.com/paradox41/app-template/commit/e331c4f2ab1ac4086ef9eb2107783141a02bff47))
-* **example:**
-  * Fix test ([79f1da06](https://github.com/paradox41/app-template/commit/79f1da06469231e335ac68c4b544ea5c34996cff))
-  * Add some content ([6ea7eebc](https://github.com/paradox41/app-template/commit/6ea7eebc57d0b3a7eff49641c867d206ca3050b0))
-  * Add link to example state ([31bcb38d](https://github.com/paradox41/app-template/commit/31bcb38d38eb2126632386cabe5419a26e64be60))
-  * Fix template for example state ([f5daaae6](https://github.com/paradox41/app-template/commit/f5daaae6585052a459c4edf4bfda2b248ba6d545))
-* **gulp:** Add hbs to config ([7d90b848](https://github.com/paradox41/app-template/commit/7d90b848fd6b361bcde45ffd562bfae49727f4f9))
-* **readme:** Update david-dm badge format ([f9e77e63](https://github.com/paradox41/app-template/commit/f9e77e6369ae0ce4ebd198e6c7a98c9561b8cd0c))
-* **web-worker:** Remove for now ([d0ae16d9](https://github.com/paradox41/app-template/commit/d0ae16d9d95f9ab81ad16e6c453c1d762608adb1))
+<a name="3.0.0"></a>
+# 3.0.0 (2015-06-25)
 
 
-#### Features
+### Bug Fixes
 
-* ***:**
-  * Add some angular material layout ([2328ca90](https://github.com/paradox41/app-template/commit/2328ca90765ef748cc4648fdadcc478fef28ddfd))
-  * Add angular-material ([7e7fb941](https://github.com/paradox41/app-template/commit/7e7fb941980d7952befcd4a19bfa6d20955d79bc))
-* **.editorconfig:** Add rule for Makefile ([25e499e9](https://github.com/paradox41/app-template/commit/25e499e9718e208f3ee44a14cbc4a0981a997409))
-* **.travis.yml:** Add travis.yml ([a96949c9](https://github.com/paradox41/app-template/commit/a96949c9a2695d91a0189b7d45b3fb11e3f0a052))
-* **Makefile:** Make NPM install log something ([fb6078a2](https://github.com/paradox41/app-template/commit/fb6078a2a894257b10d61e1edb0bdc6b46e4aa4d))
-* **ansible:** Add some ansible to deploy ([d717183a](https://github.com/paradox41/app-template/commit/d717183af83d543f6136584cccb779292547d11e))
-* **app:** Add example service-worker to app ([d76e6696](https://github.com/paradox41/app-template/commit/d76e6696bf7d84e295b105b6c2acad1f07e49132))
-* **decorators:** Add example decorator ([aa3763cd](https://github.com/paradox41/app-template/commit/aa3763cdd61344c68ff3d2991fded1af117b6aa8))
-* **example:** Update example state to use inject notation ([799ca5f4](https://github.com/paradox41/app-template/commit/799ca5f4ab6f6558d226fbd935fa43054137be80))
-* **filters:** Add example common folder ([8c3dfe15](https://github.com/paradox41/app-template/commit/8c3dfe1503370c308d0571539bfd530757478897))
-* **readme:** Adds davis-dm badge for devDependency status ([4db820ac](https://github.com/paradox41/app-template/commit/4db820acb2e3a7edaf826e24b12699b8f1f1301b))
+* **.travis.yml:** Add bower install command ([e331c4f](https://github.com/paradox41/app-template/commit/e331c4f))
+* **.travis.yml:** Chain build commands ([2a6673e](https://github.com/paradox41/app-template/commit/2a6673e))
+* **example:** Add link to example state ([31bcb38](https://github.com/paradox41/app-template/commit/31bcb38))
+* **example:** Add some content ([6ea7eeb](https://github.com/paradox41/app-template/commit/6ea7eeb))
+* **example:** Fix template for example state ([f5daaae](https://github.com/paradox41/app-template/commit/f5daaae))
+* **example:** Fix test ([79f1da0](https://github.com/paradox41/app-template/commit/79f1da0))
+* **gulp:** Add hbs to config ([7d90b84](https://github.com/paradox41/app-template/commit/7d90b84))
+* **readme:** Update david-dm badge format ([f9e77e6](https://github.com/paradox41/app-template/commit/f9e77e6))
+* **web-worker:** Remove for now ([d0ae16d](https://github.com/paradox41/app-template/commit/d0ae16d))
+
+### Features
+
+* ***:** Add angular-material ([7e7fb94](https://github.com/paradox41/app-template/commit/7e7fb94))
+* ***:** Add some angular material layout ([2328ca9](https://github.com/paradox41/app-template/commit/2328ca9))
+* **.editorconfig:** Add rule for Makefile ([25e499e](https://github.com/paradox41/app-template/commit/25e499e))
+* **.travis.yml:** Add travis.yml ([a96949c](https://github.com/paradox41/app-template/commit/a96949c))
+* **Makefile:** Make NPM install log something ([fb6078a](https://github.com/paradox41/app-template/commit/fb6078a))
+* **ansible:** Add some ansible to deploy ([d717183](https://github.com/paradox41/app-template/commit/d717183))
+* **app:** Add example service-worker to app ([d76e669](https://github.com/paradox41/app-template/commit/d76e669))
+* **decorators:** Add example decorator ([aa3763c](https://github.com/paradox41/app-template/commit/aa3763c))
+* **example:** Update example state to use inject notation ([799ca5f](https://github.com/paradox41/app-template/commit/799ca5f))
+* **filters:** Add example common folder ([8c3dfe1](https://github.com/paradox41/app-template/commit/8c3dfe1))
+* **readme:** Adds davis-dm badge for devDependency status ([4db820a](https://github.com/paradox41/app-template/commit/4db820a))
+
+### Reverts
+
+* **Makefile:** Partially revert 7444449 ([e0309cf](https://github.com/paradox41/app-template/commit/e0309cf))
 
 
+
+<a name="2.1.1"></a>
 ## 2.1.1 (2015-03-03)
 
 
-#### Features
+### Bug Fixes
 
-* **build:** Add service worker support ([82739e2c](https://github.com/paradox41/app-template/commit/82739e2c3505f6187eda9c5953d3f47841467823))
+* **gulpfile:** Fix browserify and convert task ([0b0eb48](https://github.com/paradox41/app-template/commit/0b0eb48))
 
+### Features
 
-### 2.1.0 (2015-02-25)
-
-
-#### Bug Fixes
-
-* **gulpfile:** Fix browserify and convert task ([0b0eb486](https://github.com/paradox41/app-template/commit/0b0eb486dbac30f3c1a48f3f26cdca1d1d841fb5))
+* **build:** Add service worker support ([82739e2](https://github.com/paradox41/app-template/commit/82739e2))
 
 
-#### Features
 
-* **build:** Add service worker support ([1b5ae8b3](https://github.com/paradox41/app-template/commit/1b5ae8b3c28d65bb785df8c3a27fd88b3a378aca))
-
-
-### 2.0.1 (2015-02-19)
-
-#### Bug Fixes
-
-* **gulpfile:** Fix karma path and testing ([b77752e4](https://github.com/paradox41/app-template/commit/b77752e409d255206d8fa50202096d5b6df38c9f))
+<a name="2.0.1"></a>
+## 2.0.1 (2015-02-19)
 
 
-## 2.0.0 (2015-02-19)
+### Bug Fixes
 
-#### Refactor
-
-* **gulpfile:** Make gulpfile more manageable ([1c0734c](https://github.com/paradox41/app-template/commit/1c0734c35f6ddf1359b8474eb6ef6f389bc1e409))
-
-## 1.3.0 (2015-02-18)
+* **gulpfile:** Fix karma path and testing ([b77752e](https://github.com/paradox41/app-template/commit/b77752e))
 
 
-#### Bug Fixes
 
-* **app:** Fix imports ([18b1f458](https://github.com/paradox41/app-template/commit/18b1f458605f3b32a6a3dbb9a96fa6eb6f4b587c))
-* **gulpfile:** Various fixes and updates ([9c2a43a9](https://github.com/paradox41/app-template/commit/9c2a43a94f2d1764451d9ed5d5f0150cd5428e09))
-
-
-#### Features
-
-* **test:** Add some working tests ([ce8403ce](https://github.com/paradox41/app-template/commit/ce8403cea975a12e474a366d595c389c70e6f04f))
+<a name="2.0.0"></a>
+# 2.0.0 (2015-02-19)
 
 
-## 1.1.0 (2015-02-13)
+### Bug Fixes
+
+* **app:** Add example to app ([a20fb03](https://github.com/paradox41/app-template/commit/a20fb03))
+* **app:** Fix imports ([18b1f45](https://github.com/paradox41/app-template/commit/18b1f45))
+* **build:** Fix commit message ([8690375](https://github.com/paradox41/app-template/commit/8690375))
+* **gulpfile:** Various fixes and updates ([9c2a43a](https://github.com/paradox41/app-template/commit/9c2a43a))
+
+### Features
+
+* **app:** Add partialify ([2363c2e](https://github.com/paradox41/app-template/commit/2363c2e))
+* **test:** Add some working tests ([ce8403c](https://github.com/paradox41/app-template/commit/ce8403c))
 
 
-#### Features
 
-* **test:** Add some working tests ([ce8403ce](https://github.com/paradox41/app-template/commit/ce8403cea975a12e474a366d595c389c70e6f04f))
-
-
-## 1.0.0 (2015-02-06)
+<a name="1.0.0"></a>
+# 1.0.0 (2014-12-02)
 
 
-#### Bug Fixes
-
-* **app:** Add example to app ([50a7aa84](https://github.com/paradox41/app-template/commit/50a7aa843c127fa3c86c028714284fee024213e8))
 
 
-#### Features
+<a name="0.0.1"></a>
+## 0.0.1 (2014-10-14)
 
-* **app:** Add partialify ([2ac8b275](https://github.com/paradox41/app-template/commit/2ac8b2759166f17634af32af55df146b252a2c1b))
+
+
+
