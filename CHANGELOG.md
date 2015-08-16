@@ -1,3 +1,14 @@
+<a name="3.2.2"></a>
+## 3.2.2 (2015-08-16)
+
+
+### Bug Fixes
+
+* **travis:** Peg iojs at 2.5.0 so node-sass compiles ([8394332](https://github.com/paradox41/app-template/commit/8394332))
+* Fix up release process ([bcc1b2c](https://github.com/paradox41/app-template/commit/bcc1b2c))
+
+
+
 <a name="3.2.1"></a>
 ## 3.2.1 (2015-08-16)
 
