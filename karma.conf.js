@@ -33,6 +33,10 @@ module.exports = function(config) {
             extensions: ['.js'],
             debug: true,
             transform: ['babelify', 'partialify']
-        }
+        },
+
+        // tests on Travis were timing out
+        browserDisconnectTimeout: 60000,
+        browserNoActivityTimeout: 60000
     });
 };
