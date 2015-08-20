@@ -1,3 +1,13 @@
+<a name="3.2.3"></a>
+## [3.2.3](https://github.com/paradox41/app-template/compare/v3.2.2...v3.2.3) (2015-08-20)
+
+
+### Bug Fixes
+
+* **karma:** Maybe fix Travis ([c3e7e51](https://github.com/paradox41/app-template/commit/c3e7e51))
+
+
+
 <a name="3.2.2"></a>
 ## 3.2.2 (2015-08-16)
 
