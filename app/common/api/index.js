@@ -70,12 +70,12 @@ function ResourceFactory($http, ResourceConfig) {
          * @class
          * @param  {string} route The path to the endpoint
          * @param  {function} model Optional model to be applied to the fetched resource
-         * @param  {Object} options Optional configuration object
+         * @param  {Object} options Optional configuration object. Options passed via the provider are overridden here if
+         * provided. Options passed to methods override the options passed to the constructor.
          */
         constructor(route, model, options = {}) {
-            let opts = {};
             // allow global config to be overridden here
-            _.extend(opts, ResourceConfig, options);
+            let opts = _.extend({}, ResourceConfig, options);
 
             this.route = `${opts.baseURL}/${route}`;
             this.model = model;
@@ -87,10 +87,14 @@ function ResourceFactory($http, ResourceConfig) {
          * @instance
          * @param  {integer} pk The primary key or the id
          * @param  {Object} config Config to be passed to Angular's `$http.get()`
+         * Will override any options passed in via the provider and the constructor.
          * @return {promise}
          */
         get(pk, config = {}) {
-            let result = $http.get(`${this.route}/${pk}`, config);
+            // again, allow individual methods to override the options above it
+            // without modifying the original options block
+            let options = _.extend({}, _.cloneDeep(this.options), config);
+            let result = $http.get(`${this.route}/${pk}`, options);
 
             if (this.model !== undefined) {
                 return wrapResult(result, this.model);
@@ -107,7 +111,9 @@ function ResourceFactory($http, ResourceConfig) {
          * @return {promise}
          */
         create(obj, config = {}) {
-            return $http.post(`${this.route}`, obj, config).then(returnResponse);
+            let options = _.extend({}, _.cloneDeep(this.options), config);
+
+            return $http.post(`${this.route}`, obj, options).then(returnResponse);
         }
 
         /**
@@ -119,7 +125,9 @@ function ResourceFactory($http, ResourceConfig) {
          * @return {promise}
          */
         update(pk, obj, config = {}) {
-            return $http.put(`${this.route}/${pk}`, obj, config).then(returnResponse);
+            let options = _.extend({}, _.cloneDeep(this.options), config);
+
+            return $http.put(`${this.route}/${pk}`, obj, options).then(returnResponse);
         }
 
         /**
@@ -131,6 +139,7 @@ function ResourceFactory($http, ResourceConfig) {
          */
         search(params, config = {}) {
             let route = this.route;
+            let options = _.extend({}, _.cloneDeep(this.options), config);
 
             if (params) {
                 params = serialize(params);
@@ -138,7 +147,7 @@ function ResourceFactory($http, ResourceConfig) {
                 route = `${route}?${params}`;
             }
 
-            let result = $http.get(`${route}`, config);
+            let result = $http.get(`${route}`, options);
 
             if (this.model !== undefined) {
                 let Model = this.model;
@@ -162,7 +171,9 @@ function ResourceFactory($http, ResourceConfig) {
          * @return {promise}
          */
         delete(pk, config = {}) {
-            return $http.delete(`${this.route}/${pk}`, config);
+            let options = _.extend({}, _.cloneDeep(this.options), config);
+
+            return $http.delete(`${this.route}/${pk}`, options);
         }
     }
 

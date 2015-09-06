@@ -12,14 +12,14 @@ class Foo {
 describe('ResourceConfigProvider', function() {
     var ResourceConfig;
 
-    angular.module('test', []).config(function(ResourceConfigProvider) {
+    angular.module('test.1', []).config(function(ResourceConfigProvider) {
         ResourceConfigProvider.setConfig({
             baseURL: 'http://jsonplaceholder.typicode.com'
         });
     });
 
     beforeEach(angular.mock.module('common.api'));
-    beforeEach(angular.mock.module('test'));
+    beforeEach(angular.mock.module('test.1'));
 
     beforeEach(inject(function($injector) {
         ResourceConfig = $injector.get('ResourceConfig');
@@ -35,15 +35,30 @@ describe('ResourceConfigProvider', function() {
 describe('Resource', function() {
     var testResource;
     var Resource;
+    var ResourceConfig;
+
+    angular.module('test.2', []).config(function(ResourceConfigProvider) {
+        ResourceConfigProvider.setConfig({
+            headers: {
+                'X-Auth-Token': 'bar'
+            }
+        });
+    });
 
     beforeEach(angular.mock.module('common.api'));
+    beforeEach(angular.mock.module('test.2'));
 
     beforeEach(inject(function($injector) {
         Resource = $injector.get('Resource');
+        ResourceConfig = $injector.get('ResourceConfig');
 
         class TestResource extends Resource {
             constructor() {
-                super('test', Foo);
+                super('test', Foo, {
+                    headers: {
+                        'X-Auth-Token': 'foo'
+                    }
+                });
             }
         }
 
@@ -67,5 +82,11 @@ describe('Resource', function() {
 
     it('should set the model correctly', function() {
         expect(testResource.model).to.equal(Foo);
+    });
+
+    it('should have allow options to be overridden if it is provided via the constructor', function() {
+        expect(testResource.options.headers).to.deep.equal({
+            'X-Auth-Token': 'foo'
+        });
     });
 });
