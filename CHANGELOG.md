@@ -1,3 +1,13 @@
+<a name="3.2.4"></a>
+## [3.2.4](https://github.com/paradox41/app-template/compare/v3.2.3...v3.2.4) (2015-09-06)
+
+
+### Bug Fixes
+
+* **api:** fix options not being overridden properly ([cd954d7](https://github.com/paradox41/app-template/commit/cd954d7))
+
+
+
 <a name="3.2.3"></a>
 ## [3.2.3](https://github.com/paradox41/app-template/compare/v3.2.2...v3.2.3) (2015-08-20)
 
