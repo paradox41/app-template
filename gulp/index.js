@@ -4,7 +4,6 @@ import './tasks/build';
 import './tasks/cachebust';
 import './tasks/changelog';
 import './tasks/clean';
-import './tasks/convert';
 import './tasks/copy';
 import './tasks/default';
 import './tasks/documentation';

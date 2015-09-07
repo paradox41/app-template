@@ -11,7 +11,7 @@
 // Base
 // --------------------------------------------------
 
-@import 'assets/stylesheets/partials/base/font-awesome';
+@import 'node_modules/font-awesome/scss/font-awesome';
 @import 'assets/stylesheets/partials/base/layout';
 
 //
@@ -22,4 +22,4 @@
 // Vendor
 // --------------------------------------------------
 
-@import 'bower_components/angular-material/angular-material.copy.scss';
+@import 'node_modules/angular-material/angular-material';

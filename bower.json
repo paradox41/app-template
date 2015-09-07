@@ -4,7 +4,7 @@
   "authors": [
     "Will <will.soto9@gmail.com>"
   ],
-  "description": "",
+  "description": "Angular app template",
   "license": "MIT",
   "private": true,
   "ignore": [
@@ -14,9 +14,5 @@
     "app/bower_components",
     "test",
     "tests"
-  ],
-  "dependencies": {
-    "font-awesome": "~4.2.0",
-    "angular-material": "~0.9.7"
-  }
+  ]
 }

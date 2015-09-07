@@ -1,6 +1,3 @@
 {
-    "directory": "app/bower_components",
-    "scripts": {
-        "postinstall": "gulp convert"
-    }
+    "directory": "app/bower_components"
 }

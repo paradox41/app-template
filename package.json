@@ -1,19 +1,19 @@
 {
   "name": "app-template",
   "version": "3.2.4",
-  "description": "Template",
+  "description": "Angular app template",
+  "main": "./build/app.min.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/paradox41/app-template"
   },
-  "author": "Will",
+  "author": "Will <will.soto9@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/paradox41/app-template/issues"
   },
   "scripts": {
     "test": "gulp test:once",
-    "postinstall": "bower install",
     "build": "npm install && gulp build",
     "docs": "./node_modules/.bin/jsdoc -c jsdoc.conf.json"
   },
@@ -78,8 +78,6 @@
   },
   "browser": {
     "app": "./app/app.js",
-    "angular-aria": "./app/bower_components/angular-aria/angular-aria.js",
-    "angular-material": "./app/bower_components/angular-material/angular-material.js",
     "angular-ui-router": "./node_modules/angular-ui-router/release/angular-ui-router.js"
   },
   "browserify": {
@@ -112,8 +110,11 @@
   "dependencies": {
     "angular": "^1.4.0",
     "angular-animate": "^1.4.0",
+    "angular-aria": "^1.4.5",
+    "angular-material": "^0.10.1",
     "angular-sanitize": "^1.4.1",
     "angular-ui-router": "^0.2.15",
+    "font-awesome": "^4.4.0",
     "lodash": "^3.9.3"
   }
 }
