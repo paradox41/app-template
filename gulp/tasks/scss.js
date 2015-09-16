@@ -16,7 +16,7 @@ gulp.task('scss:dev', function() {
         .pipe(sourcemaps.init())
         .pipe(sass({
             errLogToConsole: true,
-            includePaths: './node_modules'
+            includePaths: ['./node_modules']
         }))
         .pipe(autoprefixer())
         .pipe(gulp.dest(config.app))
@@ -30,7 +30,7 @@ gulp.task('scss:dev', function() {
 gulp.task('scss:build', function() {
     return gulp.src(config.scss.src)
         .pipe(sass({
-            includePaths: './node_modules'
+            includePaths: ['./node_modules']
         }))
         .pipe(autoprefixer())
         .pipe(minify({

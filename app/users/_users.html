@@ -1,16 +1,9 @@
 <div ui-view>
-    <md-whiteframe class="md-whiteframe-z2" style="display: block;">
-        <md-list>
-            <md-list-item class="md-3-line" ng-repeat="user in Users.users">
-                <div class="md-list-item-text">
-                    <h3>
-                        <a href="" ui-sref="app.users.edit({ id: user.id })">{{user.name}}</a>
-                    </h3>
-                    <h4>{{user.email}}</h4>
-                    <p>{{user.company.name}}</p>
-                </div>
-                <md-divider ng-if="!$last"></md-divider>
-            </md-list-item>
-        </md-list>
-    </md-whiteframe>
+    <div class="list-group">
+        <a href="" ui-sref="app.users.edit({ id: user.id })" class="list-group-item" ng-repeat="user in Users.users">
+            <h4 class="list-group-item-heading">{{user.name}}</h4>
+            <p class="list-group-item-text">{{user.email}}</p>
+            <p class="list-group-item-text">{{user.company.name}}</p>
+        </a>
+    </div>
 </div>

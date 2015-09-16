@@ -1,22 +1,20 @@
-<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="Navigation.$mdMedia('gt-md')">
-    <md-toolbar class="md-theme-indigo">
-        <h1 class="md-toolbar-tools">Navigation</h1>
-    </md-toolbar>
-    <md-content>
-        <md-list>
-            <md-list-item class="md-2-line" ng-repeat="item in Navigation.navItems">
-                <div class="md-list-item-text">
-                    <h3>
-                        <a href="" ui-sref="{{item.state}}">
-                            <md-icon md-font-set="material-icons">{{item.icon}}</md-icon>
-                            <span>{{item.name}}</span>
-                        </a>
-                    </h3>
-                </div>
-            </md-list-item>
-        </md-list>
-        <md-button ng-click="Navigation.toggle()" class="md-primary" hide-gt-md>
-            Close Sidenav Left
-        </md-button>
-    </md-content>
-</md-sidenav>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li ui-sref-active="active" ng-repeat="item in Navigation.navItems">
+                    <a href="" ui-sref="{{item.state}}">{{item.name}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

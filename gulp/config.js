@@ -10,8 +10,7 @@ export default {
     docs: './docs',
     html: {
         files: [
-            './app/**/*.html',
-            '!./app/bower_components/**/*.html'
+            './app/**/*.html'
         ]
     },
     hbs: {
@@ -22,14 +21,12 @@ export default {
     js: {
         files: [
             './app/**/*.js',
-            '!./app/**/*.{spec,min}.js',
-            '!./app/bower_components/**/*.js'
+            '!./app/**/*.{spec,min}.js'
         ]
     },
     scss: {
         files: [
-            './app/**/*.scss',
-            '!./app/bower_components/**/*.scss'
+            './app/**/*.scss'
         ],
         src: './app/app.scss',
         devDest: './app/app.css',
@@ -43,11 +40,9 @@ export default {
         vendor: {
             libs: [
                 'angular',
-                'angular-animate',
-                'angular-material',
-                'angular-aria',
+                // 'angular-animate',
+                // 'angular-sanitize',
                 'angular-ui-router',
-                'angular-sanitize',
                 'lodash'
             ],
             entries: ['./app/vendor.js'],

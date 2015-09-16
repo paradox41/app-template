@@ -10,7 +10,7 @@
 
 Angular 1.x starter kit featuring:
 - [Angular](https://angularjs.org/)
-- [Angular Material](https://material.angularjs.org/)
+- [Bootstrap](http://getbootstrap.com/)
 - [Gulp](http://gulpjs.com/)
 - [Browserify](http://browserify.org/)
 - [Karma](https://karma-runner.github.io/)
