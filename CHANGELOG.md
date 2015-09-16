@@ -1,3 +1,13 @@
+<a name="5.0.0"></a>
+# [5.0.0](https://github.com/paradox41/app-template/compare/v5.0.0...v5.0.0) (2015-09-16)
+
+
+### Features
+
+* add bootstrap back ([c9db8f1](https://github.com/paradox41/app-template/commit/c9db8f1))
+
+
+
 <a name="4.0.0"></a>
 # [4.0.0](https://github.com/paradox41/app-template/compare/v3.2.4...v4.0.0) (2015-09-07)
 
