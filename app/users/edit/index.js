@@ -3,7 +3,6 @@
  */
 import angular from 'angular';
 import 'angular-ui-router';
-import 'angular-material';
 
 import commonApi from 'common/api';
 
@@ -12,9 +11,7 @@ import states from './states.json';
 const STATE = 'app.users.edit';
 
 class UsersEditCtrl {
-    constructor($mdToast, UserResource, user) {
-        this.$mdToast = $mdToast;
-
+    constructor(UserResource, user) {
         this.UserResource = UserResource;
 
         this.user = user;
@@ -31,21 +28,17 @@ class UsersEditCtrl {
         }
 
         result.then(() => {
-            let $mdToast = this.$mdToast;
-
-            $mdToast.show($mdToast.simple().content('Saved!'));
+            console.log('saved');
         });
     }
 }
 
 UsersEditCtrl.$inject = [
-    '$mdToast',
     'UserResource',
     'user'
 ];
 
 export default angular.module('users.edit', [
-    'ngMaterial',
     commonApi.name
 ])
 

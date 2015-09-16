@@ -2,9 +2,6 @@ import angular from 'angular';
 
 // import angular modules
 import 'angular-ui-router';
-import 'angular-aria';
-import 'angular-animate';
-import 'angular-material';
 
 // import common modules
 import navigationModule from './common/navigation';
@@ -19,9 +16,6 @@ const MODULE_NAME = 'app';
 
 angular.module(MODULE_NAME, [
     'ui.router',
-    'ngAria',
-    'ngAnimate',
-    'ngMaterial',
     userModule.name,
     navigationModule.name,
     commonApi.name

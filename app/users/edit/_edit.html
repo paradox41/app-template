@@ -1,40 +1,57 @@
 <div ui-view>
-    <md-content layout-padding>
-        <form name="userForm">
-            <div layout layout-sm="column">
-                <md-input-container flex>
-                    <label for="name">Name</label>
-                    <input type="text" name="name" ng-model="UsersEdit.user.name">
-                </md-input-container>
-                <md-input-container flex>
-                    <label for="email">Email</label>
-                    <input type="email" name="email" ng-model="UsersEdit.user.email">
-                </md-input-container>
-            </div>
-            <div layout layout-sm="column">
-                <md-input-container flex>
-                    <label for="address">Address</label>
-                    <input type="text" name="address" ng-model="UsersEdit.user.address.street">
-                </md-input-container>
-                <md-input-container flex>
-                    <label for="address2">Address 2</label>
-                    <input type="text" name="address2" ng-model="UsersEdit.user.address.suite">
-                </md-input-container>
-            </div>
-            <div layout layout-sm="column">
-                <md-input-container flex>
-                    <label for="city">City</label>
-                    <input type="text" name="city" ng-model="UsersEdit.user.address.city">
-                </md-input-container>
-                <md-select placeholder="State" ng-model="UsersEdit.user.address.state">
-                    <md-option ng-repeat="state in UsersEdit.states" value="{{state.abbreviation}}">{{state.name}}</md-option>
-                </md-select>
-                <md-input-container flex>
-                    <label for="zipcode">Postal Code</label>
-                    <input type="text" name="zipcode" ng-model="UsersEdit.user.address.zipcode">
-                </md-input-container>
-            </div>
-        </form>
-        <md-button class="md-raised md-primary" ng-click="UsersEdit.save()">Save</md-button>
-    </md-content>
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-2">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">Name</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="name" ng-model="UsersEdit.user.name" placeholder="Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-2 control-label">Email</label>
+                    <div class="col-sm-6">
+                        <input type="email" class="form-control" id="email" placeholder="Email" ng-model="UsersEdit.user.email">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address" class="col-sm-2 control-label">Address</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="address" placeholder="Address" ng-model="UsersEdit.user.address.street">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="suite" class="col-sm-2 control-label">Suite</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="suite" placeholder="Suite" ng-model="UsersEdit.user.address.suite">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="city" class="col-sm-2 control-label">City</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="city" placeholder="City" ng-model="UsersEdit.user.address.city">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="city" class="col-sm-2 control-label">State</label>
+                    <div class="col-sm-6">
+                        <select class="form-control" name="state" id="state" ng-model="UsersEdit.user.address.state" ng-options="state.abbreviation as state.name for state in UsersEdit.states">
+                            <option value="">Select a state</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="postal-code" class="col-sm-2 control-label">Postal Code</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="postal-code" ng-model="UsersEdit.user.address.zipcode">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-6">
+                        <button type="button" class="btn btn-default" ng-click="UsersEdit.save()">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>

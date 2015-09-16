@@ -13,26 +13,16 @@
 </head>
 
 <body>
-    <main layout="column">
-        <section layout="row" flex>
-            <navigation></navigation>
-            <md-content flex layout-padding>
-                <div layout="column" layout-fill layout-align="top center" ui-view>
-                    <p>
-                        The left sidenav will 'lock open' on a medium (>=960px wide) device.
-                    </p>
-                    <p>
-                        The right sidenav will focus on a specific child element.
-                    </p>
-                    <div>
-                        <md-button ng-click="Navigation.toggle()" class="md-primary" hide-gt-md>
-                            Toggle left
-                        </md-button>
-                    </div>
+
+    <navigation></navigation>
+    <main class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div ui-view></div>
                 </div>
-                <div flex></div>
-            </md-content>
-        </section>
+            </div>
+        </div>
     </main>
 
     <script type="text/javascript" src="{{ assets "vendor.min.js" }}"></script>

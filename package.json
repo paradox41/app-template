@@ -27,11 +27,11 @@
   "devDependencies": {
     "aliasify": "^1.7.2",
     "angular-mocks": "^1.3.16",
-    "babel": "^5.5.6",
-    "babelify": "^6.1.2",
+    "babel": "^5.8.23",
+    "babelify": "^6.3.0",
     "bower": "^1.4.1",
     "browser-sync": "^2.7.5",
-    "browserify": "^11.0.1",
+    "browserify": "^11.1.0",
     "browserify-shim": "^3.8.10",
     "chai": "^3.2.0",
     "del": "^1.2.0",
@@ -74,7 +74,7 @@
     "stripify": "^3.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0",
-    "watchify": "^3.3.1"
+    "watchify": "^3.4.0"
   },
   "browser": {
     "app": "./app/app.js",
@@ -99,22 +99,13 @@
       "depends": [
         "angular"
       ]
-    },
-    "angular-material": {
-      "depends": [
-        "angular",
-        "angular-aria"
-      ]
     }
   },
   "dependencies": {
-    "angular": "^1.4.0",
-    "angular-animate": "^1.4.0",
-    "angular-aria": "^1.4.5",
-    "angular-material": "^0.10.1",
-    "angular-sanitize": "^1.4.1",
+    "angular": "^1.4.5",
     "angular-ui-router": "^0.2.15",
+    "bootstrap-sass": "^3.3.5",
     "font-awesome": "^4.4.0",
-    "lodash": "^3.9.3"
+    "lodash": "^3.10.1"
   }
 }
