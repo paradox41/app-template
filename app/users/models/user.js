@@ -2,10 +2,9 @@ import {extend} from 'lodash';
 
 export default class User {
     /**
-     * The User class
+     * The User class.
      * @class
-     * @param  {Object} user
-     * @return {Object} A User
+     * @param {Object} user - A user object
      */
     constructor(user) {
         extend(this, user);

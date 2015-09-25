@@ -20,16 +20,16 @@ function ResourceProvider() {
     /**
      * @namespace
      * @type {Object}
-     * @property {Object} config
-     * @property {String} config.baseURL The base URL for all API requests
+     * @property {Object} - config
+     * @property {String} - config.baseURL The base URL for all API requests
      */
     var config = {
         baseURL: ''
     };
 
     /**
-     * Set global configuration for Resource
-     * @param {Object} opts
+     * Set global configuration for Resource.
+     * @param {Object} opts - Options object
      */
     this.setConfig = function(opts) {
         _.extend(config, opts);
@@ -66,11 +66,11 @@ function ResourceFactory($http, ResourceConfig) {
     /** @namespace */
     class Resource {
         /**
-         * Base Resource class for constructing new REST routes
+         * Base Resource class for constructing new REST routes.
          * @class
-         * @param  {string} route The path to the endpoint
-         * @param  {function} model Optional model to be applied to the fetched resource
-         * @param  {Object} options Optional configuration object. Options passed via the provider are overridden here if
+         * @param  {string} route - The path to the endpoint
+         * @param  {function} model - Optional model to be applied to the fetched resource
+         * @param  {Object} - options Optional configuration object. Options passed via the provider are overridden here if
          * provided. Options passed to methods override the options passed to the constructor.
          */
         constructor(route, model, options = {}) {
@@ -83,10 +83,10 @@ function ResourceFactory($http, ResourceConfig) {
         }
 
         /**
-         * Get a specific resource [GET]
+         * Get a specific resource [GET].
          * @instance
-         * @param  {integer} pk The primary key or the id
-         * @param  {Object} config Config to be passed to Angular's `$http.get()`
+         * @param  {integer} pk - The primary key or the id
+         * @param  {Object} config - Config to be passed to Angular's `$http.get()`
          * Will override any options passed in via the provider and the constructor.
          * @return {promise}
          */
@@ -104,10 +104,10 @@ function ResourceFactory($http, ResourceConfig) {
         }
 
         /**
-         * Create an object [POST]
+         * Create an object [POST].
          * @instance
-         * @param  {Object} obj The object graph
-         * @param  {Object} config Config to be passed to Angular's `$http.post()`
+         * @param  {Object} obj - The object graph
+         * @param  {Object} config - Config to be passed to Angular's `$http.post()`
          * @return {promise}
          */
         create(obj, config = {}) {
@@ -117,11 +117,11 @@ function ResourceFactory($http, ResourceConfig) {
         }
 
         /**
-         * Update an object [PUT]
+         * Update an object [PUT].
          * @instance
-         * @param  {integer} pk The primary key or the id of the object to update
-         * @param  {Object} obj The new object
-         * @param  {Object} config Config to be passed to Angular's `$http.put()`
+         * @param  {integer} pk - The primary key or the id of the object to update
+         * @param  {Object} obj - The new object
+         * @param  {Object} config - Config to be passed to Angular's `$http.put()`
          * @return {promise}
          */
         update(pk, obj, config = {}) {
@@ -131,10 +131,10 @@ function ResourceFactory($http, ResourceConfig) {
         }
 
         /**
-         * Search a particular resource [GET]
+         * Search a particular resource [GET].
          * @instance
-         * @param  {Object} params Search params to be serialized
-         * @param  {Object} config Config to be passed to Angular's `$http.get()`
+         * @param  {Object} params - Search params to be serialized
+         * @param  {Object} config - Config to be passed to Angular's `$http.get()`
          * @return {promise}
          */
         search(params, config = {}) {
@@ -165,9 +165,9 @@ function ResourceFactory($http, ResourceConfig) {
         }
 
         /**
-         * Delete an object [DELETE]
-         * @param  {integer} pk The primary key or the id
-         * @param  {Object} config Config to be passed to Angular's `$http.delete()`
+         * Delete an object [DELETE].
+         * @param  {integer} pk - The primary key or the id
+         * @param  {Object} config - Config to be passed to Angular's `$http.delete()`
          * @return {promise}
          */
         delete(pk, config = {}) {

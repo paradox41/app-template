@@ -9,7 +9,15 @@
             "hoist": "never"
         }],
         "no-use-before-define": 0,
-        "no-new": 0
+        "no-new": 0,
+        "jsdoc/check-param-names": 1,
+        "jsdoc/check-redundant-params": 1,
+        "jsdoc/check-redundant-returns": 1,
+        "jsdoc/newline-after-description": 1,
+        "jsdoc/require-description-complete-sentence": 1,
+        "jsdoc/require-param-description": 1,
+        "jsdoc/require-param-types": 1,
+        "jsdoc/require-return-types": 1
     },
     "env": {
         "browser": true,
@@ -19,5 +27,8 @@
     },
     "ecmaFeatures": {
         "modules": true
-    }
+    },
+    "plugins": [
+        "jsdoc"
+    ]
 }
