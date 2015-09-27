@@ -11,6 +11,7 @@ import './tasks/gh-pages';
 import './tasks/handlebars';
 import './tasks/lint';
 import './tasks/release';
+import './tasks/sassdoc';
 import './tasks/scss';
 import './tasks/test';
 import './tasks/watch';
