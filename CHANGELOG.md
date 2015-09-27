@@ -1,3 +1,14 @@
+<a name="5.1.0"></a>
+# [5.1.0](https://github.com/paradox41/app-template/compare/v5.0.1...v5.1.0) (2015-09-27)
+
+
+### Features
+
+* add gitattributes ([8bc1903](https://github.com/paradox41/app-template/commit/8bc1903))
+* **eslint:** add jsdoc linting ([9d20a44](https://github.com/paradox41/app-template/commit/9d20a44))
+
+
+
 <a name="5.0.1"></a>
 ## [5.0.1](https://github.com/paradox41/app-template/compare/v4.0.0...v5.0.1) (2015-09-21)
 
