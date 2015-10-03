@@ -1,3 +1,13 @@
+<a name="5.1.1"></a>
+## [5.1.1](https://github.com/paradox41/app-template/compare/v5.1.0...v5.1.1) (2015-10-03)
+
+
+### Bug Fixes
+
+* **gulp:** use package.json instead of bower ([f1cf87f](https://github.com/paradox41/app-template/commit/f1cf87f))
+
+
+
 <a name="5.1.0"></a>
 # [5.1.0](https://github.com/paradox41/app-template/compare/v5.0.1...v5.1.0) (2015-09-27)
 
