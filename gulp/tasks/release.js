@@ -53,8 +53,8 @@ gulp.task('commit-release', function() {
         .pipe(git.add({
             args: '-f -A'
         }))
-        .pipe(git.commit('chore(release): New ' + getImportance() + ' release'))
-        .pipe(filter('bower.json'))
+        .pipe(git.commit(`chore(release): New ${getImportance()} release`))
+        .pipe(filter('package.json'))
         .pipe(tag());
 });
 
