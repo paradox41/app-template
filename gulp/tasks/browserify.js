@@ -5,10 +5,6 @@ import _ from 'lodash';
 
 import gulp from 'gulp';
 import gutil from 'gulp-util';
-// import gulpif from 'gulp-if';
-
-// import filter from 'gulp-filter';
-// import sourcemaps from 'gulp-sourcemaps';
 import plumber from 'gulp-plumber';
 import uglify from 'gulp-uglify';
 
@@ -17,8 +13,6 @@ import buffer from 'vinyl-buffer';
 
 import watchify from 'watchify';
 import browserify from 'browserify';
-
-// import {reload} from 'browser-sync';
 
 // transforms
 import babelify from 'babelify';
