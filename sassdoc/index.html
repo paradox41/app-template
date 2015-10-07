@@ -1,2 +1,54 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><title>App-template - v5.0.1</title><link rel="stylesheet" href="assets/css/main.css"><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="App-template - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>Angular app template</p>
-"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title"><a href="https://github.com/paradox41/app-template">App-template - v5.0.1</a></h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="undefined"><a href="#undefined">General</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-function"><a href="#undefined-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="baz" data-type="function"><a href="#function-baz">baz</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="undefined"><div class="container">General</div></h1><section class="main__sub-section" id="undefined-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="function-baz"><h3 class="item__heading"><a class="item__name" href="#function-baz">baz</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function baz() {  }" data-collapsed="@function baz() { ... }"><code>@function baz() { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Will</p></li></ul></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --><a class="project-info__name" href="https://github.com/paradox41/app-template">App-template</a><!-- Version --> <span class="project-info__version">- v5.0.1</span><!-- License --> <span class="project-info__license">, under MIT</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>App-template - v5.1.1</title><link rel="stylesheet" href="assets/css/main.css"><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="App-template - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>Angular app template</p>
+"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title"><a href="https://github.com/paradox41/app-template">App-template - v5.1.1</a></h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="global/mixins"><a href="#global/mixins">global/mixins</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="global/mixins-mixin"><a href="#global/mixins-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-name="breakpoint" data-type="mixin"><a href="#mixin-breakpoint">breakpoint</a></li><li class="sidebar__item sassdoc__item" data-name="breakpoint-xs-and-sm" data-type="mixin"><a href="#mixin-breakpoint-xs-and-sm">breakpoint-xs-and-sm</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="global/mixins"><div class="container">global/mixins</div></h1><section class="main__sub-section" id="global/mixins-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="mixin-breakpoint"><h3 class="item__heading"><a class="item__name" href="#mixin-breakpoint">breakpoint</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin breakpoint($breakpoint) { 
+    // Small devices (tablets, 768px and up)
+    @if $breakpoint == &#39;sm-min&#39; {
+        @media (min-width: $screen-sm-min) {
+            @content;
+        }
+    // Medium devices (desktops, 992px and up)
+    } @else if $breakpoint == &#39;md-min&#39; {
+        @media (min-width: $screen-md-min) {
+            @content;
+        }
+    // Medium devices (desktops, 992px and below)
+    } @else if $breakpoint == &#39;md-max&#39; {
+        @media (max-width: $screen-md-min) {
+            @content;
+        }
+    // Large devices (large desktops, 1200px and up)
+    } @else if $breakpoint == &#39;lg-min&#39; {
+        @media (min-width: $screen-lg-min) {
+            @content;
+        }
+    // Extra large devices
+    } @else if $breakpoint == &#39;xlg-min&#39; {
+        @media (min-width: $screen-xlg-min) {
+            @content;
+        }
+    // Only target small devices &lt; 768px
+    } @else if $breakpoint == &#39;only-xs&#39; {
+        @media (max-width: $screen-xs-max) {
+            @content;
+        }
+    // Only target between 768px and 992px
+    } @else if $breakpoint == &#39;only-sm&#39; {
+        @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+            @content;
+        }
+    // Only target between 992px and 1200px
+    } @else if $breakpoint == &#39;only-md&#39; {
+        @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+            @content;
+        }
+    }
+ }" data-collapsed="@mixin breakpoint($breakpoint) { ... }"><code>@mixin breakpoint($breakpoint) { ... }</code></pre></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$breakpoint</code></th><td data-label="desc"><p>The breakpoint to include</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive).<h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>@include breakpoint(&#39;sm-min&#39;) {
+    border: 1px solid red;
+}</code></pre></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#mixin-breakpoint-xs-and-sm"><code>breakpoint-xs-and-sm</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Will</p></li></ul></p></section><section class="main__item container item" id="mixin-breakpoint-xs-and-sm"><h3 class="item__heading"><a class="item__name" href="#mixin-breakpoint-xs-and-sm">breakpoint-xs-and-sm</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin breakpoint-xs-and-sm() { 
+    @include breakpoint(&#39;only-xs&#39;) {
+        @content;
+    }
+
+    @include breakpoint(&#39;only-sm&#39;) {
+        @content;
+    }
+ }" data-collapsed="@mixin breakpoint-xs-and-sm() { ... }"><code>@mixin breakpoint-xs-and-sm() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Convenience method for targeting only-xs and only-sm</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive).<h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#mixin-breakpoint"><code>breakpoint</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Will</p></li></ul></p></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --><a class="project-info__name" href="https://github.com/paradox41/app-template">App-template</a><!-- Version --> <span class="project-info__version">- v5.1.1</span><!-- License --> <span class="project-info__license">, under MIT</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>
