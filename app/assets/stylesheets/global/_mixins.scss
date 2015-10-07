@@ -1,0 +1,65 @@
+////
+/// Global Mixins
+/// @group global/mixins
+/// @author Will
+////
+
+/// @param {string} $breakpoint - The breakpoint to include
+/// @example
+///     @include breakpoint('sm-min') {
+///         border: 1px solid red;
+///     }
+@mixin breakpoint($breakpoint) {
+    // Small devices (tablets, 768px and up)
+    @if $breakpoint == 'sm-min' {
+        @media (min-width: $screen-sm-min) {
+            @content;
+        }
+    // Medium devices (desktops, 992px and up)
+    } @else if $breakpoint == 'md-min' {
+        @media (min-width: $screen-md-min) {
+            @content;
+        }
+    // Medium devices (desktops, 992px and below)
+    } @else if $breakpoint == 'md-max' {
+        @media (max-width: $screen-md-min) {
+            @content;
+        }
+    // Large devices (large desktops, 1200px and up)
+    } @else if $breakpoint == 'lg-min' {
+        @media (min-width: $screen-lg-min) {
+            @content;
+        }
+    // Extra large devices
+    } @else if $breakpoint == 'xlg-min' {
+        @media (min-width: $screen-xlg-min) {
+            @content;
+        }
+    // Only target small devices < 768px
+    } @else if $breakpoint == 'only-xs' {
+        @media (max-width: $screen-xs-max) {
+            @content;
+        }
+    // Only target between 768px and 992px
+    } @else if $breakpoint == 'only-sm' {
+        @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+            @content;
+        }
+    // Only target between 992px and 1200px
+    } @else if $breakpoint == 'only-md' {
+        @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+            @content;
+        }
+    }
+}
+
+/// Convenience method for targeting only-xs and only-sm
+@mixin breakpoint-xs-and-sm() {
+    @include breakpoint('only-xs') {
+        @content;
+    }
+
+    @include breakpoint('only-sm') {
+        @content;
+    }
+}
