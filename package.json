@@ -25,7 +25,7 @@
   "git": {
     "scripts": {
       "pre-push": "gulp pre-push",
-      "commit-msg": "node ./validate-commit-msg $1"
+      "commit-msg": "./hooks/validate-commit-msg.js $1"
     }
   },
   "homepage": "https://github.com/paradox41/app-template",
