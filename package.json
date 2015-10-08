@@ -78,7 +78,6 @@
     "phantomjs": "^1.9.17",
     "run-sequence": "^1.0.1",
     "sassdoc": "^2.1.15",
-    "sassdoc-theme-vulcan": "^0.2.0",
     "stripify": "^3.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0",
