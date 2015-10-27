@@ -1,3 +1,17 @@
+<a name="5.1.2"></a>
+## [5.1.2](https://github.com/paradox41/app-template/compare/v5.1.1...v5.1.2) (2015-10-27)
+
+
+### Bug Fixes
+
+* **filters:** import filters ([e2b7d5d](https://github.com/paradox41/app-template/commit/e2b7d5d))
+
+### Features
+
+* **stylesheets:** add mixin for media queries ([3c92458](https://github.com/paradox41/app-template/commit/3c92458))
+
+
+
 <a name="5.1.1"></a>
 ## [5.1.1](https://github.com/paradox41/app-template/compare/v5.1.0...v5.1.1) (2015-10-03)
 
