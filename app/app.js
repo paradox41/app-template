@@ -4,8 +4,9 @@ import angular from 'angular';
 import 'angular-ui-router';
 
 // import common modules
-import navigationModule from './common/navigation';
 import commonApi from './common/api';
+import commonFilters from './common/filters';
+import navigationModule from './common/navigation';
 
 // import regular modules
 import userModule, {
@@ -17,8 +18,9 @@ const MODULE_NAME = 'app';
 angular.module(MODULE_NAME, [
     'ui.router',
     userModule.name,
-    navigationModule.name,
-    commonApi.name
+    commonApi.name,
+    commonFilters.name,
+    navigationModule.name
 ])
 
 .config(['$stateProvider', '$urlRouterProvider', 'ResourceConfigProvider',
