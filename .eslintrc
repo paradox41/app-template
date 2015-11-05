@@ -17,7 +17,7 @@
         "jsdoc/require-description-complete-sentence": 1,
         "jsdoc/require-param-description": 1,
         "jsdoc/require-param-types": 1,
-        "jsdoc/require-return-types": 1
+        "jsdoc/require-returns-types": 1
     },
     "env": {
         "browser": true,
