@@ -1,3 +1,9 @@
+<a name="5.2.0"></a>
+# [5.2.0](https://github.com/paradox41/app-template/compare/v5.1.2...v5.2.0) (2015-11-05)
+
+
+
+
 <a name="5.1.2"></a>
 ## [5.1.2](https://github.com/paradox41/app-template/compare/v5.1.1...v5.1.2) (2015-10-27)
 
