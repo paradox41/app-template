@@ -1,8 +1,8 @@
 import minimist from 'minimist';
 
-/*
-    Capture any args that might have been passed in
-*/
+/**
+ * Capture any args that might have been passed in
+ */
 var knownOptions = {
     string: 'env',
     'boolean': 'debug',

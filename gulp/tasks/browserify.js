@@ -20,15 +20,15 @@ import partialify from 'partialify';
 import stripify from 'stripify';
 
 
-/*
-    Array of libs that should be excluded from the app bundle
-    We can make this dynamic if we want to
-*/
+/**
+ * Array of libs that should be excluded from the app bundle
+ * We can make this dynamic if we want to
+ */
 var libs = config.browserify.vendor.libs;
 
-/*
-    Browserify for development, mostly app code
-*/
+/**
+ * Browserify for development, mostly app code
+ */
 gulp.task('browserify:dev', function() {
     var devOpts = {
         entries: config.browserify.dev.entries,
@@ -65,9 +65,9 @@ gulp.task('browserify:dev', function() {
     return bundle();
 });
 
-/*
-    Browserify for our vendor bundle
-*/
+/**
+ * Browserify for our vendor bundle
+ */
 gulp.task('browserify:vendor', function() {
     var bundler = browserify({
         debug: true
@@ -84,9 +84,9 @@ gulp.task('browserify:vendor', function() {
         .pipe(gulp.dest(config.app));
 });
 
-/*
-    Browserify for our build
-*/
+/**
+ * Browserify for our build
+ */
 gulp.task('browserify:build', function() {
     var bundler = browserify({
         entries: config.browserify.dev.entries,
@@ -109,9 +109,9 @@ gulp.task('browserify:build', function() {
         .pipe(gulp.dest(config.build));
 });
 
-/*
-    Browserify for our vendor bundle
-*/
+/**
+ * Browserify for our vendor bundle
+ */
 gulp.task('browserify:vendor:build', function() {
     var bundler = browserify();
 
