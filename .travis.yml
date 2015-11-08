@@ -1,4 +1,8 @@
 language: node_js
 node_js:
-  - "node"
+  - "0.12"
+  - "4.0"
+  - "4.1"
+  - "4.2"
+  - "stable"
 script: npm run build
