@@ -34,7 +34,6 @@ function release() {
 
 gulp.task('bump', function() {
     return gulp.src([
-            './bower.json',
             './package.json'
         ])
         .pipe(bump({
@@ -45,7 +44,6 @@ gulp.task('bump', function() {
 
 gulp.task('commit-release', function() {
     return gulp.src([
-            './bower.json',
             './package.json',
             './CHANGELOG.md'
         ])
