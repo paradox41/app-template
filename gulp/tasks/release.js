@@ -47,8 +47,7 @@ gulp.task('commit-release', function() {
     return gulp.src([
             './bower.json',
             './package.json',
-            './CHANGELOG.md',
-            './dist'
+            './CHANGELOG.md'
         ])
         .pipe(git.add({
             args: '-f -A'
