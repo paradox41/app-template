@@ -20,7 +20,6 @@ gulp.task('scss:dev', function() {
         }))
         .pipe(autoprefixer())
         .pipe(gulp.dest(config.app))
-        .pipe(filter(config.app + '/*.css'))
         .pipe(filter('*.css'))
         .pipe(reload({
             stream: true
