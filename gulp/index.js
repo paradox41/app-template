@@ -14,4 +14,3 @@ import './tasks/release';
 import './tasks/sassdoc';
 import './tasks/scss';
 import './tasks/test';
-import './tasks/watch';

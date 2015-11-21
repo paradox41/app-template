@@ -4,12 +4,9 @@ import runSequence from 'run-sequence';
 
 gulp.task('default', function() {
     runSequence([
-        'browserify:dev',
-        'browserify:vendor',
         'handlebars:dev',
         'scss:dev',
-        'watch'
-    ], 'serve');
+    ], 'browser-sync');
 });
 
 gulp.task('pre-push', [
