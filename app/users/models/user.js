@@ -8,7 +8,5 @@ export default class User {
      */
     constructor(user) {
         extend(this, user);
-
-        console.log(this);
     }
 }
