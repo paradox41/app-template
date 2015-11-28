@@ -48,7 +48,7 @@ gulp.task('commit-release', function() {
             './CHANGELOG.md'
         ])
         .pipe(git.add({
-            args: '-f -A'
+            args: '-A'
         }))
         .pipe(git.commit(`chore(release): New ${getImportance()} release`))
         .pipe(filter('package.json'))
