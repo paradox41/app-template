@@ -1,0 +1,8 @@
+{
+  "name": "App Template",
+  "short_name": "App Template",
+  "lang": "en",
+  "start_url": "/index.html",
+  "theme_color": "#232323",
+  "display": "minimal-ui"
+}
