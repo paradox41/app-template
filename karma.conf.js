@@ -26,7 +26,7 @@ module.exports = function(config) {
         // config.LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
         logLevel: config.LOG_INFO,
         autoWatch: false,
-        browsers: ['PhantomJS'],
+        browsers: ['Chrome'],
         singleRun: true,
 
         browserify: {
