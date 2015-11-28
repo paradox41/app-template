@@ -7,9 +7,7 @@ module.exports = function(config) {
             'app/**/*.spec.js'
         ],
 
-        exclude: [
-            'app/bower_components/**/*.js'
-        ],
+        exclude: [],
 
         preprocessors: {
             'app/**/*.js': ['browserify', 'coverage']
@@ -23,7 +21,6 @@ module.exports = function(config) {
         port: 9876,
         colors: true,
 
-        // config.LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
         logLevel: config.LOG_INFO,
         autoWatch: false,
         browsers: ['Chrome'],

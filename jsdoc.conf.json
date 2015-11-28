@@ -7,9 +7,7 @@
     "include": [
       "app"
     ],
-    "exclude": [
-      "app/bower_components"
-    ],
+    "exclude": [],
     "excludePattern": "\\.min\\.js$"
   },
   "plugins": ["plugins/markdown"],
