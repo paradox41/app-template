@@ -13,7 +13,7 @@ module.exports = function(config) {
             'app/**/*.js': ['browserify', 'coverage']
         },
 
-        reporters: ['spec', 'coverage'],
+        reporters: ['spec', 'coverage', 'coveralls'],
         coverageReporter: {
             type: 'lcov',
             dir: 'coverage/'
@@ -47,7 +47,6 @@ module.exports = function(config) {
 
     if (process.env.TRAVIS) {
         options.browsers = ['ChromeTravisCI'];
-        options.reporters.push('coveralls')
     }
 
     config.set(options);
