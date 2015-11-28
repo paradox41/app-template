@@ -1,3 +1,20 @@
+<a name="6.1.0"></a>
+# [6.1.0](https://github.com/paradox41/app-template/compare/v6.0.0...v6.1.0) (2015-11-28)
+
+
+### Bug Fixes
+
+* **gulp:** remove extra filter ([84f0fbd](https://github.com/paradox41/app-template/commit/84f0fbd))
+* **karma:** referencing the wrong variable ([ba9308e](https://github.com/paradox41/app-template/commit/ba9308e))
+* **travis:** fix Chrome on Travis CI ([c1e5448](https://github.com/paradox41/app-template/commit/c1e5448))
+
+### Features
+
+* **karma:** use Chrome instead of phantom ([f25a141](https://github.com/paradox41/app-template/commit/f25a141))
+* **package:** add manifest.json ([44401f7](https://github.com/paradox41/app-template/commit/44401f7))
+
+
+
 <a name="6.0.0"></a>
 # [6.0.0](https://github.com/paradox41/app-template/compare/v5.2.0...v6.0.0) (2015-11-08)
 
