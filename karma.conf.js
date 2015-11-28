@@ -1,5 +1,5 @@
 module.exports = function(config) {
-    config.set({
+    var options = {
 
         frameworks: ['mocha', 'browserify', 'chai'],
 
@@ -22,8 +22,16 @@ module.exports = function(config) {
         colors: true,
 
         logLevel: config.LOG_INFO,
-        autoWatch: false,
+
         browsers: ['Chrome'],
+        customLaunchers: {
+            ChromeTravisCI: {
+                base: 'Chrome',
+                flags: ['--no-sandbox']
+            }
+        },
+
+        autoWatch: false,
         singleRun: true,
 
         browserify: {
@@ -35,5 +43,11 @@ module.exports = function(config) {
         // tests on Travis were timing out
         browserDisconnectTimeout: 60000,
         browserNoActivityTimeout: 60000
-    });
+    };
+
+    if (process.env.TRAVIS) {
+        configuration.browsers = ['ChromeTravisCI'];
+    }
+
+    config.set(options);
 };
