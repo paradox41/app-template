@@ -182,7 +182,7 @@ function ResourceFactory($http, ResourceConfig) {
 
 ResourceFactory.$inject = ['$http', 'ResourceConfig'];
 
-export default angular.module('common.api', [])
+export default angular.module('common.resource', [])
 
 .provider('ResourceConfig', ResourceProvider)
 

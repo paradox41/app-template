@@ -4,7 +4,7 @@
 import angular from 'angular';
 import 'angular-ui-router';
 
-import commonApi from 'common/api';
+import resource from 'common/resource';
 
 import {User} from './models';
 
@@ -33,7 +33,7 @@ function UserResourceFactory(Resource) {
 UserResourceFactory.$inject = ['Resource'];
 
 export default angular.module('users', [
-    commonApi.name,
+    resource.name,
     edit.name
 ])
 

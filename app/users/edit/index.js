@@ -4,7 +4,7 @@
 import angular from 'angular';
 import 'angular-ui-router';
 
-import commonApi from 'common/api';
+import resource from 'common/resource';
 
 import states from './states.json';
 
@@ -39,7 +39,7 @@ UsersEditCtrl.$inject = [
 ];
 
 export default angular.module('users.edit', [
-    commonApi.name
+    resource.name
 ])
 
 .config(['$stateProvider', function($stateProvider) {

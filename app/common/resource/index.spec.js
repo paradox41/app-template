@@ -1,7 +1,7 @@
 import angular from 'angular';
 import 'angular-mocks';
 
-import './';
+import resource from './';
 
 class Foo {
     constructor(data) {
@@ -18,7 +18,7 @@ describe('ResourceConfigProvider', function() {
         });
     });
 
-    beforeEach(angular.mock.module('common.api'));
+    beforeEach(angular.mock.module(resource.name));
     beforeEach(angular.mock.module('test.1'));
 
     beforeEach(inject(function($injector) {
@@ -45,7 +45,7 @@ describe('Resource', function() {
         });
     });
 
-    beforeEach(angular.mock.module('common.api'));
+    beforeEach(angular.mock.module(resource.name));
     beforeEach(angular.mock.module('test.2'));
 
     beforeEach(inject(function($injector) {
