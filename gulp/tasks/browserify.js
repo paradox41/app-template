@@ -5,7 +5,6 @@ import _ from 'lodash';
 
 import gulp from 'gulp';
 import gutil from 'gulp-util';
-import plumber from 'gulp-plumber';
 import uglify from 'gulp-uglify';
 
 import source from 'vinyl-source-stream';
@@ -44,7 +43,6 @@ gulp.task('browserify:dev', function() {
 
     function bundle() {
         return bundler.bundle()
-            .pipe(plumber())
             .on('error', gutil.log.bind(gutil, 'Browserify Error'))
             .pipe(source(config.browserify.dev.out))
             .pipe(buffer())
