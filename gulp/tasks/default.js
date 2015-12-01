@@ -8,8 +8,3 @@ gulp.task('default', function() {
         'scss:dev',
     ], 'browser-sync');
 });
-
-gulp.task('pre-push', [
-    'lint',
-    'test:once'
-]);

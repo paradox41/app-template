@@ -7,8 +7,7 @@ import debug from 'gulp-debug';
 gulp.task('copy:build', function() {
     return gulp.src([
         './app/**/*.{tff,woff,woff2,ico,txt,png,svg,jpg,jpeg,json,geojson,csv,hbs}',
-        '!*.map',
-        '!./app/bower_components/**/*.{json,txt,csv}'
+        '!*.map'
     ], {
         base: config.app
     })
