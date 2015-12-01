@@ -1,3 +1,13 @@
+<a name="7.0.2"></a>
+## [7.0.2](https://github.com/paradox41/app-template/compare/v7.0.1...v7.0.2) (2015-12-01)
+
+
+### Bug Fixes
+
+* **release:** don't run git hooks. Causes release to not finish ([b4f3cac](https://github.com/paradox41/app-template/commit/b4f3cac))
+
+
+
 <a name="7.0.1"></a>
 ## [7.0.1](https://github.com/paradox41/app-template/compare/v7.0.0...v7.0.1) (2015-12-01)
 
