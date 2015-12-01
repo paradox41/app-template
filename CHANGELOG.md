@@ -1,3 +1,13 @@
+<a name="7.0.3"></a>
+## [7.0.3](https://github.com/paradox41/app-template/compare/v7.0.2...v7.0.3) (2015-12-01)
+
+
+### Bug Fixes
+
+* **karma:** reference the actual options... ([99c8c9f](https://github.com/paradox41/app-template/commit/99c8c9f))
+
+
+
 <a name="7.0.2"></a>
 ## [7.0.2](https://github.com/paradox41/app-template/compare/v7.0.1...v7.0.2) (2015-12-01)
 
