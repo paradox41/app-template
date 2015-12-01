@@ -48,7 +48,7 @@ module.exports = function(config) {
     if (process.env.TRAVIS) {
         options.browsers = ['ChromeTravisCI'];
 
-        reporters.push('coveralls');
+        options.reporters.push('coveralls');
     }
 
     config.set(options);
