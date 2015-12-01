@@ -1,3 +1,14 @@
+<a name="7.0.0"></a>
+# [7.0.0](https://github.com/paradox41/app-template/compare/v6.1.1...v7.0.0) (2015-12-01)
+
+
+### Bug Fixes
+
+* **gulp:** remove plumber since it swallows errors ([8b2eaeb](https://github.com/paradox41/app-template/commit/8b2eaeb))
+* **release:** keep coveralls since it breaks the build I guess ([b3282fe](https://github.com/paradox41/app-template/commit/b3282fe))
+
+
+
 <a name="6.1.1"></a>
 ## [6.1.1](https://github.com/paradox41/app-template/compare/v6.0.1...v6.1.1) (2015-11-28)
 
