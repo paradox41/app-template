@@ -50,7 +50,9 @@ gulp.task('commit-release', function() {
         .pipe(git.add({
             args: '-A'
         }))
-        .pipe(git.commit(`chore(release): New ${getImportance()} release`))
+        .pipe(git.commit(`chore(release): New ${getImportance()} release`, {
+            args: '--no-verify'
+        }))
         .pipe(filter('package.json'))
         .pipe(tag());
 });
