@@ -1,34 +1,44 @@
 {
-    "rules": {
-        "quotes": [2, "single", "avoid-escape"],
-        "camelcase": [1, {
-            "properties": "never"
-        }],
-        "no-underscore-dangle": 0,
-        "no-shadow": [1, {
-            "hoist": "never"
-        }],
-        "no-use-before-define": 0,
-        "no-new": 0,
-        "jsdoc/check-param-names": 1,
-        "jsdoc/check-redundant-params": 1,
-        "jsdoc/check-redundant-returns": 1,
-        "jsdoc/newline-after-description": 1,
-        "jsdoc/require-description-complete-sentence": 1,
-        "jsdoc/require-param-description": 1,
-        "jsdoc/require-param-types": 1,
-        "jsdoc/require-returns-types": 1
-    },
-    "env": {
-        "browser": true,
-        "node": true,
-        "es6": true,
-        "mocha": true
-    },
-    "ecmaFeatures": {
-        "modules": true
-    },
-    "plugins": [
-        "jsdoc"
+  "extends": "eslint:recommended",
+  "rules": {
+    "camelcase": [
+      1,
+      {
+        "properties": "never"
+      }
+    ],
+    "no-console": [
+      1
+    ],
+    "no-debugger": [
+      1
+    ],
+    "no-new": 0,
+    "no-shadow": [
+      1,
+      {
+        "hoist": "never"
+      }
+    ],
+    "no-underscore-dangle": 0,
+    "no-use-before-define": 0,
+    "quotes": [
+      2,
+      "single",
+      "avoid-escape"
+    ],
+    "semi": [
+      2,
+      "always"
     ]
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "mocha": true
+  },
+  "ecmaFeatures": {
+    "modules": true
+  }
 }
