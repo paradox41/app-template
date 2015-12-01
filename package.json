@@ -18,13 +18,15 @@
     "template"
   ],
   "scripts": {
+    "lint": "gulp lint",
     "test": "gulp test:once",
     "build": "npm install && gulp build",
     "docs": "./node_modules/.bin/jsdoc -c jsdoc.conf.json"
   },
   "git": {
     "scripts": {
-      "pre-push": "gulp pre-push",
+      "pre-commit": "npm run lint",
+      "pre-push": "npm test",
       "commit-msg": "./hooks/validate-commit-msg.js $1"
     }
   },
@@ -40,12 +42,10 @@
     "browserify-shim": "^3.8.10",
     "chai": "^3.2.0",
     "del": "^2.0.2",
-    "eslint-plugin-jsdoc": "^1.1.0",
     "git-scripts": "^0.2.1",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-bump": "^1.0.0",
-    "gulp-changed": "^1.2.1",
     "gulp-compile-handlebars": "^0.5.0",
     "gulp-conventional-changelog": "^0.7.0",
     "gulp-debug": "^2.0.0",
