@@ -27,7 +27,7 @@
     "scripts": {
       "pre-commit": "npm run lint",
       "pre-push": "npm test",
-      "commit-msg": "./hooks/validate-commit-msg.js $1"
+      "commit-msg": "./node_modules/.bin/validate-commit-msg $1"
     }
   },
   "homepage": "https://github.com/paradox41/app-template",
@@ -78,6 +78,7 @@
     "run-sequence": "^1.0.1",
     "sassdoc": "^2.1.15",
     "stripify": "^3.0.0",
+    "validate-commit": "^1.0.7",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0",
     "watchify": "^3.4.0"
