@@ -35,6 +35,7 @@
     "aliasify": "^1.7.2",
     "angular-mocks": "^1.3.16",
     "babel-core": "^6.0.20",
+    "babel-eslint": "^4.1.6",
     "babel-preset-es2015": "^6.0.15",
     "babelify": "^7.2.0",
     "browser-sync": "^2.7.5",
