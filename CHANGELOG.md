@@ -1,3 +1,13 @@
+<a name="8.0.1"></a>
+## [8.0.1](https://github.com/paradox41/app-template/compare/v8.0.0...v8.0.1) (2015-12-15)
+
+
+### Features
+
+* **eslint:** use babel-eslint ([8ce63dd](https://github.com/paradox41/app-template/commit/8ce63dd))
+
+
+
 <a name="8.0.0"></a>
 # [8.0.0](https://github.com/paradox41/app-template/compare/v7.0.3...v8.0.0) (2015-12-03)
 
