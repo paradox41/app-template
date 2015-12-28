@@ -6,7 +6,7 @@ import sourcemaps from 'gulp-sourcemaps';
 import sass from 'gulp-sass';
 import autoprefixer from 'gulp-autoprefixer';
 import filter from 'gulp-filter';
-import minify from 'gulp-minify-css';
+import nano from 'gulp-cssnano';
 
 import {reload} from 'browser-sync';
 
@@ -32,8 +32,6 @@ gulp.task('scss:build', function() {
             includePaths: ['./node_modules']
         }))
         .pipe(autoprefixer())
-        .pipe(minify({
-            keepSpecialComments: 0
-        }))
+        .pipe(nano())
         .pipe(gulp.dest(config.build));
 });
