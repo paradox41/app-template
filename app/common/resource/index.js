@@ -50,7 +50,7 @@ function ResourceFactory($http, ResourceConfig) {
         });
     }
 
-    function serialize(obj) {
+    function encode(obj) {
         return _(obj).keys().map(function(key) {
             let param = encodeURIComponent(key);
             let value = encodeURIComponent(obj[key]);
@@ -142,7 +142,7 @@ function ResourceFactory($http, ResourceConfig) {
             let options = _.extend({}, _.cloneDeep(this.options), config);
 
             if (params) {
-                params = serialize(params);
+                params = encode(params);
 
                 route = `${route}?${params}`;
             }
