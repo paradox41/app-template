@@ -20,7 +20,7 @@ function release() {
         'lint',
         'clean',
         'copy:build', [
-            'browserify:build',
+            'browserify',
             'browserify:vendor:build',
             'scss:build'
         ],

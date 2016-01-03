@@ -21,7 +21,10 @@
   "scripts": {
     "lint": "gulp lint",
     "test": "gulp test:once",
-    "build": "npm install && gulp build",
+    "build": "gulp build --env 'production'",
+    "patch": "gulp release:patch --env 'production'",
+    "minor": "gulp release:minor --env 'production'",
+    "major": "gulp release:major --env 'production'",
     "docs": "./node_modules/.bin/jsdoc -c jsdoc.conf.json"
   },
   "git": {

@@ -22,6 +22,7 @@ import aliasify from 'aliasify';
 
 const aliasifyConfig = config.browserify.aliasify;
 
+console.log(aliasifyConfig);
 /**
  * Array of libs that should be excluded from the app bundle
  * We can make this dynamic if we want to
@@ -73,7 +74,7 @@ gulp.task('browserify', function() {
             .pipe(source(config.browserify.dev.out))
             .pipe(buffer())
             .pipe(gulpif(env === 'production', uglify()))
-            .pipe(gulp.dest(config.app));
+            .pipe(gulpif(env === 'production', gulp.dest(config.build), gulp.dest(config.app)));
     }
 
     libs.forEach(function(lib) {
@@ -100,31 +101,6 @@ gulp.task('browserify:vendor', function() {
         .pipe(buffer())
         .on('error', gutil.log)
         .pipe(gulp.dest(config.app));
-});
-
-/**
- * Browserify for our build
- */
-gulp.task('browserify:build', function() {
-    var bundler = browserify({
-        entries: config.browserify.dev.entries,
-        transform: [
-            babelify,
-            partialify,
-            stripify
-        ]
-    });
-
-    libs.forEach(function(lib) {
-        bundler.exclude(lib);
-    });
-
-    return bundler.bundle()
-        .pipe(source(config.browserify.dev.out))
-        .pipe(buffer())
-        // add transformation tasks to the pipeline here
-        .pipe(uglify())
-        .pipe(gulp.dest(config.build));
 });
 
 /**
