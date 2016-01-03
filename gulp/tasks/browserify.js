@@ -22,7 +22,6 @@ import aliasify from 'aliasify';
 
 const aliasifyConfig = config.browserify.aliasify;
 
-console.log(aliasifyConfig);
 /**
  * Array of libs that should be excluded from the app bundle
  * We can make this dynamic if we want to
