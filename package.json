@@ -1,6 +1,6 @@
 {
   "name": "app-template",
-  "version": "8.0.1",
+  "version": "9.0.0",
   "description": "Angular app template",
   "main": "./build/app.min.js",
   "repository": {

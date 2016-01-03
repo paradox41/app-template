@@ -1,3 +1,13 @@
+<a name="9.0.0"></a>
+# [9.0.0](https://github.com/paradox41/app-template/compare/v8.0.1...v9.0.0) (2016-01-03)
+
+
+### Bug Fixes
+
+* **build:** fix the build, remove old browserify task ([674dfbe](https://github.com/paradox41/app-template/commit/674dfbe))
+
+
+
 <a name="8.0.1"></a>
 ## [8.0.1](https://github.com/paradox41/app-template/compare/v8.0.0...v8.0.1) (2015-12-15)
 
