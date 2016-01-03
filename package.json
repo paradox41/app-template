@@ -89,14 +89,8 @@
   },
   "browserify": {
     "transform": [
-      "browserify-shim",
-      "aliasify"
+      "browserify-shim"
     ]
-  },
-  "aliasify": {
-    "aliases": {
-      "common": "./app/common"
-    }
   },
   "browserify-shim": {
     "angular": {

@@ -4,6 +4,7 @@ import options from '../options';
 import _ from 'lodash';
 
 import gulp from 'gulp';
+import gulpif from 'gulp-if';
 import gutil from 'gulp-util';
 import uglify from 'gulp-uglify';
 
@@ -17,7 +18,9 @@ import browserify from 'browserify';
 import babelify from 'babelify';
 import partialify from 'partialify';
 import stripify from 'stripify';
+import aliasify from 'aliasify';
 
+const aliasifyConfig = config.browserify.aliasify;
 
 /**
  * Array of libs that should be excluded from the app bundle
@@ -28,37 +31,54 @@ var libs = config.browserify.vendor.libs;
 /**
  * Browserify for development, mostly app code
  */
-gulp.task('browserify:dev', function() {
-    var devOpts = {
+gulp.task('browserify', function() {
+    var bundler = null;
+    var {env, debug} = options;
+
+    gutil.log(gutil.colors.magenta(`Running browserify in ${gutil.colors.green(env)} mode`));
+
+    var baseOpts = {
         entries: config.browserify.dev.entries,
-        cache: {},
-        packageCache: {},
         fullPaths: true,
         extensions: ['.js', '.html', '.json'],
-        debug: options.debug
+        debug: debug
     };
 
-    var opts = _.extend({}, watchify.args, devOpts);
-    var bundler = watchify(browserify(opts));
+    if (env === 'development') {
+        var opts = _.extend({}, watchify.args, baseOpts, {
+            cache: {},
+            packageCache: {}
+        });
+
+        bundler = watchify(browserify(opts));
+
+        bundler.transform(babelify);
+        bundler.transform(partialify);
+        bundler.transform(aliasify, aliasifyConfig);
+
+        // on any dep update, runs the bundler
+        bundler.on('update', bundle);
+    } else {
+        bundler = browserify(baseOpts);
+
+        bundler.transform(babelify);
+        bundler.transform(partialify);
+        bundler.transform(aliasify, aliasifyConfig);
+        bundler.transform(stripify);
+    }
 
     function bundle() {
         return bundler.bundle()
             .on('error', gutil.log.bind(gutil, 'Browserify Error'))
             .pipe(source(config.browserify.dev.out))
             .pipe(buffer())
+            .pipe(gulpif(env === 'production', uglify()))
             .pipe(gulp.dest(config.app));
     }
-
-    // add transformations here
-    bundler.transform(babelify);
-    bundler.transform(partialify);
 
     libs.forEach(function(lib) {
         bundler.exclude(lib);
     });
-
-    // on any dep update, runs the bundler
-    bundler.on('update', bundle);
 
     return bundle();
 });

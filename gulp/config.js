@@ -40,13 +40,16 @@ export default {
         vendor: {
             libs: [
                 'angular',
-                // 'angular-animate',
-                // 'angular-sanitize',
                 'angular-ui-router',
                 'lodash'
             ],
             entries: ['./app/vendor.js'],
             out: 'vendor.min.js'
+        },
+        aliasify: {
+            aliases: {
+              common: './app/common'
+            }
         }
     },
     test: {

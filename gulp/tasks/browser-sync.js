@@ -6,7 +6,7 @@ import {create} from 'browser-sync';
 
 const browserSync = create();
 
-gulp.task('browserify:watch', ['browserify:dev'], function() {
+gulp.task('browserify:watch', ['browserify'], function() {
     browserSync.reload();
 });
 
@@ -14,7 +14,7 @@ gulp.task('scss:watch', ['scss:dev'], function() {
     browserSync.reload();
 });
 
-gulp.task('browser-sync', ['browserify:dev', 'browserify:vendor'], function() {
+gulp.task('browser-sync', ['browserify', 'browserify:vendor'], function() {
     let browserifyFiles = config.js.files.concat(config.html.files);
 
     browserSync.init({
