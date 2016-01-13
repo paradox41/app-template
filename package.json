@@ -39,7 +39,7 @@
     "angular-ui-router": "^0.2.15",
     "bootstrap-sass": "^3.3.5",
     "font-awesome": "^4.4.0",
-    "lodash": "^3.10.1"
+    "lodash": "^4.0.0"
   },
   "devDependencies": {
     "aliasify": "^1.7.2",

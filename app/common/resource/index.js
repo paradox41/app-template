@@ -51,9 +51,9 @@ function ResourceFactory($http, ResourceConfig) {
     }
 
     function encode(obj) {
-        return _(obj).keys().map(function(key) {
-            let param = encodeURIComponent(key);
-            let value = encodeURIComponent(obj[key]);
+        return _.map(obj, function(value, param) {
+            param = encodeURIComponent(param);
+            value = encodeURIComponent(value);
 
             return `${param}=${value}`;
         }).value().join('&');
