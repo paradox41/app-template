@@ -87,8 +87,10 @@ gulp.task('browserify', function() {
  * Browserify for our vendor bundle
  */
 gulp.task('browserify:vendor', function() {
+    var {env, debug} = options;
+
     var bundler = browserify({
-        debug: true
+        debug
     });
 
     libs.forEach(function(lib) {
@@ -98,23 +100,7 @@ gulp.task('browserify:vendor', function() {
     return bundler.bundle()
         .pipe(source(config.browserify.vendor.out))
         .pipe(buffer())
-        .on('error', gutil.log)
-        .pipe(gulp.dest(config.app));
-});
+        .pipe(gulpif(env === 'production', uglify()))
+        .pipe(gulpif(env === 'production', gulp.dest(config.build), gulp.dest(config.app)));
 
-/**
- * Browserify for our vendor bundle
- */
-gulp.task('browserify:vendor:build', function() {
-    var bundler = browserify();
-
-    libs.forEach(function(lib) {
-        bundler.require(lib);
-    });
-
-    return bundler.bundle()
-        .pipe(source(config.browserify.vendor.out))
-        .pipe(buffer())
-        .pipe(uglify())
-        .pipe(gulp.dest(config.build));
 });

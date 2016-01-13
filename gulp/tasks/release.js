@@ -21,7 +21,7 @@ function release() {
         'clean',
         'copy:build', [
             'browserify',
-            'browserify:vendor:build',
+            'browserify:vendor',
             'scss:build'
         ],
         'cachebust',
