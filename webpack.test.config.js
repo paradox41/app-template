@@ -1,24 +1,9 @@
-var path = require('path');
-
 var webpack = require('webpack');
 
 var ProgressBarPlugin = require('progress-bar-webpack-plugin');
 
 module.exports = {
-    devtool: 'cheap-module-inline-source-map',
-    debug: true,
-    context: __dirname + '/app',
-    entry: {
-        index: './index.js',
-        vendor: [
-            'angular',
-            'angular-ui-router',
-            'lodash'
-        ]
-    },
-    output: {
-        filename: '[name].bundle.js'
-    },
+    devtool: 'inline-source-map',
     module: {
         loaders: [{
             test: /\.js$/,
@@ -34,22 +19,12 @@ module.exports = {
             loader: 'json-loader'
         }]
     },
-    resolve: {
-        root: path.resolve(__dirname, 'app/'),
-        extenstions: ['', '.js', '.json', '.html'],
-        alias: {
-            common: 'common'
-        }
-    },
     plugins: [
         new webpack.ProvidePlugin({
             'process.env': {
                 'NODE_ENV': process.env.NODE_ENV || 'development'
-            },
-            'global': 'window'
+            }
         }),
-        new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
-        new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin(),
         new ProgressBarPlugin()
     ]

@@ -1,16 +1,33 @@
 module.exports = function(config) {
     var options = {
 
-        frameworks: ['mocha', 'browserify', 'chai'],
+        frameworks: ['mocha', 'chai'],
+
+        plugins: [
+            'karma-mocha',
+            'karma-chai',
+            'karma-coverage',
+            'karma-coveralls',
+            'karma-webpack',
+            'karma-chrome-launcher',
+            'karma-spec-reporter',
+            'karma-sourcemap-loader'
+        ],
 
         files: [
-            'app/**/*.spec.js'
+            'app/app.spec.js'
         ],
 
         exclude: [],
 
         preprocessors: {
-            'app/**/*.js': ['browserify', 'coverage']
+            'app/app.spec.js': ['webpack', 'sourcemap', 'coverage']
+        },
+
+        webpack: require('./webpack.test.config.js'),
+
+        webpackMiddleware: {
+            noInfo: true
         },
 
         reporters: ['spec', 'coverage'],
@@ -33,12 +50,6 @@ module.exports = function(config) {
 
         autoWatch: false,
         singleRun: true,
-
-        browserify: {
-            extensions: ['.js'],
-            debug: true,
-            transform: ['babelify', 'partialify', 'aliasify']
-        },
 
         // tests on Travis were timing out
         browserDisconnectTimeout: 60000,
