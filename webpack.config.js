@@ -45,8 +45,7 @@ module.exports = {
         new webpack.ProvidePlugin({
             'process.env': {
                 'NODE_ENV': process.env.NODE_ENV || 'development'
-            },
-            'global': 'window'
+            }
         }),
         new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
         new webpack.HotModuleReplacementPlugin(),
