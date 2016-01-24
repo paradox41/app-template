@@ -1,7 +1,6 @@
 import config from '../config';
 
 import gulp from 'gulp';
-import plumber from 'gulp-plumber';
 import sourcemaps from 'gulp-sourcemaps';
 import sass from 'gulp-sass';
 import autoprefixer from 'gulp-autoprefixer';
@@ -12,7 +11,6 @@ import {reload} from 'browser-sync';
 
 gulp.task('scss:dev', function() {
     return gulp.src(config.scss.src)
-        .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(sass({
             errLogToConsole: true,
