@@ -6,17 +6,11 @@ import {create} from 'browser-sync';
 
 const browserSync = create();
 
-gulp.task('browserify:watch', ['browserify'], function() {
-    browserSync.reload();
-});
-
 gulp.task('scss:watch', ['scss:dev'], function() {
     browserSync.reload();
 });
 
-gulp.task('browser-sync', ['browserify', 'browserify:vendor'], function() {
-    let browserifyFiles = config.js.files.concat(config.html.files);
-
+gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
             baseDir: config.app,
@@ -28,7 +22,6 @@ gulp.task('browser-sync', ['browserify', 'browserify:vendor'], function() {
         notify: false
     });
 
-    gulp.watch(browserifyFiles, ['browserify:watch']);
     gulp.watch(config.scss.files, ['scss:watch']);
     gulp.watch(config.hbs.files, ['handlebars:dev']);
 });

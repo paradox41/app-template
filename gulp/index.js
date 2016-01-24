@@ -1,5 +1,4 @@
 import './tasks/browser-sync';
-import './tasks/browserify';
 import './tasks/build';
 import './tasks/cachebust';
 import './tasks/changelog';

@@ -3,8 +3,6 @@ import runSequence from 'run-sequence';
 
 gulp.task('build', function() {
     runSequence('test:once', 'lint', 'clean', 'copy:build', [
-        'browserify',
-        'browserify:vendor',
         'scss:build'
     ], 'cachebust', 'handlebars:build');
 });

@@ -1,5 +1,5 @@
 {
     "app.css": "app.css",
-    "app.min.js": "app.min.js",
-    "vendor.min.js": "vendor.min.js"
+    "index.bundle.js": "index.bundle.js",
+    "vendor.bundle.js": "vendor.bundle.js"
 }

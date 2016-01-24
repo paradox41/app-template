@@ -32,21 +32,6 @@ export default {
         devDest: './app/app.css',
         buildDest: './build/app.css'
     },
-    browserify: {
-        dev: {
-            entries: ['./app/app.js'],
-            out: 'app.min.js'
-        },
-        vendor: {
-            libs: [
-                'angular',
-                'angular-ui-router',
-                'lodash'
-            ],
-            entries: ['./app/vendor.js'],
-            out: 'vendor.min.js'
-        }
-    },
     test: {
         karma: karmaConfigPath
     }

@@ -20,8 +20,6 @@ function release() {
         'lint',
         'clean',
         'copy:build', [
-            'browserify',
-            'browserify:vendor',
             'scss:build'
         ],
         'cachebust',

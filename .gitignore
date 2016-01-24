@@ -44,3 +44,4 @@ app/*.map
 app/*.min.*
 app/*.css
 app/*.html
+*.bundle.js
