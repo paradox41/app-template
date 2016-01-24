@@ -21,7 +21,7 @@ export default {
     js: {
         files: [
             './app/**/*.js',
-            '!./app/**/*.{spec,min}.js'
+            '!./app/**/*.{bundle,spec,min}.js'
         ]
     },
     scss: {
