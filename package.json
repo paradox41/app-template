@@ -111,5 +111,10 @@
         "angular"
       ]
     }
+  },
+  "aliasify": {
+    "aliases": {
+      "common": "./app/common"
+    }
   }
 }

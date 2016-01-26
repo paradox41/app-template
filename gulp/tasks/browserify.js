@@ -20,8 +20,6 @@ import partialify from 'partialify';
 import stripify from 'stripify';
 import aliasify from 'aliasify';
 
-const aliasifyConfig = config.browserify.aliasify;
-
 /**
  * Array of libs that should be excluded from the app bundle
  * We can make this dynamic if we want to
@@ -54,7 +52,7 @@ gulp.task('browserify', function() {
 
         bundler.transform(babelify);
         bundler.transform(partialify);
-        bundler.transform(aliasify, aliasifyConfig);
+        bundler.transform(aliasify);
 
         // on any dep update, runs the bundler
         bundler.on('update', bundle);
@@ -63,7 +61,7 @@ gulp.task('browserify', function() {
 
         bundler.transform(babelify);
         bundler.transform(partialify);
-        bundler.transform(aliasify, aliasifyConfig);
+        bundler.transform(aliasify);
         bundler.transform(stripify);
     }
 

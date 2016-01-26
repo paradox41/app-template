@@ -45,11 +45,6 @@ export default {
             ],
             entries: ['./app/vendor.js'],
             out: 'vendor.min.js'
-        },
-        aliasify: {
-            aliases: {
-              common: './app/common'
-            }
         }
     },
     test: {

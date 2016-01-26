@@ -37,7 +37,7 @@ module.exports = function(config) {
         browserify: {
             extensions: ['.js'],
             debug: true,
-            transform: ['babelify', 'partialify']
+            transform: ['babelify', 'partialify', 'aliasify']
         },
 
         // tests on Travis were timing out
