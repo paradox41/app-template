@@ -33,6 +33,7 @@ function UserResourceFactory(Resource) {
 UserResourceFactory.$inject = ['Resource'];
 
 export default angular.module('users', [
+    'ui.router',
     resource.name,
     edit.name
 ])

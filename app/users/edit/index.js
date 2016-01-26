@@ -39,6 +39,7 @@ UsersEditCtrl.$inject = [
 ];
 
 export default angular.module('users.edit', [
+    'ui.router',
     resource.name
 ])
 
