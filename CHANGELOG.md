@@ -1,3 +1,20 @@
+<a name="11.0.0"></a>
+# [11.0.0](https://github.com/paradox41/app-template/compare/v10.0.0...v11.0.0) (2016-01-29)
+
+
+### Bug Fixes
+
+* **karam:** fix tests ([01ba2db](https://github.com/paradox41/app-template/commit/01ba2db))
+* **karma:** add aliasify config back to package.json so karma picks it up ([3eb0618](https://github.com/paradox41/app-template/commit/3eb0618))
+* **user:** add missing DI ([93a69f1](https://github.com/paradox41/app-template/commit/93a69f1))
+
+### Features
+
+* **build:** get build working ([fbc55cd](https://github.com/paradox41/app-template/commit/fbc55cd))
+* **webpack:** integrate webpack into gulp workflow ([341ea58](https://github.com/paradox41/app-template/commit/341ea58))
+
+
+
 <a name="10.0.0"></a>
 # [10.0.0](https://github.com/paradox41/app-template/compare/v9.0.0...v10.0.0) (2016-01-13)
 
