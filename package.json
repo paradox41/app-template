@@ -21,7 +21,9 @@
   "scripts": {
     "lint": "gulp lint",
     "test": "gulp test:once",
-    "build": "gulp build --env 'production'",
+    "prebuild": "gulp build",
+    "build": "webpack --config webpack.prod.config.js",
+    "postbuild": "gulp cachebust",
     "patch": "gulp release:patch --env 'production'",
     "minor": "gulp release:minor --env 'production'",
     "major": "gulp release:major --env 'production'",

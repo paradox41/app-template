@@ -4,7 +4,9 @@ import gulp from 'gulp';
 
 import rev from 'gulp-rev';
 
-gulp.task('cachebust', function() {
+import runSequence from 'run-sequence';
+
+gulp.task('rev', function() {
     return gulp.src([`${config.build}/**/*.{css,js}`], {
             base: config.build
         })
@@ -13,4 +15,8 @@ gulp.task('cachebust', function() {
         .pipe(gulp.dest(config.build))
         .pipe(rev.manifest())
         .pipe(gulp.dest(config.build));
+});
+
+gulp.task('cachebust', function() {
+    runSequence('rev', 'handlebars:build');
 });
