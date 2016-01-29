@@ -1,3 +1,13 @@
+<a name="11.0.1"></a>
+## [11.0.1](https://github.com/paradox41/app-template/compare/v11.0.0...v11.0.1) (2016-01-29)
+
+
+### Bug Fixes
+
+* **gulp:** fix release task ([b82e7cd](https://github.com/paradox41/app-template/commit/b82e7cd))
+
+
+
 <a name="11.0.0"></a>
 # [11.0.0](https://github.com/paradox41/app-template/compare/v10.0.0...v11.0.0) (2016-01-29)
 
