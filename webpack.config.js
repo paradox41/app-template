@@ -17,7 +17,8 @@ module.exports = {
         ]
     },
     output: {
-        filename: '[name].bundle.js'
+        filename: '[name].bundle.js',
+        publicPath: '/'
     },
     module: {
         loaders: [{
@@ -25,7 +26,7 @@ module.exports = {
             exclude: [
                 /node_modules/
             ],
-            loader: 'babel-loader'
+            loaders: ['babel-loader', 'ng-annotate']
         }, {
             test: /\.html$/,
             loader: 'html-loader'
