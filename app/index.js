@@ -55,4 +55,6 @@ angular.module(MODULE_NAME, [
     }
 ]);
 
-angular.bootstrap(document.querySelector('html'), [MODULE_NAME]);
+angular.bootstrap(document.querySelector('html'), [MODULE_NAME], {
+    strictDi: true
+});
