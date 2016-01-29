@@ -1,6 +1,6 @@
 {
   "name": "app-template",
-  "version": "11.0.0",
+  "version": "11.0.1",
   "description": "Angular app template",
   "main": "app/index.js",
   "repository": {
@@ -27,9 +27,9 @@
     "prepatch": "npm run build",
     "preminor": "npm run build",
     "premajor": "npm run build",
-    "patch": "gulp release:patch --env 'production'",
-    "minor": "gulp release:minor --env 'production'",
-    "major": "gulp release:major --env 'production'",
+    "patch": "gulp release:patch",
+    "minor": "gulp release:minor",
+    "major": "gulp release:major",
     "docs": "./node_modules/.bin/jsdoc -c jsdoc.conf.json"
   },
   "git": {
