@@ -16,14 +16,6 @@ function getImportance() {
 
 function release() {
     runSequence(
-        'test:once',
-        'lint',
-        'clean',
-        'copy:build', [
-            'scss:build'
-        ],
-        'cachebust',
-        'handlebars:build',
         'bump',
         'changelog',
         'commit-release'
@@ -48,7 +40,7 @@ gulp.task('commit-release', function() {
         .pipe(git.add({
             args: '-A'
         }))
-        .pipe(git.commit(`chore(release): New ${getImportance()} release`, {
+        .pipe(git.commit(`chore(release): new ${getImportance()} release`, {
             args: '--no-verify'
         }))
         .pipe(filter('package.json'))
