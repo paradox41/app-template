@@ -1,3 +1,9 @@
+<a name="11.0.2"></a>
+## [11.0.2](https://github.com/paradox41/app-template/compare/v11.0.1...v11.0.2) (2016-02-10)
+
+
+
+
 <a name="11.0.1"></a>
 ## [11.0.1](https://github.com/paradox41/app-template/compare/v11.0.0...v11.0.1) (2016-01-29)
 
