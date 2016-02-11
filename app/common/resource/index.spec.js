@@ -1,6 +1,8 @@
 import angular from 'angular';
 import 'angular-mocks';
 
+import {expect} from 'chai';
+
 import resource from './';
 
 class Foo {
@@ -21,7 +23,7 @@ describe('ResourceConfigProvider', function() {
     beforeEach(angular.mock.module(resource.name));
     beforeEach(angular.mock.module('test.1'));
 
-    beforeEach(inject(function($injector) {
+    beforeEach(angular.mock.inject(function($injector) {
         ResourceConfig = $injector.get('ResourceConfig');
     }));
 
@@ -33,10 +35,6 @@ describe('ResourceConfigProvider', function() {
 });
 
 describe('Resource', function() {
-    var testResource;
-    var Resource;
-    var ResourceConfig;
-
     angular.module('test.2', []).config(function(ResourceConfigProvider) {
         ResourceConfigProvider.setConfig({
             headers: {
@@ -48,9 +46,8 @@ describe('Resource', function() {
     beforeEach(angular.mock.module(resource.name));
     beforeEach(angular.mock.module('test.2'));
 
-    beforeEach(inject(function($injector) {
-        Resource = $injector.get('Resource');
-        ResourceConfig = $injector.get('ResourceConfig');
+    beforeEach(angular.mock.inject(function($injector) {
+        let Resource = this.Resource = $injector.get('Resource');
 
         class TestResource extends Resource {
             constructor() {
@@ -62,30 +59,30 @@ describe('Resource', function() {
             }
         }
 
-        testResource = new TestResource();
+        this.testResource = new TestResource();
     }));
 
     it('should expose the CRUD methods and search', function() {
-        expect(testResource).to.be.an.instanceof(Resource);
+        expect(this.testResource).to.be.an.instanceof(this.Resource);
 
-        expect(testResource).to.have.property('get');
-        expect(testResource).to.have.property('create');
-        expect(testResource).to.have.property('update');
-        expect(testResource).to.have.property('search');
-        expect(testResource).to.have.property('delete');
+        expect(this.testResource).to.have.property('get');
+        expect(this.testResource).to.have.property('create');
+        expect(this.testResource).to.have.property('update');
+        expect(this.testResource).to.have.property('search');
+        expect(this.testResource).to.have.property('delete');
     });
 
     it('should set the route correctly', function() {
-        expect(testResource.route).to.exist
+        expect(this.testResource.route).to.exist
             .and.to.equal('/test');
     });
 
     it('should set the model correctly', function() {
-        expect(testResource.model).to.equal(Foo);
+        expect(this.testResource.model).to.equal(Foo);
     });
 
     it('should have allow options to be overridden if it is provided via the constructor', function() {
-        expect(testResource.options.headers).to.deep.equal({
+        expect(this.testResource.options.headers).to.deep.equal({
             'X-Auth-Token': 'foo'
         });
     });
