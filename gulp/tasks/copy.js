@@ -4,10 +4,9 @@ import gulp from 'gulp';
 
 import debug from 'gulp-debug';
 
-gulp.task('copy:build', function() {
+gulp.task('copy', function() {
     return gulp.src([
-        './app/**/*.{tff,woff,woff2,ico,txt,png,svg,jpg,jpeg,json,geojson,csv,hbs}',
-        '!*.map'
+        './app/**/*.{tff,woff,woff2,ico,txt,png,svg,jpg,jpeg,json,geojson,csv}'
     ], {
         base: config.app
     })

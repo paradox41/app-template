@@ -50,7 +50,7 @@ gulp.task('browser-sync', function() {
         ],
         plugins: ['bs-fullscreen-message'],
         files: [
-            'app/app.css',
+            'build/app.css',
             'app/**/*.html'
         ]
     });
