@@ -14,8 +14,8 @@ var handlebarOpts = {
     }
 };
 
-gulp.task('handlebars', function() {
-    var manifest = JSON.parse(fs.readFileSync(`${config.app}/rev-manifest.json`, 'utf8'));
+gulp.task('handlebars', ['copy'], function() {
+    var manifest = JSON.parse(fs.readFileSync(`${config.build}/rev-manifest.json`, 'utf8'));
 
     return gulp.src(`${config.app}/index.hbs`)
         .pipe(handlebars(manifest, handlebarOpts))
