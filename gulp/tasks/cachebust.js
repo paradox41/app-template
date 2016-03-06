@@ -18,5 +18,5 @@ gulp.task('rev', function() {
 });
 
 gulp.task('cachebust', function() {
-    runSequence('rev', 'handlebars:build');
+    runSequence('rev', 'handlebars');
 });

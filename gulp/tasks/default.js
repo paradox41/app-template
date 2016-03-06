@@ -4,7 +4,7 @@ import runSequence from 'run-sequence';
 
 gulp.task('default', function() {
     runSequence([
-        'handlebars:dev',
-        'scss:dev'
+        'handlebars',
+        'scss'
     ], 'browser-sync');
 });

@@ -2,8 +2,6 @@ var path = require('path');
 
 var webpack = require('webpack');
 
-var ProgressBarPlugin = require('progress-bar-webpack-plugin');
-
 module.exports = {
     devtool: 'cheap-module-inline-source-map',
     debug: true,
@@ -18,6 +16,7 @@ module.exports = {
     },
     output: {
         filename: '[name].bundle.js',
+        path: __dirname + '/build',
         publicPath: '/'
     },
     module: {
@@ -50,7 +49,6 @@ module.exports = {
         }),
         new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin(),
-        new ProgressBarPlugin()
+        new webpack.NoErrorsPlugin()
     ]
 };

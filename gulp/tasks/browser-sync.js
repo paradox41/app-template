@@ -2,23 +2,20 @@ import config from '../config';
 
 import gulp from 'gulp';
 
-import {
-    create
-}
-from 'browser-sync';
+import { create } from 'browser-sync';
 
 import stripAnsi from 'strip-ansi';
 
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 
-import webpackConfig from '../../webpack.dev.config';
+import webpackConfig from '../../webpack.config';
 
 var bundler = webpack(webpackConfig);
 
 const browserSync = create();
 
-gulp.task('scss:watch', ['scss:dev'], function() {
+gulp.task('scss:watch', ['scss'], function() {
     browserSync.reload();
 });
 
@@ -42,7 +39,7 @@ gulp.task('browser-sync', function() {
      * Run Browsersync and use middleware for Hot Module Replacement
      */
     browserSync.init({
-        server: config.app,
+        server: config.build,
         middleware: [
             webpackDevMiddleware(bundler, {
                 publicPath: webpackConfig.output.publicPath,
@@ -59,5 +56,5 @@ gulp.task('browser-sync', function() {
     });
 
     gulp.watch(config.scss.files, ['scss:watch']);
-    gulp.watch(config.hbs.files, ['handlebars:dev']);
+    gulp.watch(config.hbs.files, ['handlebars']);
 });
