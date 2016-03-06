@@ -1,3 +1,13 @@
+<a name="11.2.0"></a>
+# [11.2.0](https://github.com/paradox41/app-template/compare/v11.1.0...v11.2.0) (2016-03-06)
+
+
+### Bug Fixes
+
+* **gulp:** ensure files get copies first ([b9d0e13](https://github.com/paradox41/app-template/commit/b9d0e13))
+
+
+
 <a name="11.1.0"></a>
 # [11.1.0](https://github.com/paradox41/app-template/compare/v11.0.3...v11.1.0) (2016-03-06)
 
