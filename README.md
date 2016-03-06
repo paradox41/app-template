@@ -12,7 +12,7 @@ Angular 1.x starter kit featuring:
 - [Angular](https://angularjs.org/)
 - [Bootstrap](http://getbootstrap.com/)
 - [Gulp](http://gulpjs.com/)
-- [Browserify](http://browserify.org/)
+- [Webpack](https://webpack.github.io/)
 - [Karma](https://karma-runner.github.io/)
 - [Mocha](http://mochajs.org/)
 - [Chai](http://chaijs.com/)
@@ -22,83 +22,25 @@ Angular 1.x starter kit featuring:
 
 Clone the repo or download the zip file. If you cloned, `rm -rf .git`
 
-1. `npm install`
-3. `gulp`
+`npm install && npm run start`
 
 ## Build
 
-1. `npm run build`
+`npm run build`
 
-## Style
+## Lint 
 
-### JavaScript
-- Each module should be totally self-contained. Any functionality shared across modules should be moved into `common/`.
-- Modules can have their own directives, services, filters, etc. If multiple files are needed in order to maintain file size,
-a folder should be created (`directives/`, `services/`, etc) and the broken up files should be placed into their respective folders
-with less abstract naming conventions.
-- JavaScript files should always be as close as possible - preferably on the same level - as their HTML partials.
-- If a directive has a partial - which they tend to - a new folder should be created that is named accordingly (meaning not something generic)
-and the HTML partial and the JavaScript file should be placed together in that folder.
+`npm run lint`
 
-### Sass
-- `app.scss` is merely a table of contents. There should be no Sass in the file.
-- Each module is responsible for exporting its submodules. In other words, `app.scss` should only import top level modules.
-- Sass that needs to be shared among modules should be moved into `assets/stylesheets/`.
+## Cutting Releases
 
-### Modules
+Run `npm run <release-type>` where `release-type` is 'patch', 'minor' or 'major'
 
-A typical module will look something like this:
+This will:
 
-```javascript
-import angular from 'angular';
-
-import _ from 'lodash';
-
-class ExampleCtrl {
-    constructor(data) {
-        this.exampleData = data;
-    }
-
-    someMethod() {
-        return _.map(this.exampleData, function(data) {
-            return (data * 2);
-        });
-    }
-
-    get data() {
-        return this.exampleData;
-    }
-}
-
-ExampleCtrl.$inject = ['data'];
-
-/* 
-    Allows us to import exampleModule like so:
-
-    import exampleModule from './example';
-    
-    angular.module('foo', [
-        exampleModule.name
-    ])  
-*/ 
-export default angular.module('example', [])
-
-.controller('ExampleCtrl', ExampleCtrl)
-
-.config(['$stateProvider', function($stateProvider) {
-    $stateProvider.state('app.example', {
-        controller: 'ExampleCtrl',
-        controllerAs: 'Example',
-        url: '/example',
-        template: require('./_example.html'),
-        resolve: {
-            data: [function() {
-                return [1, 2, 3, 4, 5, 6];
-            }]
-        }
-    });
-}]);
-```
+1. Lint and run tests
+2. Build and cachebust into `./build`
+3. Generate a changelog and tag the version appropriately.
 
 ### Commit Conventions
 
