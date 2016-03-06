@@ -1,6 +1,6 @@
 {
   "name": "app-template",
-  "version": "11.0.3",
+  "version": "11.1.0",
   "description": "Angular app template",
   "main": "app/index.js",
   "repository": {
@@ -75,6 +75,8 @@
     "gulp-rev": "^6.0.1",
     "gulp-sass": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
+    "gulp-stylelint": "^0.2.0",
+    "gulp-stylelint-console-reporter": "^0.1.1",
     "gulp-tag-version": "^1.1.0",
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.1",
