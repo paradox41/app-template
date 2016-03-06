@@ -16,7 +16,13 @@
   "keywords": [
     "angular",
     "gulp",
-    "template"
+    "template",
+    "webpack",
+    "starter",
+    "mocha",
+    "chai",
+    "karma",
+    "conventional changelog"
   ],
   "scripts": {
     "start": "webpack --config webpack.config.js",
