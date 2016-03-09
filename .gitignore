@@ -38,10 +38,3 @@ build/
 
 # jsdoc
 .publish/
-
-# Compiled
-app/*.map
-app/*.min.*
-app/*.css
-app/*.html
-*.bundle.js
