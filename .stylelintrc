@@ -1,0 +1,17 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "string-quotes": "single",
+    "indentation": 2,
+    "block-closing-brace-newline-after": [
+      "always-multi-line",
+      {
+        "ignoreAtRules": [
+          "if",
+          "else"
+        ]
+      }
+    ],
+    "at-rule-empty-line-before": null
+  }
+}
