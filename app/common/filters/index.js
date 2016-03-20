@@ -1,16 +1,5 @@
-/**
- * @module common.filters
- * @author Will
- * @description Common filters
- */
 import angular from 'angular';
 
-/**
- * @example <p>{{obj.value | default:'Some other value'}}</p>
- * @author Will
- * @param {any} value The value to be tested
- * @param {any} defaultValue The fallback value
- */
 function defaultFilter() {
     return function(value, defaultValue) {
         // if the value is invalid, return the default value

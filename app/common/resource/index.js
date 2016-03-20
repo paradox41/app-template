@@ -1,36 +1,12 @@
-/**
- * @module common.api
- * @author Will
- * @description Base class for creating REST endpoints
- */
 import angular from 'angular';
 
 import _ from 'lodash';
 
-/**
- * @description Provider for `Resource`
- * @example angular.module('example', []).config(['ResourceConfigProvider',
- *     function(ResourceConfigProvider) {
- *         // pass some config options
- *         ResourceConfigProvider.setConfig({});
- *     }
- * ]);
- */
 function ResourceProvider() {
-    /**
-     * @namespace
-     * @type {Object}
-     * @property {Object} - config
-     * @property {String} - config.baseURL The base URL for all API requests
-     */
     var config = {
         baseURL: ''
     };
 
-    /**
-     * Set global configuration for Resource.
-     * @param {Object} opts - Options object
-     */
     this.setConfig = function(opts) {
         _.extend(config, opts);
     };
@@ -63,16 +39,7 @@ function ResourceFactory($http, ResourceConfig) {
         return response.data;
     }
 
-    /** @namespace */
     class Resource {
-        /**
-         * Base Resource class for constructing new REST routes.
-         * @class
-         * @param  {string} route - The path to the endpoint
-         * @param  {function} model - Optional model to be applied to the fetched resource
-         * @param  {Object} - options Optional configuration object. Options passed via the provider are overridden here if
-         * provided. Options passed to methods override the options passed to the constructor.
-         */
         constructor(route, model, options = {}) {
             // allow global config to be overridden here
             let opts = _.extend({}, ResourceConfig, options);
@@ -82,17 +49,7 @@ function ResourceFactory($http, ResourceConfig) {
             this.options = opts;
         }
 
-        /**
-         * Get a specific resource [GET].
-         * @instance
-         * @param  {integer} pk - The primary key or the id
-         * @param  {Object} config - Config to be passed to Angular's `$http.get()`
-         * Will override any options passed in via the provider and the constructor.
-         * @return {promise}
-         */
         get(pk, config = {}) {
-            // again, allow individual methods to override the options above it
-            // without modifying the original options block
             let options = _.extend({}, _.cloneDeep(this.options), config);
             let result = $http.get(`${this.route}/${pk}`, options);
 
@@ -103,40 +60,18 @@ function ResourceFactory($http, ResourceConfig) {
             }
         }
 
-        /**
-         * Create an object [POST].
-         * @instance
-         * @param  {Object} obj - The object graph
-         * @param  {Object} config - Config to be passed to Angular's `$http.post()`
-         * @return {promise}
-         */
         create(obj, config = {}) {
             let options = _.extend({}, _.cloneDeep(this.options), config);
 
             return $http.post(`${this.route}`, obj, options).then(returnResponse);
         }
 
-        /**
-         * Update an object [PUT].
-         * @instance
-         * @param  {integer} pk - The primary key or the id of the object to update
-         * @param  {Object} obj - The new object
-         * @param  {Object} config - Config to be passed to Angular's `$http.put()`
-         * @return {promise}
-         */
         update(pk, obj, config = {}) {
             let options = _.extend({}, _.cloneDeep(this.options), config);
 
             return $http.put(`${this.route}/${pk}`, obj, options).then(returnResponse);
         }
 
-        /**
-         * Search a particular resource [GET].
-         * @instance
-         * @param  {Object} params - Search params to be serialized
-         * @param  {Object} config - Config to be passed to Angular's `$http.get()`
-         * @return {promise}
-         */
         search(params, config = {}) {
             let route = this.route;
             let options = _.extend({}, _.cloneDeep(this.options), config);
@@ -164,12 +99,6 @@ function ResourceFactory($http, ResourceConfig) {
             }
         }
 
-        /**
-         * Delete an object [DELETE].
-         * @param  {integer} pk - The primary key or the id
-         * @param  {Object} config - Config to be passed to Angular's `$http.delete()`
-         * @return {promise}
-         */
         delete(pk, config = {}) {
             let options = _.extend({}, _.cloneDeep(this.options), config);
 
