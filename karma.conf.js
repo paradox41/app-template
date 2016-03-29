@@ -15,13 +15,13 @@ module.exports = function(config) {
         ],
 
         files: [
-            'app/app.spec.js'
+            'test.spec.js'
         ],
 
         exclude: [],
 
         preprocessors: {
-            'app/app.spec.js': ['webpack', 'sourcemap', 'coverage']
+            'test.spec.js': ['webpack', 'sourcemap', 'coverage']
         },
 
         webpack: require('./webpack.test.config.js'),
