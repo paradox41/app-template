@@ -102,7 +102,7 @@
     "run-sequence": "^1.0.1",
     "strip-ansi": "^3.0.0",
     "stylelint-config-standard": "^4.0.1",
-    "validate-commit": "^1.0.14",
+    "validate-commit": "^2.0.3",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0",
     "webpack": "^1.12.11",
