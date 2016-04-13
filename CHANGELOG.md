@@ -1,3 +1,13 @@
+<a name="12.1.0"></a>
+# [12.1.0](https://github.com/paradox41/app-template/compare/v12.0.1...v12.1.0) (2016-04-13)
+
+
+### Features
+
+* **webpack:** add uglification and optimization ([4d73e62](https://github.com/paradox41/app-template/commit/4d73e62))
+
+
+
 <a name="12.0.1"></a>
 ## [12.0.1](https://github.com/paradox41/app-template/compare/v12.0.0...v12.0.1) (2016-04-13)
 
