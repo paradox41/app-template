@@ -45,10 +45,3 @@ This will:
 ### Commit Conventions
 
 Follow [conventional changelog](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit)
-
-### Documentation
-
-Documentation via [JSDoc](http://usejsdoc.org/)
-
-1. `npm run docs`
-2. `gulp documentation:serve`
