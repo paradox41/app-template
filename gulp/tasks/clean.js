@@ -4,5 +4,5 @@ import gulp from 'gulp';
 import del from 'del';
 
 gulp.task('clean', function() {
-    return del([config.build]);
+  return del([config.build]);
 });

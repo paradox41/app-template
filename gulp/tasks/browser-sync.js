@@ -16,45 +16,45 @@ var bundler = webpack(webpackConfig);
 const browserSync = create();
 
 gulp.task('scss:watch', ['scss'], function() {
-    browserSync.reload();
+  browserSync.reload();
 });
 
 gulp.task('browser-sync', function() {
-    /**
-     * Reload all devices when bundle is complete
-     * or send a fullscreen error message to the browser instead
-     */
-    bundler.plugin('done', function(stats) {
-        if (stats.hasErrors() || stats.hasWarnings()) {
-            return browserSync.sockets.emit('fullscreen:message', {
-                title: 'Webpack Error:',
-                body: stripAnsi(stats.toString()),
-                timeout: 100000
-            });
+  /**
+   * Reload all devices when bundle is complete
+   * or send a fullscreen error message to the browser instead
+   */
+  bundler.plugin('done', function(stats) {
+    if (stats.hasErrors() || stats.hasWarnings()) {
+      return browserSync.sockets.emit('fullscreen:message', {
+        title: 'Webpack Error:',
+        body: stripAnsi(stats.toString()),
+        timeout: 100000
+      });
+    }
+    browserSync.reload();
+  });
+
+  /**
+   * Run Browsersync and use middleware for Hot Module Replacement
+   */
+  browserSync.init({
+    server: config.build,
+    middleware: [
+      webpackDevMiddleware(bundler, {
+        publicPath: webpackConfig.output.publicPath,
+        stats: {
+          colors: true
         }
-        browserSync.reload();
-    });
+      })
+    ],
+    plugins: ['bs-fullscreen-message'],
+    files: [
+      'build/app.css',
+      'app/**/*.html'
+    ]
+  });
 
-    /**
-     * Run Browsersync and use middleware for Hot Module Replacement
-     */
-    browserSync.init({
-        server: config.build,
-        middleware: [
-            webpackDevMiddleware(bundler, {
-                publicPath: webpackConfig.output.publicPath,
-                stats: {
-                    colors: true
-                }
-            })
-        ],
-        plugins: ['bs-fullscreen-message'],
-        files: [
-            'build/app.css',
-            'app/**/*.html'
-        ]
-    });
-
-    gulp.watch(config.scss.files, ['scss:watch']);
-    gulp.watch(config.hbs.files, ['handlebars']);
+  gulp.watch(config.scss.files, ['scss:watch']);
+  gulp.watch(config.hbs.files, ['handlebars']);
 });
