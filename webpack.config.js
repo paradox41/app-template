@@ -5,7 +5,7 @@ var webpack = require('webpack');
 module.exports = {
     devtool: 'cheap-module-inline-source-map',
     debug: true,
-    context: __dirname + '/app',
+    context: `${__dirname}/app`,
     entry: {
         index: './index.js',
         vendor: [
@@ -16,7 +16,7 @@ module.exports = {
     },
     output: {
         filename: '[name].bundle.js',
-        path: __dirname + '/build',
+        path: `${__dirname}/build`,
         publicPath: '/'
     },
     module: {
