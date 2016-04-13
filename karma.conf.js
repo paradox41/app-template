@@ -24,7 +24,7 @@ module.exports = function(config) {
             'test.spec.js': ['webpack', 'sourcemap', 'coverage']
         },
 
-        webpack: require('./webpack.test.config.js'),
+        webpack: require('./webpack.config.test.js'),
 
         webpackMiddleware: {
             noInfo: true
