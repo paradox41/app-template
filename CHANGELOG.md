@@ -1,3 +1,14 @@
+<a name="12.0.1"></a>
+## [12.0.1](https://github.com/paradox41/app-template/compare/v12.0.0...v12.0.1) (2016-04-13)
+
+
+### Bug Fixes
+
+* **karma:** fixes webpack error "Module not found" ([d401ab3](https://github.com/paradox41/app-template/commit/d401ab3))
+* **webpack.config:** fix typo in resolve ([1f50499](https://github.com/paradox41/app-template/commit/1f50499))
+
+
+
 <a name="12.0.0"></a>
 # [12.0.0](https://github.com/paradox41/app-template/compare/v11.2.0...v12.0.0) (2016-03-20)
 
