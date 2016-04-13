@@ -25,13 +25,20 @@ module.exports = {
             exclude: [
                 /node_modules/
             ],
-            loaders: ['babel-loader', 'ng-annotate']
+            loader: 'babel-loader'
         }, {
             test: /\.html$/,
             loader: 'html-loader'
         }, {
             test: /\.json$/,
             loader: 'json-loader'
+        }],
+        postLoaders: [{
+            test: /\.js$/,
+            exclude: [
+                /node_modules/
+            ],
+            loader: 'ng-annotate'
         }]
     },
     resolve: {
