@@ -43,11 +43,10 @@ export default angular.module('users.edit', [
     url: '/edit/:id',
     template: require('./_edit.html'),
     resolve: {
-      user: ['UserResource', '$stateParams',
-        function(UserResource, $stateParams) {
-          return UserResource.get($stateParams.id);
-        }
-      ]
+      /*@ngInject*/
+      user(UserResource, $stateParams) {
+        return UserResource.get($stateParams.id);
+      }
     }
   });
 })

@@ -40,9 +40,10 @@ export default angular.module('users', [
     url: '/users',
     template: require('./_users.html'),
     resolve: {
-      users: ['UserResource', function(UserResource) {
+      /*@ngInject*/
+      users(UserResource) {
         return UserResource.search();
-      }]
+      }
     }
   });
 })
