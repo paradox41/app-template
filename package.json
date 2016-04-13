@@ -1,6 +1,6 @@
 {
   "name": "app-template",
-  "version": "12.1.0",
+  "version": "12.2.0",
   "description": "Angular app template",
   "main": "app/index.js",
   "repository": {
