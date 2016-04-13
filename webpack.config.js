@@ -36,7 +36,7 @@ module.exports = {
     },
     resolve: {
         root: path.resolve(__dirname, 'app/'),
-        extenstions: ['', '.js', '.json', '.html'],
+        extensions: ['', '.js', '.json', '.html'],
         alias: {
             common: 'common'
         }
