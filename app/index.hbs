@@ -2,34 +2,33 @@
 <html lang="en">
 
 <head>
-    <title>App Template</title>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>App Template</title>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="theme-color" content="#232323">
+  <meta name="theme-color" content="#232323">
 
-    <link rel="stylesheet" href="{{ assets "app.css" }}">
+  <link rel="stylesheet" href="{{ assets "app.css" }}">
 
-    <link rel="manifest" href="manifest.json">
+  <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
+  <navigation></navigation>
+  <main class="container-fluid">
+      <div class="container">
+          <div class="row">
+              <div class="col-xs-12">
+                  <div ui-view></div>
+              </div>
+          </div>
+      </div>
+  </main>
 
-    <navigation></navigation>
-    <main class="container-fluid">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div ui-view></div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <script type="text/javascript" src="{{ assets "vendor.bundle.js" }}"></script>
-    <script type="text/javascript" src="{{ assets "index.bundle.js" }}"></script>
+  <script type="text/javascript" src="{{ assets "vendor.bundle.js" }}"></script>
+  <script type="text/javascript" src="{{ assets "index.bundle.js" }}"></script>
 </body>
 
 </html>

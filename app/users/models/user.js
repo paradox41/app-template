@@ -1,7 +1,7 @@
-import {extend} from 'lodash';
+import { extend } from 'lodash';
 
 export default class User {
-    constructor(user) {
-        extend(this, user);
-    }
+  constructor(user) {
+    extend(this, user);
+  }
 }

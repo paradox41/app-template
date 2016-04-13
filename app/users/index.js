@@ -10,41 +10,41 @@ import edit from './edit';
 const STATE = 'app.users';
 
 class UsersCtrl {
-    /*@ngInject*/
-    constructor(users) {
-        this.users = users;
-    }
+  /*@ngInject*/
+  constructor(users) {
+    this.users = users;
+  }
 }
 
 /*@ngInject*/
 function UserResourceFactory(Resource) {
-    class UserResource extends Resource {
-        constructor() {
-            super('users', User);
-        }
+  class UserResource extends Resource {
+    constructor() {
+      super('users', User);
     }
+  }
 
-    return new UserResource();
+  return new UserResource();
 }
 
 export default angular.module('users', [
-    'ui.router',
-    resource.name,
-    edit.name
+  'ui.router',
+  resource.name,
+  edit.name
 ])
 
 .config( /*@ngInject*/ function($stateProvider) {
-    $stateProvider.state(STATE, {
-        controller: 'UsersCtrl',
-        controllerAs: 'Users',
-        url: '/users',
-        template: require('./_users.html'),
-        resolve: {
-            users: ['UserResource', function(UserResource) {
-                return UserResource.search();
-            }]
-        }
-    });
+  $stateProvider.state(STATE, {
+    controller: 'UsersCtrl',
+    controllerAs: 'Users',
+    url: '/users',
+    template: require('./_users.html'),
+    resolve: {
+      users: ['UserResource', function(UserResource) {
+        return UserResource.search();
+      }]
+    }
+  });
 })
 
 .controller('UsersCtrl', UsersCtrl)
@@ -52,7 +52,7 @@ export default angular.module('users', [
 .factory('UserResource', UserResourceFactory);
 
 export var userNavigation = {
-    state: STATE,
-    name: 'Users',
-    icon: 'face'
+  state: STATE,
+  name: 'Users',
+  icon: 'face'
 };
