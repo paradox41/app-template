@@ -8,6 +8,7 @@ import states from './states.json';
 const STATE = 'app.users.edit';
 
 class UsersEditCtrl {
+    /*@ngInject*/
     constructor(UserResource, user) {
         this.UserResource = UserResource;
 
@@ -30,17 +31,12 @@ class UsersEditCtrl {
     }
 }
 
-UsersEditCtrl.$inject = [
-    'UserResource',
-    'user'
-];
-
 export default angular.module('users.edit', [
     'ui.router',
     resource.name
 ])
 
-.config(['$stateProvider', function($stateProvider) {
+.config( /*@ngInject*/ function($stateProvider) {
     $stateProvider.state(STATE, {
         controller: 'UsersEditCtrl',
         controllerAs: 'UsersEdit',
@@ -54,6 +50,6 @@ export default angular.module('users.edit', [
             ]
         }
     });
-}])
+})
 
 .controller('UsersEditCtrl', UsersEditCtrl);

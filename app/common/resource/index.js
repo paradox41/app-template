@@ -2,6 +2,7 @@ import angular from 'angular';
 
 import _ from 'lodash';
 
+/*@ngInject*/
 function ResourceProvider() {
     var config = {
         baseURL: ''
@@ -16,8 +17,7 @@ function ResourceProvider() {
     }];
 }
 
-ResourceProvider.$inject = [];
-
+/*@ngInject*/
 function ResourceFactory($http, ResourceConfig) {
 
     function wrapResult(resultPromise, ResultModel) {
@@ -108,8 +108,6 @@ function ResourceFactory($http, ResourceConfig) {
 
     return Resource;
 }
-
-ResourceFactory.$inject = ['$http', 'ResourceConfig'];
 
 export default angular.module('common.resource', [])
 

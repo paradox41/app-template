@@ -3,20 +3,20 @@ import 'angular-ui-router';
 
 import resource from 'common/resource';
 
-import {User} from './models';
+import { User } from './models';
 
 import edit from './edit';
 
 const STATE = 'app.users';
 
 class UsersCtrl {
+    /*@ngInject*/
     constructor(users) {
         this.users = users;
     }
 }
 
-UsersCtrl.$inject = ['users'];
-
+/*@ngInject*/
 function UserResourceFactory(Resource) {
     class UserResource extends Resource {
         constructor() {
@@ -27,15 +27,13 @@ function UserResourceFactory(Resource) {
     return new UserResource();
 }
 
-UserResourceFactory.$inject = ['Resource'];
-
 export default angular.module('users', [
     'ui.router',
     resource.name,
     edit.name
 ])
 
-.config(['$stateProvider', function($stateProvider) {
+.config( /*@ngInject*/ function($stateProvider) {
     $stateProvider.state(STATE, {
         controller: 'UsersCtrl',
         controllerAs: 'Users',
@@ -47,7 +45,7 @@ export default angular.module('users', [
             }]
         }
     });
-}])
+})
 
 .controller('UsersCtrl', UsersCtrl)
 

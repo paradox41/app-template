@@ -1,5 +1,6 @@
 import angular from 'angular';
 
+/*@ngInject*/
 function defaultFilter() {
     return function(value, defaultValue) {
         // if the value is invalid, return the default value
@@ -9,8 +10,6 @@ function defaultFilter() {
         return value;
     };
 }
-
-defaultFilter.$inject = [];
 
 export default angular.module('common.filters', [])
 

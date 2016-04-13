@@ -1,13 +1,13 @@
 import angular from 'angular';
 
 class NavigationCtrl {
+    /*@ngInject*/
     constructor($rootScope) {
         this.navItems = $rootScope.navItems;
     }
 }
 
-NavigationCtrl.$inject = ['$rootScope'];
-
+/*@ngInject*/
 function navigationDirective() {
     return {
         restrict: 'E',
@@ -17,8 +17,6 @@ function navigationDirective() {
         template: require('./_navigation.html')
     };
 }
-
-navigationDirective.$inject = [];
 
 export default angular.module('common.navigation', [])
 

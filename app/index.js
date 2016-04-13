@@ -23,37 +23,33 @@ angular.module(MODULE_NAME, [
     navigation.name
 ])
 
-.config(['$stateProvider', '$urlRouterProvider', 'ResourceConfigProvider',
-    function($stateProvider, $urlRouterProvider, ResourceConfigProvider) {
+.config( /*@ngInject*/ function($stateProvider, $urlRouterProvider, ResourceConfigProvider) {
 
-        ResourceConfigProvider.setConfig({
-            baseURL: 'http://jsonplaceholder.typicode.com'
-        });
+    ResourceConfigProvider.setConfig({
+        baseURL: 'http://jsonplaceholder.typicode.com'
+    });
 
-        $urlRouterProvider.otherwise('');
+    $urlRouterProvider.otherwise('');
 
-        $stateProvider.state('app', {
-            url: '',
-            abstract: true,
-            template: '<div ui-view></div>'
-        });
-    }
-])
+    $stateProvider.state('app', {
+        url: '',
+        abstract: true,
+        template: '<div ui-view></div>'
+    });
+})
 
 .constant('version', require('../package.json').version)
 
-.run(['$rootScope', '$state', '$stateParams',
-    function($rootScope, $state, $stateParams) {
-        $rootScope.$state = $state;
-        $rootScope.$stateParams = $stateParams;
+.run( /*@ngInject*/ function($rootScope, $state, $stateParams) {
+    $rootScope.$state = $state;
+    $rootScope.$stateParams = $stateParams;
 
-        $rootScope.navItems = [userNavigation];
+    $rootScope.navItems = [userNavigation];
 
-        $rootScope.$on('$routeChangeError', function() {
-            console.log('failed to change routes', arguments);
-        });
-    }
-]);
+    $rootScope.$on('$routeChangeError', function() {
+        console.log('failed to change routes', arguments);
+    });
+});
 
 angular.bootstrap(document.querySelector('html'), [MODULE_NAME], {
     strictDi: true
