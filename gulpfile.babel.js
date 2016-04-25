@@ -1,9 +1,9 @@
-
-/*
- * Add tasks to `./gulp/tasks and then import that file into
- * ./gulp/index.js.
- *
- * Add common configuration options to ./gulp/config.js
- */
-
-import './gulp';
+import './gulp/tasks/browser-sync';
+import './gulp/tasks/build';
+import './gulp/tasks/changelog';
+import './gulp/tasks/clean';
+import './gulp/tasks/copy';
+import './gulp/tasks/default';
+import './gulp/tasks/lint';
+import './gulp/tasks/release';
+import './gulp/tasks/test';
