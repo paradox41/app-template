@@ -10,6 +10,8 @@ import users, {
   userNavigation
 } from './users';
 
+import './app.scss';
+
 const MODULE_NAME = 'app';
 
 angular.module(MODULE_NAME, [

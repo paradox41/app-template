@@ -2,6 +2,11 @@ var path = require('path');
 
 var webpack = require('webpack');
 
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
+var autoprefixer = require('autoprefixer');
+
 module.exports = {
   devtool: 'cheap-module-inline-source-map',
   debug: true,
@@ -17,7 +22,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: `${__dirname}/build`,
-    publicPath: '/'
+    publicPath: ''
   },
   module: {
     loaders: [{
@@ -32,6 +37,13 @@ module.exports = {
     }, {
       test: /\.json$/,
       loader: 'json-loader'
+    }, {
+      test: /\.scss$/,
+      loader: ExtractTextPlugin.extract('style-loader', [
+        'css-loader',
+        'postcss-loader',
+        'sass-loader'
+      ])
     }],
     postLoaders: [{
       test: /\.js$/,
@@ -41,21 +53,32 @@ module.exports = {
       loader: 'ng-annotate'
     }]
   },
+  sassLoader: {
+    includePaths: [path.resolve(__dirname, 'node_modules')]
+  },
   resolve: {
     root: path.resolve(__dirname, 'app/'),
-    extensions: ['', '.js', '.json', '.html'],
+    extensions: [
+      '',
+      '.js',
+      '.json',
+      '.html',
+      '.scss'
+    ],
     alias: {
       common: 'common'
     }
   },
   plugins: [
-    new webpack.ProvidePlugin({
-      'process.env': {
-        'NODE_ENV': process.env.NODE_ENV || 'development'
-      }
-    }),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
-  ]
+    new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin('[name].css'),
+    new HtmlWebpackPlugin({
+      inject: 'body',
+      template: 'index.html'
+    })
+  ],
+  postcss: function () {
+      return [autoprefixer];
+  }
 };

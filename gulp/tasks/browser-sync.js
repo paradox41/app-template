@@ -15,10 +15,6 @@ var bundler = webpack(webpackConfig);
 
 const browserSync = create();
 
-gulp.task('scss:watch', ['scss'], function() {
-  browserSync.reload();
-});
-
 gulp.task('browser-sync', function() {
   /**
    * Reload all devices when bundle is complete
@@ -48,13 +44,6 @@ gulp.task('browser-sync', function() {
         }
       })
     ],
-    plugins: ['bs-fullscreen-message'],
-    files: [
-      'build/app.css',
-      'app/**/*.html'
-    ]
+    plugins: ['bs-fullscreen-message']
   });
-
-  gulp.watch(config.scss.files, ['scss:watch']);
-  gulp.watch(config.hbs.files, ['handlebars']);
 });
