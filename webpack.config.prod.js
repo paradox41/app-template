@@ -4,6 +4,7 @@ var baseConfig = require('./webpack.config.js');
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = Object.assign(baseConfig, {
   devtool: '',
@@ -18,6 +19,9 @@ module.exports = Object.assign(baseConfig, {
         drop_debugger: true,
         drop_console: true
       }
+    }),
+    new StyleLintPlugin({
+      syntax: 'scss'
     }),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.[hash:8].js'),
     new ExtractTextPlugin('[name].[hash:8].css'),

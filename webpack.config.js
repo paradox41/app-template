@@ -4,6 +4,7 @@ var webpack = require('webpack');
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var StyleLintPlugin = require('stylelint-webpack-plugin');
 
 var autoprefixer = require('autoprefixer');
 
@@ -25,6 +26,13 @@ module.exports = {
     publicPath: ''
   },
   module: {
+    preLoaders: [{
+      test: /\.js$/,
+      loader: 'eslint-loader',
+      exclude: [
+        /node_modules/
+      ]
+    }],
     loaders: [{
       test: /\.js$/,
       exclude: [
@@ -72,13 +80,16 @@ module.exports = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
     new webpack.NoErrorsPlugin(),
+    new StyleLintPlugin({
+      syntax: 'scss'
+    }),
     new ExtractTextPlugin('[name].css'),
     new HtmlWebpackPlugin({
       inject: 'body',
       template: 'index.html'
     })
   ],
-  postcss: function () {
-      return [autoprefixer];
+  postcss: function() {
+    return [autoprefixer];
   }
 };

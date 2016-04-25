@@ -4,6 +4,5 @@ import './gulp/tasks/changelog';
 import './gulp/tasks/clean';
 import './gulp/tasks/copy';
 import './gulp/tasks/default';
-import './gulp/tasks/lint';
 import './gulp/tasks/release';
 import './gulp/tasks/test';
