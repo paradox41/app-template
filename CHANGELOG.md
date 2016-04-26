@@ -9,9 +9,8 @@
 
 ### BREAKING CHANGES
 
-* app: S: no more bootstrap or font-awesome
+* app: no more bootstrap or font-awesome
 
-Signed-off-by: Will Soto <will.soto9@gmail.com>
 
 
 
