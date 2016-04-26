@@ -1,3 +1,20 @@
+<a name="13.0.0"></a>
+# [13.0.0](https://github.com/paradox41/app-template/compare/v12.2.0...v13.0.0) (2016-04-26)
+
+
+### Code Refactoring
+
+* **app:** remove bootstrap and extra modules. ([6bab734](https://github.com/paradox41/app-template/commit/6bab734))
+
+
+### BREAKING CHANGES
+
+* app: S: no more bootstrap or font-awesome
+
+Signed-off-by: Will Soto <will.soto9@gmail.com>
+
+
+
 <a name="12.2.0"></a>
 # [12.2.0](https://github.com/paradox41/app-template/compare/v12.1.0...v12.2.0) (2016-04-13)
 
