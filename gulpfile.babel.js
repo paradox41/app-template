@@ -1,4 +1,3 @@
-import './gulp/tasks/browser-sync';
 import './gulp/tasks/build';
 import './gulp/tasks/changelog';
 import './gulp/tasks/clean';
