@@ -1,3 +1,25 @@
+<a name="14.0.0"></a>
+# [14.0.0](https://github.com/paradox41/app-template/compare/v12.2.0...v14.0.0) (2016-05-18)
+
+
+### Code Refactoring
+
+* **app:** remove bootstrap and extra modules. ([4220df3](https://github.com/paradox41/app-template/commit/4220df3))
+
+
+### Features
+
+* **webpack:** add lodash-webpack-plugin and babel-plugin-lodash ([f22bcd0](https://github.com/paradox41/app-template/commit/f22bcd0))
+
+
+### BREAKING CHANGES
+
+* app: no more bootstrap or font-awesome
+
+Signed-off-by: Will Soto <will.soto9@gmail.com>
+
+
+
 <a name="13.0.0"></a>
 # [13.0.0](https://github.com/paradox41/app-template/compare/v12.2.0...v13.0.0) (2016-04-26)
 
