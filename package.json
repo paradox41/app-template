@@ -41,7 +41,6 @@
   },
   "git": {
     "scripts": {
-      "pre-push": "npm test",
       "commit-msg": "./node_modules/.bin/validate-commit-msg $1"
     }
   },
