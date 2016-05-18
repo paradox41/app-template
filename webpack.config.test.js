@@ -1,13 +1,13 @@
 var webpack = require('webpack');
 
-var baseConfig = require('./webpack.config');
+var BASE_CONFIG = require('./webpack.config').BASE_CONFIG;
 
 var LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 module.exports = {
   devtool: 'inline-source-map',
   module: {
-    loaders: baseConfig.module.loaders
+    loaders: BASE_CONFIG.module.loaders
   },
   plugins: [
     new LodashModuleReplacementPlugin(),

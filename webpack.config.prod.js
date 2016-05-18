@@ -1,19 +1,15 @@
 var webpack = require('webpack');
 
-var baseConfig = require('./webpack.config.js');
+var config = require('./webpack.config');
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var StyleLintPlugin = require('stylelint-webpack-plugin');
-var LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
-module.exports = Object.assign(baseConfig, {
+const { BASE_CONFIG, BASE_PLUGINS } = config;
+
+module.exports = Object.assign(BASE_CONFIG, {
   devtool: '',
   debug: false,
-  plugins: [
-    new LodashModuleReplacementPlugin(),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(),
+  plugins: BASE_PLUGINS.concat([
     new webpack.optimize.UglifyJsPlugin({
       screwIe8: true,
       mangle: true,
@@ -22,16 +18,9 @@ module.exports = Object.assign(baseConfig, {
         drop_console: true
       }
     }),
-    new StyleLintPlugin({
-      syntax: 'scss'
-    }),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.[hash:8].js'),
-    new ExtractTextPlugin('[name].[hash:8].css'),
-    new HtmlWebpackPlugin({
-      inject: 'body',
-      template: 'index.html'
-    })
-  ],
+    new ExtractTextPlugin('[name].[hash:8].css')
+  ]),
   output: {
     filename: '[name].bundle.[hash:8].js',
     path: `${__dirname}/build`,

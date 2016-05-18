@@ -24,8 +24,8 @@ function release() {
 
 gulp.task('bump', function() {
   return gulp.src([
-      './package.json'
-    ])
+    './package.json'
+  ])
     .pipe(bump({
       type: getImportance()
     }))
@@ -34,9 +34,9 @@ gulp.task('bump', function() {
 
 gulp.task('commit-release', function() {
   return gulp.src([
-      './package.json',
-      './CHANGELOG.md'
-    ])
+    './package.json',
+    './CHANGELOG.md'
+  ])
     .pipe(git.add({
       args: '-A'
     }))

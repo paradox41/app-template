@@ -6,20 +6,36 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var StyleLintPlugin = require('stylelint-webpack-plugin');
 var LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var autoprefixer = require('autoprefixer');
 
-module.exports = {
+var pkg = require('./package.json');
+
+const BASE_PLUGINS = [
+  new LodashModuleReplacementPlugin(),
+  new webpack.optimize.DedupePlugin(),
+  new webpack.optimize.OccurrenceOrderPlugin(),
+  new webpack.NoErrorsPlugin(),
+  new StyleLintPlugin({
+    syntax: 'scss'
+  }),
+  new HtmlWebpackPlugin({
+    inject: 'body',
+    template: 'index.html'
+  }),
+  new CopyWebpackPlugin([{
+    from: '*.{tff,woff,woff2,ico,txt,png,svg,jpg,jpeg,json}'
+  }])
+];
+
+exports.BASE_CONFIG = {
   devtool: 'cheap-module-inline-source-map',
   debug: true,
   context: `${__dirname}/app`,
   entry: {
     index: './index.js',
-    vendor: [
-      'angular',
-      'angular-ui-router',
-      'lodash'
-    ]
+    vendor: Object.keys(pkg.dependencies)
   },
   output: {
     filename: '[name].bundle.js',
@@ -75,20 +91,13 @@ module.exports = {
       '.scss'
     ]
   },
-  plugins: [
-    new LodashModuleReplacementPlugin(),
+  plugins: BASE_PLUGINS.concat([
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
-    new webpack.NoErrorsPlugin(),
-    new StyleLintPlugin({
-      syntax: 'scss'
-    }),
-    new ExtractTextPlugin('[name].css'),
-    new HtmlWebpackPlugin({
-      inject: 'body',
-      template: 'index.html'
-    })
-  ],
+    new ExtractTextPlugin('[name].css')
+  ]),
   postcss: function() {
     return [autoprefixer];
   }
 };
+
+exports.BASE_PLUGINS = BASE_PLUGINS;
