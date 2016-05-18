@@ -1,3 +1,13 @@
+<a name="14.0.1"></a>
+## [14.0.1](https://github.com/paradox41/app-template/compare/v14.0.0...v14.0.1) (2016-05-18)
+
+
+### Bug Fixes
+
+* **server:** reference the correct config ([e46acf2](https://github.com/paradox41/app-template/commit/e46acf2))
+
+
+
 <a name="14.0.0"></a>
 # [14.0.0](https://github.com/paradox41/app-template/compare/v12.2.0...v14.0.0) (2016-05-18)
 
