@@ -73,10 +73,7 @@ module.exports = {
       '.json',
       '.html',
       '.scss'
-    ],
-    alias: {
-      common: 'common'
-    }
+    ]
   },
   plugins: [
     new LodashModuleReplacementPlugin(),
