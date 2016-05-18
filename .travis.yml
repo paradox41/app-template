@@ -1,7 +1,12 @@
 language: node_js
 node_js:
-  - "4"
-  - "stable"
+  - stable
+  - '5'
+  - '5.1'
+  - '4'
+  - '4.2'
+  - '4.1'
+  - '4.0'
 script: npm run build
 
 # Google Chrome
