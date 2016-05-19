@@ -1,3 +1,13 @@
+<a name="14.0.2"></a>
+## [14.0.2](https://github.com/paradox41/app-template/compare/v14.0.1...v14.0.2) (2016-05-19)
+
+
+### Bug Fixes
+
+* **webpack:** don't destructure for old node versions ([e415dcc](https://github.com/paradox41/app-template/commit/e415dcc))
+
+
+
 <a name="14.0.1"></a>
 ## [14.0.1](https://github.com/paradox41/app-template/compare/v14.0.0...v14.0.1) (2016-05-18)
 
