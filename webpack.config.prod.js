@@ -4,7 +4,8 @@ var config = require('./webpack.config');
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const { BASE_CONFIG, BASE_PLUGINS } = config;
+const BASE_CONFIG = config.BASE_CONFIG;
+const BASE_PLUGINS = config.BASE_PLUGINS;
 
 module.exports = Object.assign(BASE_CONFIG, {
   devtool: '',
