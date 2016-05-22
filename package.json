@@ -83,7 +83,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "0.0.26",
     "karma-webpack": "^1.7.0",
-    "lodash-webpack-plugin": "^0.7.0",
+    "lodash-webpack-plugin": "^0.8.0",
     "minimist": "^1.2.0",
     "mocha": "^2.4.5",
     "ng-annotate-loader": "^0.1.0",
@@ -93,11 +93,11 @@
     "run-sequence": "^1.2.0",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
-    "stylelint": "^6.4.1",
-    "stylelint-config-standard": "^7.0.0",
+    "stylelint": "^6.5.1",
+    "stylelint-config-standard": "^8.0.0",
     "stylelint-webpack-plugin": "^0.2.0",
-    "validate-commit": "^2.0.3",
-    "webpack": "^1.13.0",
+    "validate-commit": "^2.2.0",
+    "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"
   }
 }
