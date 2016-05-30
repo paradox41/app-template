@@ -3,17 +3,6 @@ module.exports = function(config) {
 
     frameworks: ['mocha', 'chai'],
 
-    plugins: [
-      'karma-mocha',
-      'karma-chai',
-      'karma-coverage',
-      'karma-coveralls',
-      'karma-webpack',
-      'karma-chrome-launcher',
-      'karma-spec-reporter',
-      'karma-sourcemap-loader'
-    ],
-
     files: [
       'test.spec.js'
     ],
