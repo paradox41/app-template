@@ -21,8 +21,16 @@ module.exports = function(config) {
 
     reporters: ['spec', 'coverage'],
     coverageReporter: {
-      type: 'lcov',
-      dir: 'coverage/'
+      dir: 'coverage/',
+      reporters: [{
+        type: 'text-summary'
+      }, {
+        type: 'json'
+      }, {
+        type: 'html'
+      }, {
+        type: 'lcov'
+      }]
     },
     port: 9876,
     colors: true,
