@@ -10,8 +10,6 @@
 
 Angular 1.x starter kit featuring:
 - [Angular](https://angularjs.org/)
-- [Bootstrap](http://getbootstrap.com/)
-- [Gulp](http://gulpjs.com/)
 - [Webpack](https://webpack.github.io/)
 - [Karma](https://karma-runner.github.io/)
 - [Mocha](http://mochajs.org/)
@@ -28,13 +26,9 @@ Clone the repo or download the zip file. If you cloned, `rm -rf .git`
 
 `npm run build`
 
-## Lint 
-
-`npm run lint`
-
 ## Cutting Releases
 
-Run `npm run <release-type>` where `release-type` is 'patch', 'minor' or 'major'
+`npm run release` (uses [standard-version](https://www.npmjs.com/package/standard-version))
 
 This will:
 
@@ -44,4 +38,4 @@ This will:
 
 ### Commit Conventions
 
-Follow [conventional changelog](https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#commit)
+Uses [validate-commit](https://github.com/paradox41/validate-commit)
