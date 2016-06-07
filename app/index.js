@@ -10,7 +10,8 @@ angular.module(MODULE_NAME, [
   'ui.router'
 ])
 
-.config( /*@ngInject*/ function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider) {
+  'ngInject';
 
   $urlRouterProvider.otherwise('');
 
@@ -21,7 +22,9 @@ angular.module(MODULE_NAME, [
   });
 })
 
-.run( /*@ngInject*/ function($rootScope, $state, $stateParams) {
+.run(function($rootScope, $state, $stateParams) {
+  'ngInject';
+
   $rootScope.$state = $state;
   $rootScope.$stateParams = $stateParams;
 
