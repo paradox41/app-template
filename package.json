@@ -28,12 +28,14 @@
     "clean": "rimraf build/",
     "prestart": "npm run clean",
     "start": "node server.js",
-    "test": "karma start",
+    "test": "NODE_ENV=test karma start",
     "test:watch": "karma start --auto-watch --no-single-run",
     "prebuild": "npm test && npm run clean",
     "build": "webpack --config webpack.config.prod.js --progress",
     "prerelease": "npm test && npm run build",
-    "release": "standard-version && git push --follow-tags origin master"
+    "release": "standard-version && git push --follow-tags origin master",
+    "coveralls": "coveralls < coverage/lcov.info",
+    "postcoveralls": "rimraf ./coverage"
   },
   "git": {
     "scripts": {
@@ -51,12 +53,14 @@
     "babel-core": "^6.9.0",
     "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",
+    "babel-plugin-__coverage__": "^1.11.111",
     "babel-plugin-lodash": "^3.1.4",
     "babel-preset-es2015": "^6.9.0",
     "chai": "^3.5.0",
     "conventional-changelog": "^1.1.0",
     "conventional-changelog-cli": "^1.2.0",
     "copy-webpack-plugin": "^3.0.0",
+    "coveralls": "^2.11.9",
     "css-loader": "^0.23.1",
     "del": "^2.2.0",
     "eslint": "^2.10.2",

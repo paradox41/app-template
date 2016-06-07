@@ -16,7 +16,7 @@ module.exports = function(config) {
     exclude: [],
 
     preprocessors: {
-      'test.spec.js': ['webpack', 'sourcemap', 'coverage']
+      'test.spec.js': ['webpack', 'sourcemap']
     },
 
     webpack: Object.assign(webpackConfig, {
@@ -38,12 +38,9 @@ module.exports = function(config) {
     reporters: ['spec', 'coverage'],
     coverageReporter: {
       dir: 'coverage/',
+      subdir: '.',
       reporters: [{
         type: 'text-summary'
-      }, {
-        type: 'json'
-      }, {
-        type: 'html'
       }, {
         type: 'lcov'
       }]
