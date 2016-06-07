@@ -1,3 +1,29 @@
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="15.0.0"></a>
+# [15.0.0](https://github.com/paradox41/app-template/compare/v14.0.2...v15.0.0) (2016-06-07)
+
+
+### Bug Fixes
+
+* **coverage:** fix coverage reporting and upload to coveralls ([70c22f5](https://github.com/paradox41/app-template/commit/70c22f5))
+
+
+### Features
+
+* **release:** use standard-version for cutting releases ([686cf16](https://github.com/paradox41/app-template/commit/686cf16))
+
+
+### BREAKING CHANGES
+
+* release: No longer using gulp
+
+Signed-off-by: Will Soto <will.soto9@gmail.com>
+
+
+
 <a name="14.0.2"></a>
 ## [14.0.2](https://github.com/paradox41/app-template/compare/v14.0.1...v14.0.2) (2016-05-19)
 
@@ -520,7 +546,3 @@ Signed-off-by: Will Soto <will.soto9@gmail.com>
 
 <a name="0.0.1"></a>
 ## 0.0.1 (2014-10-14)
-
-
-
-
