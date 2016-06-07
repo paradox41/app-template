@@ -31,7 +31,7 @@
     "test": "karma start",
     "test:watch": "karma start --auto-watch --no-single-run",
     "prebuild": "npm test && npm run clean",
-    "build": "webpack --config webpack.config.prod.js",
+    "build": "webpack --config webpack.config.prod.js --progress",
     "prerelease": "npm test && npm run build",
     "release": "standard-version && git push --follow-tags origin master"
   },

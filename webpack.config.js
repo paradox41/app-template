@@ -12,77 +12,71 @@ var autoprefixer = require('autoprefixer');
 
 var pkg = require('./package.json');
 
-const BASE_PLUGINS = [
-  new LodashModuleReplacementPlugin(),
-  new webpack.optimize.DedupePlugin(),
-  new webpack.optimize.OccurrenceOrderPlugin(),
-  new webpack.NoErrorsPlugin(),
-  new StyleLintPlugin({
-    syntax: 'scss'
-  }),
-  new HtmlWebpackPlugin({
-    inject: 'body',
-    template: 'index.html'
-  }),
-  new CopyWebpackPlugin([{
-    from: '*.{tff,woff,woff2,ico,txt,png,svg,jpg,jpeg,json}'
-  }])
-];
-
-exports.BASE_CONFIG = {
+module.exports = {
   devtool: 'cheap-module-inline-source-map',
   debug: true,
-  context: `${__dirname}/app`,
+  context: path.resolve(__dirname, 'app'),
   entry: {
     index: './index.js',
     vendor: Object.keys(pkg.dependencies)
   },
   output: {
     filename: '[name].bundle.js',
-    path: `${__dirname}/build`,
+    path: path.resolve(__dirname, 'build'),
     publicPath: ''
   },
   module: {
     preLoaders: [{
       test: /\.js$/,
-      loader: 'eslint-loader',
-      exclude: [
-        /node_modules/
+      loader: 'eslint',
+      include: [
+        path.resolve(__dirname, 'app')
       ]
     }],
     loaders: [{
       test: /\.js$/,
-      exclude: [
-        /node_modules/
-      ],
-      loader: 'babel-loader'
+      loader: 'babel',
+      include: [
+        path.resolve(__dirname, 'app')
+      ]
     }, {
       test: /\.html$/,
-      loader: 'html-loader'
+      loader: 'html',
+      include: [
+        path.resolve(__dirname, 'app')
+      ]
     }, {
       test: /\.json$/,
-      loader: 'json-loader'
+      loader: 'json',
+      include: [
+        path.resolve(__dirname, 'app')
+      ]
     }, {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract('style-loader', [
         'css-loader',
         'postcss-loader',
         'sass-loader'
-      ])
+      ]),
+      include: [
+        path.resolve(__dirname, 'app')
+      ]
     }],
     postLoaders: [{
       test: /\.js$/,
-      exclude: [
-        /node_modules/
-      ],
-      loader: 'ng-annotate'
+      loader: 'ng-annotate',
+      include: [
+        path.resolve(__dirname, 'app')
+      ]
     }]
   },
   sassLoader: {
-    includePaths: [path.resolve(__dirname, 'node_modules')]
+    includePaths: [
+      path.resolve(__dirname, 'node_modules')
+    ]
   },
   resolve: {
-    root: path.resolve(__dirname, 'app/'),
+    root: path.resolve(__dirname, 'app'),
     extensions: [
       '',
       '.js',
@@ -91,13 +85,25 @@ exports.BASE_CONFIG = {
       '.scss'
     ]
   },
-  plugins: BASE_PLUGINS.concat([
+  plugins: [
+    new LodashModuleReplacementPlugin(),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.NoErrorsPlugin(),
+    new StyleLintPlugin({
+      syntax: 'scss'
+    }),
+    new HtmlWebpackPlugin({
+      inject: 'body',
+      template: 'index.html'
+    }),
+    new CopyWebpackPlugin([{
+      from: '*.{tff,woff,woff2,ico,txt,png,svg,jpg,jpeg,json}'
+    }]),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
     new ExtractTextPlugin('[name].css')
-  ]),
+  ],
   postcss: function() {
     return [autoprefixer];
   }
 };
-
-exports.BASE_PLUGINS = BASE_PLUGINS;
