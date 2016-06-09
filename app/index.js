@@ -1,13 +1,13 @@
 import angular from 'angular';
 
-import 'angular-ui-router';
+import router from 'angular-ui-router';
 
 import './app.scss';
 
-const MODULE_NAME = 'app';
+const APP_NAME = 'app';
 
-angular.module(MODULE_NAME, [
-  'ui.router'
+angular.module(APP_NAME, [
+  router
 ])
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -33,6 +33,6 @@ angular.module(MODULE_NAME, [
   });
 });
 
-angular.bootstrap(document.querySelector('html'), [MODULE_NAME], {
+angular.bootstrap(document.querySelector('html'), [APP_NAME], {
   strictDi: true
 });
