@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="15.0.2"></a>
+## [15.0.2](https://github.com/paradox41/app-template/compare/v15.0.1...v15.0.2) (2016-06-09)
+
+
+### Bug Fixes
+
+* **server:** fix reference to config ([2fb0586](https://github.com/paradox41/app-template/commit/2fb0586))
+
+
+
 <a name="15.0.1"></a>
 ## [15.0.1](https://github.com/paradox41/app-template/compare/v15.0.0...v15.0.1) (2016-06-07)
 
