@@ -4,7 +4,8 @@
     "commonjs": true,
     "es6": true,
     "mocha": true,
-    "node": true
+    "node": true,
+    "protractor": true
   },
   "extends": "eslint:recommended",
   "parser": "babel-eslint",
