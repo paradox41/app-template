@@ -37,7 +37,9 @@
     "coveralls": "coveralls < coverage/lcov.info",
     "postcoveralls": "rimraf ./coverage",
     "postinstall": "webdriver-manager update",
-    "protractor": "protractor e2e/protractor.conf.js"
+    "protractor": "protractor e2e/protractor.conf.js",
+    "preci": "npm run build",
+    "ci": "npm test && npm run protractor"
   },
   "git": {
     "scripts": {
