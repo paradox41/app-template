@@ -11,7 +11,7 @@ exports.config = {
     maxInstances: 5
   },
   framework: 'mocha',
-  specs: ['./**/*.e2e.js'],
+  specs: ['./**/*.e2e-spec.js'],
   baseUrl: 'http://localhost:8080/',
   onPrepare: function() {
     app.use(express.static(path.resolve('build')));
