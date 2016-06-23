@@ -43,6 +43,7 @@
   },
   "git": {
     "scripts": {
+      "pre-commit": "git diff --cached --name-only --diff-filter=ACM | grep '.js$' | xargs eslint",
       "commit-msg": "./node_modules/.bin/validate-commit-msg $1"
     }
   },
