@@ -95,7 +95,7 @@
     "protractor": "^3.3.0",
     "rimraf": "^2.5.2",
     "run-sequence": "^1.2.0",
-    "sass-loader": "^3.2.0",
+    "sass-loader": "^4.0.0",
     "standard-version": "^2.3.0",
     "style-loader": "^0.13.1",
     "stylelint": "^6.7.1",
