@@ -11,7 +11,6 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = Object.assign(config, {
   devtool: '',
-  debug: false,
   output: {
     filename: '[name].bundle.[hash:8].js',
     path: path.resolve(__dirname, 'build'),

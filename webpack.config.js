@@ -14,7 +14,6 @@ var pkg = require('./package.json');
 
 module.exports = {
   devtool: 'cheap-module-inline-source-map',
-  debug: true,
   context: path.resolve(__dirname, 'app'),
   entry: {
     index: './index.js',
@@ -69,11 +68,6 @@ module.exports = {
         path.resolve(__dirname, 'app')
       ]
     }]
-  },
-  sassLoader: {
-    includePaths: [
-      path.resolve(__dirname, 'node_modules')
-    ]
   },
   resolve: {
     root: path.resolve(__dirname, 'app'),
