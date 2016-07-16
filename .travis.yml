@@ -5,6 +5,8 @@ node_js:
   - stable
   - '5'
   - '4'
+before_install:
+  - npm install -g npm
 script:
   - npm run ci
 after_script:
