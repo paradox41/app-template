@@ -1,36 +1,16 @@
-var path = require('path');
 var webpack = require('webpack');
+var webpackMerge = require('webpack-merge');
+
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var config = require('./webpack.config');
 
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var StyleLintPlugin = require('stylelint-webpack-plugin');
-var LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-
-module.exports = Object.assign(config, {
+module.exports = webpackMerge(config, {
   devtool: '',
   output: {
-    filename: '[name].bundle.[hash:8].js',
-    path: path.resolve(__dirname, 'build'),
-    publicPath: ''
+    filename: '[name].bundle.[hash:8].js'
   },
   plugins: [
-    new LodashModuleReplacementPlugin(),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.NoErrorsPlugin(),
-    new StyleLintPlugin({
-      syntax: 'scss'
-    }),
-    new HtmlWebpackPlugin({
-      inject: 'body',
-      template: 'index.html'
-    }),
-    new CopyWebpackPlugin([{
-      from: '*.{tff,woff,woff2,ico,txt,png,svg,jpg,jpeg,json}'
-    }]),
     new webpack.optimize.UglifyJsPlugin({
       screwIe8: true,
       mangle: true,
