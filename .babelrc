@@ -10,6 +10,9 @@
       "plugins": [
         "__coverage__"
       ]
+    },
+    "production": {
+      "compact": true
     }
   }
 }
