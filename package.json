@@ -88,7 +88,7 @@
     "karma-webpack": "^1.7.0",
     "lodash-webpack-plugin": "^0.9.1",
     "minimist": "^1.2.0",
-    "mocha": "^2.4.5",
+    "mocha": "^3.0.0",
     "ng-annotate-loader": "^0.1.0",
     "node-sass": "^3.7.0",
     "postcss-loader": "^0.9.1",
