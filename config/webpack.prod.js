@@ -3,10 +3,10 @@ var webpackMerge = require('webpack-merge');
 
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var config = require('./webpack.config');
+var config = require('./webpack.common');
 
 module.exports = webpackMerge(config, {
-  devtool: '',
+  devtool: 'source-map',
   output: {
     filename: '[name].bundle.[hash:8].js'
   },

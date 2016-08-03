@@ -1,9 +1,3 @@
-var webpack = require('webpack');
-
-var LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
-
-var webpackConfig = require('./webpack.config');
-
 module.exports = function(config) {
   var options = {
 
@@ -19,20 +13,11 @@ module.exports = function(config) {
       'test.spec.js': ['webpack', 'sourcemap']
     },
 
-    webpack: Object.assign(webpackConfig, {
-      devtool: 'inline-source-map',
-      debug: false,
-      entry: {},
-      plugins: [
-        new LodashModuleReplacementPlugin(),
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.NoErrorsPlugin()
-      ]
-    }),
+    webpack: require('./config/webpack.test'),
 
     webpackMiddleware: {
-      noInfo: true
+      noInfo: true,
+      stats: 'errors-only'
     },
 
     reporters: ['spec', 'coverage'],
