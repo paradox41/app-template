@@ -6,7 +6,7 @@ import './app.scss';
 
 const APP_NAME = 'app';
 
-angular.module(APP_NAME, [
+export default angular.module(APP_NAME, [
   router
 ])
 
@@ -19,17 +19,6 @@ angular.module(APP_NAME, [
     url: '',
     abstract: true,
     template: '<div ui-view></div>'
-  });
-})
-
-.run(function($rootScope, $state, $stateParams) {
-  'ngInject';
-
-  $rootScope.$state = $state;
-  $rootScope.$stateParams = $stateParams;
-
-  $rootScope.$on('$routeChangeError', function() {
-    console.log('failed to change routes', arguments);
   });
 });
 
