@@ -1,5 +1,4 @@
 import angular from 'angular';
-
 import router from 'angular-ui-router';
 
 import './app.scss';
