@@ -6,7 +6,7 @@ var app = express();
 exports.config = {
   directConnect: true,
   capabilities: {
-    'browserName': 'chrome',
+    browserName: 'chrome',
     shardTestFiles: true,
     maxInstances: 5
   },
