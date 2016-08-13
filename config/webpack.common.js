@@ -52,11 +52,14 @@ module.exports = {
       ]
     }, {
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract('style-loader', [
-        'css-loader',
-        'postcss-loader',
-        'sass-loader'
-      ]),
+      loader: ExtractTextPlugin.extract({
+        fallbackLoader: 'style-loader',
+        loader: [
+          'css-loader',
+          'postcss-loader',
+          'sass-loader'
+        ]
+      }),
       include: [
         helpers.root('app')
       ]
@@ -94,7 +97,10 @@ module.exports = {
     new CopyWebpackPlugin([{
       from: '*.{tff,woff,woff2,ico,txt,png,svg,jpg,jpeg,json}'
     }]),
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor.bundle.js'
+    }),
     new ExtractTextPlugin('[name].css')
   ],
   postcss: function() {

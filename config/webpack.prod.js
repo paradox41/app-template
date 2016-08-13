@@ -19,7 +19,10 @@ module.exports = webpackMerge(config, {
         drop_console: true
       }
     }),
-    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.[hash:8].js'),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'vendor.bundle.[hash:8].js'
+    }),
     new ExtractTextPlugin('[name].[hash:8].css')
   ]
 });

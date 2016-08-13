@@ -38,11 +38,14 @@ module.exports = {
       ]
     }, {
       test: /\.scss$/,
-      loader: ExtractTextPlugin.extract('style-loader', [
-        'css-loader',
-        'postcss-loader',
-        'sass-loader'
-      ]),
+      loader: ExtractTextPlugin.extract({
+        fallbackLoader: 'style-loader',
+        loader: [
+          'css-loader',
+          'postcss-loader',
+          'sass-loader'
+        ]
+      }),
       include: [
         helpers.root('app')
       ]
