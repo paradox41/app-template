@@ -4,16 +4,16 @@ module.exports = function(config) {
     frameworks: ['mocha', 'chai'],
 
     files: [
-      'test.spec.js'
+      '../test.spec.js'
     ],
 
     exclude: [],
 
     preprocessors: {
-      'test.spec.js': ['webpack', 'sourcemap']
+      '../test.spec.js': ['webpack', 'sourcemap']
     },
 
-    webpack: require('./config/webpack.test'),
+    webpack: require('./webpack.test'),
 
     webpackMiddleware: {
       noInfo: true,
