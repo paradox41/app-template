@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="15.1.0"></a>
+# [15.1.0](https://github.com/paradox41/app-template/compare/v15.0.5...v15.1.0) (2016-08-13)
+
+
+### Features
+
+* **eslint:** add eslint-plugin-import ([144b0bf](https://github.com/paradox41/app-template/commit/144b0bf))
+* **webpack:** upgrade to webpack[@beta](https://github.com/beta) ([5e802a3](https://github.com/paradox41/app-template/commit/5e802a3))
+
+
+
 <a name="15.0.5"></a>
 ## [15.0.5](https://github.com/paradox41/app-template/compare/v15.0.4...v15.0.5) (2016-08-03)
 
