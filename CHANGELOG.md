@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="15.2.0"></a>
+# [15.2.0](https://github.com/paradox41/app-template/compare/v15.1.0...v15.2.0) (2016-08-20)
+
+
+### Features
+
+* **webpack:** add webpack-dashboard ([a137892](https://github.com/paradox41/app-template/commit/a137892))
+
+
+
 <a name="15.1.0"></a>
 # [15.1.0](https://github.com/paradox41/app-template/compare/v15.0.5...v15.1.0) (2016-08-13)
 
