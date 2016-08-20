@@ -1,9 +1,9 @@
-var webpack = require('webpack');
-var webpackMerge = require('webpack-merge');
+const webpack = require('webpack');
+const webpackMerge = require('webpack-merge');
 
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var config = require('./webpack.common');
+const config = require('./webpack.common');
 
 module.exports = webpackMerge(config, {
   devtool: 'source-map',

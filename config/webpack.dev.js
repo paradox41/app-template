@@ -1,7 +1,7 @@
-var webpackMerge = require('webpack-merge');
-var DashboardPlugin = require('webpack-dashboard/plugin');
+const webpackMerge = require('webpack-merge');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
-var config = require('./webpack.common');
+const config = require('./webpack.common');
 
 module.exports = webpackMerge(config, {
   plugins: [

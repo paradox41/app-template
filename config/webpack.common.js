@@ -1,16 +1,16 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
 
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var StyleLintPlugin = require('stylelint-webpack-plugin');
-var LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-var autoprefixer = require('autoprefixer');
+const autoprefixer = require('autoprefixer');
 
-var helpers = require('./helpers');
+const helpers = require('./helpers');
 
-var pkg = require('../package.json');
+const pkg = require('../package.json');
 
 module.exports = {
   devtool: 'source-map',

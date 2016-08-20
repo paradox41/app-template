@@ -1,12 +1,12 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
 
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var StyleLintPlugin = require('stylelint-webpack-plugin');
-var LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
+const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
-var autoprefixer = require('autoprefixer');
+const autoprefixer = require('autoprefixer');
 
-var helpers = require('./helpers');
+const helpers = require('./helpers');
 
 module.exports = {
   devtool: 'source-map',

@@ -1,5 +1,5 @@
 module.exports = function(config) {
-  var options = {
+  const options = {
 
     frameworks: ['mocha', 'chai'],
 
