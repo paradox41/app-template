@@ -27,7 +27,7 @@
   "scripts": {
     "clean": "rimraf build/",
     "prestart": "npm run clean",
-    "start": "webpack-dev-server --hot --inline --https --open",
+    "start": "webpack-dashboard -c cyan -- webpack-dev-server --hot --inline --https --open",
     "test": "NODE_ENV=test karma start ./config/karma.conf.js",
     "test:watch": "npm test -- --auto-watch --no-single-run",
     "prebuild": "npm run clean",
@@ -104,6 +104,7 @@
     "stylelint-webpack-plugin": "^0.3.0",
     "validate-commit": "^2.2.0",
     "webpack": "^2.1.0-beta.20",
+    "webpack-dashboard": "^0.1.6",
     "webpack-dev-server": "^2.1.0-beta.0",
     "webpack-merge": "^0.14.0"
   }
