@@ -1,3 +1,5 @@
+require('babel-core/register');
+
 module.exports = function(config) {
   const options = {
 
