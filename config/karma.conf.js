@@ -15,7 +15,7 @@ module.exports = function(config) {
       '../test.spec.js': ['webpack', 'sourcemap']
     },
 
-    webpack: require('./webpack.test'),
+    webpack: require('./webpack.test.babel'),
 
     webpackMiddleware: {
       noInfo: true,

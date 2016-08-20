@@ -3,7 +3,7 @@ const webpackMerge = require('webpack-merge');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const config = require('./webpack.common');
+const config = require('./webpack.common.babel');
 
 module.exports = webpackMerge(config, {
   devtool: 'source-map',

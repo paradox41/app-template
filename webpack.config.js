@@ -1,1 +1,1 @@
-module.exports = require('./config/webpack.dev');
+module.exports = require('./config/webpack.dev.babel');

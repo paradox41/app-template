@@ -31,7 +31,7 @@
     "test": "NODE_ENV=test karma start ./config/karma.conf.js",
     "test:watch": "npm test -- --auto-watch --no-single-run",
     "prebuild": "npm run clean",
-    "build": "webpack --config ./config/webpack.prod.js --progress",
+    "build": "webpack --config ./config/webpack.prod.babel.js --progress",
     "prerelease": "npm test && npm run protractor",
     "release": "standard-version --sign && git push --follow-tags origin master",
     "coveralls": "coveralls < coverage/lcov.info",
