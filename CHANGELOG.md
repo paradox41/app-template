@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="15.2.1"></a>
+## [15.2.1](https://github.com/paradox41/app-template/compare/v15.2.0...v15.2.1) (2016-08-20)
+
+
+### Bug Fixes
+
+* **karma:** use babel-register for old node versions ([c4b5a06](https://github.com/paradox41/app-template/commit/c4b5a06))
+
+
+
 <a name="15.2.0"></a>
 # [15.2.0](https://github.com/paradox41/app-template/compare/v15.1.0...v15.2.0) (2016-08-20)
 
