@@ -23,6 +23,11 @@ module.exports = webpackMerge(config, {
       name: 'vendor',
       filename: 'vendor.bundle.[hash:8].js'
     }),
-    new ExtractTextPlugin('[name].[hash:8].css')
+    new ExtractTextPlugin('[name].[hash:8].css'),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('production')
+      }
+    })
   ]
 });
