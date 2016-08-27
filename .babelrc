@@ -3,7 +3,7 @@
     "lodash"
   ],
   "presets": [
-    "es2015"
+    "latest"
   ],
   "env": {
     "test": {
