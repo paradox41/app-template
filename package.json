@@ -15,14 +15,12 @@
   },
   "keywords": [
     "angular",
-    "gulp",
-    "template",
     "webpack",
-    "starter",
     "mocha",
     "chai",
     "karma",
-    "conventional changelog"
+    "conventional changelog",
+    "boilerplate"
   ],
   "scripts": {
     "clean": "rimraf build/",
