@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="15.3.0"></a>
+# [15.3.0](https://github.com/paradox41/app-template/compare/v15.2.1...v15.3.0) (2016-08-28)
+
+
+### Features
+
+* **babel:** use babel-preset-latest ([2b4e6a3](https://github.com/paradox41/app-template/commit/2b4e6a3))
+* **webpack:** add DefinePlugin ([2759e27](https://github.com/paradox41/app-template/commit/2759e27))
+
+
+
 <a name="15.2.1"></a>
 ## [15.2.1](https://github.com/paradox41/app-template/compare/v15.2.0...v15.2.1) (2016-08-20)
 
