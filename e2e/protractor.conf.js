@@ -25,6 +25,10 @@ exports.config = {
     maxInstances: 5
   },
   framework: 'mocha',
+  mochaOpts: {
+    reporter: 'spec',
+    slow: 3000
+  },
   specs: [
     './**/*.e2e-spec.js'
   ],
