@@ -20,7 +20,7 @@ Angular 1.x starter kit featuring:
 
 Clone the repo or download the zip file. If you cloned, `rm -rf .git`
 
-`npm install && npm run start`
+`npm install && npm start`
 
 ## Build
 
