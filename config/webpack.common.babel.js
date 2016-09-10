@@ -63,13 +63,6 @@ module.exports = {
       include: [
         helpers.root('app')
       ]
-    }],
-    postLoaders: [{
-      test: /\.js$/,
-      loader: 'ng-annotate',
-      include: [
-        helpers.root('app')
-      ]
     }]
   },
   resolve: {

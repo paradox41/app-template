@@ -1,18 +1,9 @@
 {
   "plugins": [
-    "lodash"
+    "lodash",
+    "angularjs-annotate"
   ],
   "presets": [
     "latest"
-  ],
-  "env": {
-    "test": {
-      "plugins": [
-        "__coverage__"
-      ]
-    },
-    "production": {
-      "compact": true
-    }
-  }
+  ]
 }

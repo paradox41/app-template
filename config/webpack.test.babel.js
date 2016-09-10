@@ -23,7 +23,16 @@ module.exports = {
       loader: 'babel',
       include: [
         helpers.root('app')
-      ]
+      ],
+      query: {
+        plugins: [
+          ['istanbul', {
+            'exclude': [
+              '**/*.spec.js'
+            ]
+          }]
+        ]
+      }
     }, {
       test: /\.html$/,
       loader: 'html',
@@ -46,13 +55,6 @@ module.exports = {
           'sass-loader'
         ]
       }),
-      include: [
-        helpers.root('app')
-      ]
-    }],
-    postLoaders: [{
-      test: /\.js$/,
-      loader: 'ng-annotate',
       include: [
         helpers.root('app')
       ]
