@@ -25,14 +25,14 @@ module.exports = {
     publicPath: ''
   },
   module: {
-    preLoaders: [{
+    loaders: [{
       test: /\.js$/,
       loader: 'eslint',
+      enforce: 'pre',
       include: [
         helpers.root('app')
       ]
-    }],
-    loaders: [{
+    }, {
       test: /\.js$/,
       loader: 'babel',
       include: [
@@ -66,9 +66,7 @@ module.exports = {
     }]
   },
   resolve: {
-    root: helpers.root('app'),
     extensions: [
-      '',
       '.js',
       '.json',
       '.html',
@@ -94,9 +92,13 @@ module.exports = {
       name: 'vendor',
       filename: 'vendor.bundle.js'
     }),
-    new ExtractTextPlugin('[name].css')
-  ],
-  postcss: function() {
-    return [autoprefixer];
-  }
+    new ExtractTextPlugin('[name].css'),
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        postcss: function() {
+          return [autoprefixer];
+        }
+      }
+    })
+  ]
 };
