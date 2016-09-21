@@ -25,7 +25,7 @@ module.exports = {
     publicPath: ''
   },
   module: {
-    loaders: [{
+    rules: [{
       test: /\.js$/,
       loader: 'eslint',
       enforce: 'pre',

@@ -11,7 +11,7 @@ const helpers = require('./helpers');
 module.exports = {
   devtool: 'source-map',
   module: {
-    loaders: [{
+    rules: [{
       test: /\.js$/,
       loader: 'eslint',
       enforce: 'pre',
