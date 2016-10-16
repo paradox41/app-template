@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="15.4.0"></a>
+# [15.4.0](https://github.com/paradox41/app-template/compare/v15.3.3...v15.4.0) (2016-10-16)
+
+
+### Features
+
+* **yarn:** add yarn.lock ([9a2ba26](https://github.com/paradox41/app-template/commit/9a2ba26))
+
+
+
 <a name="15.3.3"></a>
 ## [15.3.3](https://github.com/paradox41/app-template/compare/v15.3.2...v15.3.3) (2016-09-21)
 
