@@ -7,6 +7,9 @@ node_js:
   - '4'
 before_install:
   - npm install -g npm
+install:
+  - yarn
+  - npm run postinstall
 script:
   - npm run ci
 after_script:
