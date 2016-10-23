@@ -6,7 +6,7 @@ node_js:
   - '5'
   - '4'
 before_install:
-  - npm install -g npm
+  - npm install -g npm yarn
 install:
   - yarn
   - npm run postinstall
