@@ -7,8 +7,7 @@ node_js:
 before_install:
   - npm install -g npm yarn
 install:
-  - yarn
-  - npm run postinstall
+  - yarn --pure-lockfile
 script:
   - npm run ci
 after_script:
