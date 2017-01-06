@@ -13,14 +13,14 @@ module.exports = {
   module: {
     rules: [{
       test: /\.js$/,
-      loader: 'eslint',
+      loader: 'eslint-loader',
       enforce: 'pre',
       include: [
         helpers.root('app')
       ]
     }, {
       test: /\.js$/,
-      loader: 'babel',
+      loader: 'babel-loader',
       include: [
         helpers.root('app')
       ],
@@ -35,13 +35,7 @@ module.exports = {
       }
     }, {
       test: /\.html$/,
-      loader: 'html',
-      include: [
-        helpers.root('app')
-      ]
-    }, {
-      test: /\.json$/,
-      loader: 'json',
+      loader: 'html-loader',
       include: [
         helpers.root('app')
       ]
@@ -70,9 +64,7 @@ module.exports = {
   },
   plugins: [
     new LodashModuleReplacementPlugin(),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.NoErrorsPlugin(),
     new StyleLintPlugin({
       syntax: 'scss'
     }),
