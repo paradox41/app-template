@@ -3,11 +3,7 @@ sudo: required
 dist: trusty
 node_js:
   - stable
-  - '5'
-before_install:
-  - npm install -g npm yarn
-install:
-  - yarn --pure-lockfile
+  - '6'
 script:
   - npm run ci
 after_script:
