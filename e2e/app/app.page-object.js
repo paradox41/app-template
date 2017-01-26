@@ -1,4 +1,4 @@
-export class AppPage {
+class AppPage {
   load() {
     browser.get('index.html');
   }
@@ -7,3 +7,6 @@ export class AppPage {
     return element(by.css('h1'));
   }
 }
+
+module.exports = AppPage;
+

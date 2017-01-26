@@ -1,9 +1,43 @@
 {
-  "plugins": [
-    "lodash",
-    "angularjs-annotate"
-  ],
-  "presets": [
-    "latest"
-  ]
+  "env": {
+    "development": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "browsers": [
+                "last 2 Chrome versions"
+              ]
+            },
+            "modules": false
+          }
+        ]
+      ],
+      "plugins": [
+        "lodash",
+        "angularjs-annotate"
+      ]
+    },
+    "production": {
+      "presets": [
+        [
+          "env",
+          {
+            "targets": {
+              "browsers": [
+                "last 2 versions",
+                "> 5%"
+              ]
+            },
+            "modules": false
+          }
+        ]
+      ],
+      "plugins": [
+        "lodash",
+        "angularjs-annotate"
+      ]
+    }
+  }
 }

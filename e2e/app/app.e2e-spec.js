@@ -1,4 +1,4 @@
-import { AppPage } from './app.page-object';
+const AppPage = require('./app.page-object');
 
 describe('app', function() {
   beforeEach(function() {
@@ -10,3 +10,4 @@ describe('app', function() {
     expect(this.page.getTitle().getText()).to.eventually.equal('Hello World!');
   });
 });
+
