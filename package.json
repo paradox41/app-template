@@ -97,7 +97,7 @@
     "stylelint-webpack-plugin": "^0.5.1",
     "validate-commit": "^2.3.2",
     "webpack": "beta",
-    "webpack-dashboard": "^0.2.1",
+    "webpack-dashboard": "^0.3.0",
     "webpack-dev-server": "beta",
     "webpack-merge": "^2.5.0"
   }
