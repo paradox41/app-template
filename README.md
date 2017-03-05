@@ -1,5 +1,7 @@
 # Angular Boilerplate
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/willsoto/app-template.svg)](https://greenkeeper.io/)
+
 [![Tag](https://img.shields.io/github/tag/paradox41/app-template.svg?style=flat)](https://github.com/paradox41/app-template)
 [![Build](https://travis-ci.org/paradox41/app-template.svg)](https://travis-ci.org/paradox41/app-template)
 [![Dependency Status](https://david-dm.org/paradox41/app-template.svg)](https://david-dm.org/paradox41/app-template)
