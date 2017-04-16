@@ -11,70 +11,62 @@ const helpers = require('./helpers');
 module.exports = {
   devtool: 'source-map',
   module: {
-    rules: [{
-      test: /\.js$/,
-      loader: 'eslint-loader',
-      enforce: 'pre',
-      include: [
-        helpers.root('app')
-      ]
-    }, {
-      test: /\.js$/,
-      loader: 'babel-loader',
-      include: [
-        helpers.root('app')
-      ],
-      query: {
-        plugins: [
-          ['istanbul', {
-            'exclude': [
-              '**/*.spec.js'
-            ]
-          }]
-        ]
-      }
-    }, {
-      test: /\.html$/,
-      loader: 'html-loader',
-      include: [
-        helpers.root('app')
-      ]
-    }, {
-      test: /\.scss$/,
-      loader: ExtractTextPlugin.extract({
-        fallbackLoader: 'style-loader',
-        loader: [
-          'css-loader',
-          'postcss-loader',
-          'sass-loader'
-        ]
-      }),
-      include: [
-        helpers.root('app')
-      ]
-    }]
+    rules: [
+      {
+        test: /\.js$/,
+        use: 'eslint-loader',
+        enforce: 'pre',
+        include: [helpers.root('app')],
+      },
+      {
+        test: /\.js$/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              plugins: [
+                [
+                  'istanbul',
+                  {
+                    exclude: ['**/*.spec.js'],
+                  },
+                ],
+              ],
+            },
+          },
+        ],
+        include: [helpers.root('app')],
+      },
+      {
+        test: /\.html$/,
+        use: 'html-loader',
+        include: [helpers.root('app')],
+      },
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'postcss-loader', 'sass-loader'],
+        }),
+        include: [helpers.root('app')],
+      },
+    ],
   },
   resolve: {
-    extensions: [
-      '.js',
-      '.json',
-      '.html',
-      '.scss'
-    ]
+    extensions: ['.js', '.json', '.html', '.scss'],
   },
   plugins: [
     new LodashModuleReplacementPlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(),
     new StyleLintPlugin({
-      syntax: 'scss'
+      syntax: 'scss',
     }),
     new ExtractTextPlugin('[name].css'),
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: function() {
           return [autoprefixer];
-        }
-      }
-    })
-  ]
+        },
+      },
+    }),
+  ],
 };

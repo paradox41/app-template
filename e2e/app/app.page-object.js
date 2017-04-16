@@ -9,4 +9,3 @@ class AppPage {
 }
 
 module.exports = AppPage;
-

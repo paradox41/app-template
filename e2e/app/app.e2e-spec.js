@@ -10,4 +10,3 @@ describe('app', function() {
     expect(this.page.getTitle().getText()).to.eventually.equal('Hello World!');
   });
 });
-

@@ -2,35 +2,35 @@ require('babel-core/register');
 
 module.exports = function(config) {
   const options = {
-
     frameworks: ['mocha', 'chai'],
 
-    files: [
-      '../test.spec.js'
-    ],
+    files: ['../test.spec.js'],
 
     exclude: [],
 
     preprocessors: {
-      '../test.spec.js': ['webpack', 'sourcemap']
+      '../test.spec.js': ['webpack', 'sourcemap'],
     },
 
     webpack: require('./webpack.test.babel'),
 
     webpackMiddleware: {
       noInfo: true,
-      stats: 'errors-only'
+      stats: 'errors-only',
     },
 
     reporters: ['spec', 'coverage'],
     coverageReporter: {
       dir: '../coverage/',
       subdir: '.',
-      reporters: [{
-        type: 'text-summary'
-      }, {
-        type: 'lcov'
-      }]
+      reporters: [
+        {
+          type: 'text-summary',
+        },
+        {
+          type: 'lcov',
+        },
+      ],
     },
     port: 9876,
     colors: true,
@@ -41,8 +41,8 @@ module.exports = function(config) {
     customLaunchers: {
       ChromeTravisCI: {
         base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
+        flags: ['--no-sandbox'],
+      },
     },
 
     autoWatch: false,
@@ -50,7 +50,7 @@ module.exports = function(config) {
 
     // tests on Travis were timing out
     browserDisconnectTimeout: 60000,
-    browserNoActivityTimeout: 60000
+    browserNoActivityTimeout: 60000,
   };
 
   if (process.env.TRAVIS) {

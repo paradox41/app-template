@@ -18,11 +18,11 @@ exports.config = {
   capabilities: {
     browserName: 'chrome',
     shardTestFiles: true,
-    maxInstances: 5
+    maxInstances: 5,
   },
   framework: 'mocha',
   mochaOpts: { reporter: 'spec', slow: 3000 },
-  specs: [ './**/*.e2e-spec.js' ],
+  specs: ['./**/*.e2e-spec.js'],
   baseUrl: `http://localhost:${opts.port}/`,
   onPrepare: function() {
     // add globals like `expect` so tests don't have to set them up every time
@@ -35,6 +35,5 @@ exports.config = {
       // eslint-disable-next-line no-console
       console.log(chalk.bgMagenta.bold(`Server started on port ${opts.port}`));
     });
-  }
+  },
 };
-
