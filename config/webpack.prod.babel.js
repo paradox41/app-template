@@ -8,7 +8,7 @@ const config = require('./webpack.common.babel');
 module.exports = webpackMerge(config, {
   devtool: 'source-map',
   output: {
-    filename: '[name].bundle.[hash:8].js',
+    filename: '[name].bundle.[hash:8].js'
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
@@ -16,18 +16,18 @@ module.exports = webpackMerge(config, {
       mangle: true,
       compress: {
         drop_debugger: true,
-        drop_console: true,
-      },
+        drop_console: true
+      }
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      filename: 'vendor.bundle.[hash:8].js',
+      filename: 'vendor.bundle.[hash:8].js'
     }),
     new ExtractTextPlugin('[name].[hash:8].css'),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('production'),
-      },
-    }),
-  ],
+        NODE_ENV: JSON.stringify('production')
+      }
+    })
+  ]
 });

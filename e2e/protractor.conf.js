@@ -18,7 +18,7 @@ exports.config = {
   capabilities: {
     browserName: 'chrome',
     shardTestFiles: true,
-    maxInstances: 5,
+    maxInstances: 5
   },
   framework: 'mocha',
   mochaOpts: { reporter: 'spec', slow: 3000 },
@@ -35,5 +35,5 @@ exports.config = {
       // eslint-disable-next-line no-console
       console.log(chalk.bgMagenta.bold(`Server started on port ${opts.port}`));
     });
-  },
+  }
 };

@@ -16,7 +16,7 @@ module.exports = {
         test: /\.js$/,
         use: 'eslint-loader',
         enforce: 'pre',
-        include: [helpers.root('app')],
+        include: [helpers.root('app')]
       },
       {
         test: /\.js$/,
@@ -28,45 +28,45 @@ module.exports = {
                 [
                   'istanbul',
                   {
-                    exclude: ['**/*.spec.js'],
-                  },
-                ],
-              ],
-            },
-          },
+                    exclude: ['**/*.spec.js']
+                  }
+                ]
+              ]
+            }
+          }
         ],
-        include: [helpers.root('app')],
+        include: [helpers.root('app')]
       },
       {
         test: /\.html$/,
         use: 'html-loader',
-        include: [helpers.root('app')],
+        include: [helpers.root('app')]
       },
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'postcss-loader', 'sass-loader'],
+          use: ['css-loader', 'postcss-loader', 'sass-loader']
         }),
-        include: [helpers.root('app')],
-      },
-    ],
+        include: [helpers.root('app')]
+      }
+    ]
   },
   resolve: {
-    extensions: ['.js', '.json', '.html', '.scss'],
+    extensions: ['.js', '.json', '.html', '.scss']
   },
   plugins: [
     new LodashModuleReplacementPlugin(),
     new StyleLintPlugin({
-      syntax: 'scss',
+      syntax: 'scss'
     }),
     new ExtractTextPlugin('[name].css'),
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: function() {
           return [autoprefixer];
-        },
-      },
-    }),
-  ],
+        }
+      }
+    })
+  ]
 };
