@@ -1,5 +1,5 @@
 import angular from 'angular';
-import router from 'angular-ui-router';
+import router from '@uirouter/angularjs';
 
 import './app.scss';
 
@@ -12,10 +12,10 @@ export default angular.module(APP_NAME, [router]).config(function($stateProvider
   $stateProvider.state('app', {
     url: '',
     abstract: true,
-    template: '<div ui-view></div>',
+    template: '<div ui-view></div>'
   });
 });
 
 angular.bootstrap(document.querySelector('html'), [APP_NAME], {
-  strictDi: true,
+  strictDi: true
 });
