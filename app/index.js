@@ -1,7 +1,7 @@
 import angular from 'angular';
 import router from '@uirouter/angularjs';
 
-import './app.scss';
+import './app.css';
 
 const APP_NAME = 'app';
 

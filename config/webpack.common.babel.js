@@ -2,11 +2,7 @@ const webpack = require('webpack');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-
-const autoprefixer = require('autoprefixer');
 
 const helpers = require('./helpers');
 
@@ -43,43 +39,34 @@ module.exports = {
         include: [helpers.root('app')]
       },
       {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          loader: ['css-loader', 'postcss-loader', 'sass-loader']
-        }),
-        include: [helpers.root('app')]
+          use: [
+            {
+              loader: 'css-loader'
+            },
+            {
+              loader: 'postcss-loader'
+            }
+          ]
+        })
       }
     ]
   },
   resolve: {
-    extensions: ['.js', '.json', '.html', '.scss']
+    extensions: ['.js', '.json', '.html', '.css']
   },
   plugins: [
     new LodashModuleReplacementPlugin(),
-    new StyleLintPlugin({
-      syntax: 'scss'
-    }),
     new HtmlWebpackPlugin({
       inject: 'body',
       template: 'index.html'
     }),
-    new CopyWebpackPlugin([
-      {
-        from: '*.{tff,woff,woff2,ico,txt,png,svg,jpg,jpeg,json}'
-      }
-    ]),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: 'vendor.bundle.js'
     }),
-    new ExtractTextPlugin('[name].css'),
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        postcss: function() {
-          return [autoprefixer];
-        }
-      }
-    })
+    new ExtractTextPlugin('[name].css')
   ]
 };

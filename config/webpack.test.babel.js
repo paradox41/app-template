@@ -1,10 +1,5 @@
-const webpack = require('webpack');
-
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
-
-const autoprefixer = require('autoprefixer');
 
 const helpers = require('./helpers');
 
@@ -43,30 +38,23 @@ module.exports = {
         include: [helpers.root('app')]
       },
       {
-        test: /\.scss$/,
-        use: ExtractTextPlugin.extract({
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'postcss-loader', 'sass-loader']
-        }),
-        include: [helpers.root('app')]
+          use: [
+            {
+              loader: 'css-loader'
+            },
+            {
+              loader: 'postcss-loader'
+            }
+          ]
+        })
       }
     ]
   },
   resolve: {
-    extensions: ['.js', '.json', '.html', '.scss']
+    extensions: ['.js', '.json', '.html', '.css']
   },
-  plugins: [
-    new LodashModuleReplacementPlugin(),
-    new StyleLintPlugin({
-      syntax: 'scss'
-    }),
-    new ExtractTextPlugin('[name].css'),
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        postcss: function() {
-          return [autoprefixer];
-        }
-      }
-    })
-  ]
+  plugins: [new LodashModuleReplacementPlugin(), new ExtractTextPlugin('[name].css')]
 };
