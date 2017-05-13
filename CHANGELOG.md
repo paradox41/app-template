@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="15.6.0"></a>
+# [15.6.0](https://github.com/paradox41/app-template/compare/v15.5.0...v15.6.0) (2017-05-13)
+
+
+### Features
+
+* **git/hooks:** add husky and prettier ([34bd6da](https://github.com/paradox41/app-template/commit/34bd6da))
+
+
+
 <a name="15.5.0"></a>
 # [15.5.0](https://github.com/paradox41/app-template/compare/v15.4.0...v15.5.0) (2017-05-13)
 
