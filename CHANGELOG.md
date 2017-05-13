@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="15.5.0"></a>
+# [15.5.0](https://github.com/paradox41/app-template/compare/v15.4.0...v15.5.0) (2017-05-13)
+
+
+### Chores
+
+* **dotfiles:** remove old dotfiles ([e7521da](https://github.com/paradox41/app-template/commit/e7521da))
+* **package:** change script name to e2e ([7262ab0](https://github.com/paradox41/app-template/commit/7262ab0))
+
+
+### Features
+
+* **all:** use postcss ([3dcac9a](https://github.com/paradox41/app-template/commit/3dcac9a))
+
+
+### BREAKING CHANGES
+
+* package: no longer a task called protractor
+
+Signed-off-by: Will Soto <will.soto9@gmail.com>
+* all: no longer using Sass
+
+Signed-off-by: Will Soto <will.soto9@gmail.com>
+* dotfiles: no more jsbeautifyrc
+
+Signed-off-by: Will Soto <will.soto9@gmail.com>
+
+
+
 <a name="15.4.0"></a>
 # [15.4.0](https://github.com/paradox41/app-template/compare/v15.3.3...v15.4.0) (2016-10-16)
 
