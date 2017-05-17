@@ -38,24 +38,15 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO,
 
     browsers: ['Chrome'],
-    customLaunchers: {
-      ChromeTravisCI: {
-        base: 'Chrome',
-        flags: ['--no-sandbox']
-      }
-    },
 
     autoWatch: false,
     singleRun: true,
 
-    // tests on Travis were timing out
     browserDisconnectTimeout: 60000,
     browserNoActivityTimeout: 60000
   };
 
-  if (process.env.TRAVIS) {
-    options.browsers = ['ChromeTravisCI'];
-
+  if (process.env.CI) {
     options.reporters.push('coveralls');
   }
 
