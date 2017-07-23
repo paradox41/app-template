@@ -69,7 +69,7 @@
     "coveralls": "^2.13.1",
     "css-loader": "^0.28.4",
     "cssnano": "^3.10.0",
-    "eslint": "^4.2.0",
+    "eslint": "^4.3.0",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.7.0",
     "express": "^4.15.3",
@@ -86,7 +86,7 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "0.0.31",
     "karma-webpack": "^2.0.4",
-    "lint-staged": "^4.0.1",
+    "lint-staged": "^4.0.2",
     "lodash-webpack-plugin": "^0.11.4",
     "mocha": "^3.4.2",
     "node-sass": "^4.5.3",
@@ -102,7 +102,7 @@
     "stylelint-config-standard": "^17.0.0",
     "validate-commit": "^3.2.1",
     "webpack": "^3.3.0",
-    "webpack-dev-server": "^2.5.1",
+    "webpack-dev-server": "^2.6.0",
     "webpack-merge": "^4.1.0"
   }
 }
