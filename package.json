@@ -74,7 +74,7 @@
     "eslint-plugin-import": "^2.7.0",
     "express": "^4.15.3",
     "extract-text-webpack-plugin": "^3.0.0",
-    "html-loader": "^0.4.5",
+    "html-loader": "^0.5.0",
     "html-webpack-plugin": "^2.29.0",
     "husky": "^0.14.3",
     "karma": "^1.7.0",
