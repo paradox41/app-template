@@ -91,7 +91,7 @@
     "mocha": "^3.4.2",
     "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.6",
-    "postcss-reporter": "^4.0.0",
+    "postcss-reporter": "^5.0.0",
     "prettier": "^1.5.3",
     "protractor": "^5.1.2",
     "rimraf": "^2.6.1",
